@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Project Management</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Sujata Associates - Company Registration in Kolkata</title> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="web.css">
+    <script src="usa.js"></script>
+</head>
+
+<body>
+    <div class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-3 px-4">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-phone text-green-400"></i>
+                    <span>Call us: 9038001356</span>
+                </div>
+                <div class="hidden sm:block text-gray-400">|</div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-envelope text-green-400"></i>
+                    <span>rahul.bhakat@sujataassociates.com</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center space-x-2">
+                    <i class="fas fa-question-circle text-blue-400"></i>
+                    <span>Have any questions?</span>
+                </span>
+                <a href="#"
+                    class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 transform hover:scale-105">
+                    VISIT OUR IT WEBSITE
+                </a>
+            </div>
+        </div>
+    </div>
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <!-- <div class="text-2xl font-bold gradient-text">Sujata Associates</div> -->
+                    <img src="../Logo-new-final.png" alt="Description" class="h-auto object-cover rounded-lg shadow-lg">
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#"
+                        class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Home</a>
+                    <div class="relative group">
+                        <button onmouseover="toggleDropdown('legalDropdown')"
+                            class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
+                            Legal Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div id="legalDropdown"
+                            class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
+                            <a href="cybersecurity.html" class="block px-4 py-2 hover:bg-green-600">Cyber Security</a>
+                            <a href="criminallaw.html" class="block px-4 py-2 hover:bg-green-600">Criminal Law</a>
+                            <a href="property.html" class="block px-4 py-2 hover:bg-green-600">Property Registration</a>
+                            <a href="legal.html" class="block px-4 py-2 hover:bg-green-600">Legal Drafting</a>
+                            <a href="marriage.html" class="block px-4 py-2 hover:bg-green-600">Marriage Registration</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <a href="#"
+                        class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium flex items-center">
+                        CA Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                </div>
+                <div class="relative group">
+                    <button onmouseover="toggleDropdown('brandingDropdown')"
+                        class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
+                        Company Branding <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+
+                    <div id="brandingDropdown"
+                        class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
+                        <a href="trade.html" class="block px-4 py-2 hover:bg-green-600">Trade Mark Registration</a>
+                        <a href="bar.html" class="block px-4 py-2 hover:bg-green-600">Barcode Registration</a>
+                        <a href="iso.html" class="block px-4 py-2 hover:bg-green-600">ISO Registration</a>
+                        <a href="copy.html" class="block px-4 py-2 hover:bg-green-600">Copyright Registration</a>
+                        <a href="patent.html" class="block px-4 py-2 hover:bg-green-600">Patent Registration</a>
+                        <a href="start.html" class="block px-4 py-2 hover:bg-green-600">startup India Registration</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button onmouseover="toggleDropdown('servicesDropdown')"
+                        class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
+                        Other Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div id="servicesDropdown"
+                        class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
+                        <a href="usa.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in USA</a>
+                        <a href="uk.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in UK</a>
+                        <a href="bangladesh.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in Bangladesh</a>
+                        <a href="srilanka.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in Srilanka</a>
+                        <a href="china.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in China</a>
+                        <a href="web.html" class="block px-4 py-2 hover:bg-green-600">Web Services</a>
+                        <a href="hospital.html" class="block px-4 py-2 hover:bg-green-600">Hospital project Management</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button onmouseover="toggleDropdown('CompanyDropdown')"
+                        class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
+                        Company <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div id="CompanyDropdown"
+                        class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
+                        <a href="about.html" class="block px-4 py-2 hover:bg-green-600">About Us</a>
+                        <a href="contact.html" class="block px-4 py-2 hover:bg-green-600">Contact Us</a>
+                </div>
+               
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-gray-700 focus:outline-none" id="mobile-menu-btn">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+
+            <div class="hidden lg:flex items-center">
+                <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                    <i class="fas fa-search text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden bg-white border-t" id="mobile-menu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Home</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Legal Services</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">CA Services</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Company Branding</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Other Services</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Company</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Include Tailwind CSS in your HTML head if not already included -->
+    <!-- Example: <script src="https://cdn.tailwindcss.com"></script> -->
+
+    <section class="bg-gray-50 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+
+                <!-- Page Title -->
+                <h1 class="text-3xl font-bold text-gray-800 mb-4 md:mb-0">
+                    Hospital Project Management
+                </h1>
+
+                <!-- Breadcrumb -->
+                <nav class="text-sm font-medium text-gray-400 space-x-2">
+                    <a href="#" class="text-green-500 hover:text-blue-400">Home</a>
+                    <span>&gt;</span>
+                    <a href="legal.html" class="text-green-500 hover:text-blue-400">Company Branding</a>
+                    <span>&gt;</span>
+                    <span>Hospital Project Management</span>
+                </nav>
+
+            </div>
+        </div>
+    </section>
+    <div class="marriage-registration-section">
+        <div class="marriage-text" style="font-size: 18px;">
+            <p>
+                At Sujata Associated, we specialize in comprehensive Hospital Project Management services. Our goal is
+                to help hospitals and service for all our projects using the expert team including Hospital
+                Administrator, Advisor, Qualified Architect, Professional Hospital Interior Designers, Hospital
+                consultants and Structural Engineers on-site at the time of project execution. We give you trust that
+                the processes and techniques employed during the project management service will remain within the
+                client’s budget.
+
+            </p>
+            <br>
+            <p>
+                Whether it's building a new hospital wing, implementing advanced healthcare IT systems, or renovating
+                existing infrastructure, our expert team support every project meets the highest standards of quality,
+                safety, and reputation. We bring together medical professionals, architects, engineers, and
+                administrators to align every aspect of the project with clinical needs and operational goals.
+            </p>
+            <br>
+            <p>
+                Our approach focuses on clear communication, a good planning, and risk management. From good studies
+                and budgeting to procurement, scheduling, and execution, we manage every phase with brave and
+                precision.
+
+            </p>
+            <br>
+            <p>
+                Trust us to bring your hospital vision to life—with professionalism, accountability, and a deep
+                understanding of healthcare environments.
+            </p>
+
+            <p>
+                Let us help you build a better future for healthcare.
+            </p>
+        </div>
+        <div class="marriage-image" style="width: 400px;">
+            <img src="../hospital.jpg" alt="Marriage Registration Services" />
+        </div>
+    </div>
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Services we Provide</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Service items -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-building text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">MARKET SURVEY & FEASIBILITY STUDIES</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We help you to determine the sources of business for the
+                        Hospital. This is essential while establishing a new hospital or creating a new facility in an
+                        existing hospital.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">HOSPITAL PLANNING, DESIGN & ARCHITECTURE</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Develop cost-effective and efficient Hospitals,that’s
+                        well-designed, well-staffed, patient-centered and that makes a positive impression through our
+                        intelligent planning services.
+                </div>
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">EQUIPMENT PLANNING, GUIDANCE & FACILITATION
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We assist you right from need assessment, budgeting &
+                        planning, procurement and installation of all the Equipment of your Hospital in a manner that is
+                        very specific to your operational goals and budget.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-user-tie text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">
+                            DIGITAL HEALTH SOLUTIONS</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Our Healthcare Division to bring together the latest
+                        Digital Technologies to benefit Indian Healthcare Providers. We are using the modern technology
+                        to develop the projects. We always here to litsen your words.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Accreditation Compliant (NABH & JCI)</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Our Organisation is India’s pioneering and largest Hospital
+                        Accreditation Advisory Group. Our Team of Quality Professionals, Hospital Planners, Designers
+                        and Architects will ensure that the requirements.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-crown text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">END TO END - TOTAL SOLUTIONS</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Our Project Management Team will work closely with the
+                        Planners, Designers, Equipment Specialists and Commissioning Experts, from concept to
+                        commissioning of the Project to ensure an integrated approach and timely completion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="legal-services">
+        <div class="container">
+            <h1 class="heading">We provide the following services</h1>
+            <div class="underline"></div>
+
+            <p>At Sujata Associated Company, we help to build and improve healthcare facilities by giving complete
+                solutions from start to finish. We understand the needs of hospitals and healthcare centers, and we are
+                here to make the process easy and simple. We provide services like Hospital Planning, Design &
+                Architecture, helping you create space in the market. Our Planning service ensures you to support your
+                work, while our Guidance will help you to rise in the environment . We also offer Digital Health
+                Solutions that help to improve patient care and hospital management. Our team supports you in meeting to
+                ensure your hospital for quality and safety. From beginning to end, Sujata Associated Company is here to
+                help you. Contact us now, for a healthcare facility that works for you to rise your business..
+
+            </p>
+        </div>
+    </div>
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Other Web</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Service items -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-building text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Web Designing consulting</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We provide web services to help to promote your business
+                        online..</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Software Consulting</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We provide web services to help to promote your business
+                        online.
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">SEO Consulting
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We provide web services to help to promote your business
+                        online.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-user-tie text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Digital Marketing Consulting</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We provide web services to help to promote your business
+                        online.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">App Development Consulting</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We provide web services to help to promote your business
+                        online.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-crown text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Logo Designing Consulting</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We design your commercial logo to promote your brand online
+                        & offline market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

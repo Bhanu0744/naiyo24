@@ -1,0 +1,119 @@
+.brochure-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: white;
+    line-height: 1.8;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.brochure-card h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.brochure-card p {
+    font-size: 16px;
+    color: #333;
+    text-align: justify;
+}
+
+.custom-button {
+    background-color: #2f4965;
+    color: white;
+    padding: 12px 20px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 220px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.custom-button i {
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.custom-button:hover {
+    background-color: #28a745;
+}
+
+.video-section iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 315px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+
+.footer-col {
+    flex: 1 1 200px;
+}
+
+.footer-logo {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.footer-col p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer-col ul li {
+    margin-bottom: 5px;
+}
+
+.footer-col ul li a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-col ul li a:hover {
+    color: #fff;
+}
+
+/* Newsletter Form */
+.newsletter label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.newsletter input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #e3f2fd;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.newsletter button {
+    background-color: #20c997;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.newsletter button:hover {
+    background-color: #198754;
+}
