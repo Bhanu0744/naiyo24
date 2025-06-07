@@ -2,106 +2,107 @@
     background-color: #2b3439;
     color: white;
     padding: 30px 50px;
-}
-
-.footer-top {
+  }
+  
+  .footer-top {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-}
-
-.contact-info {
+  }
+  
+  .contact-info {
     display: flex;
     gap: 50px;
     flex-wrap: wrap;
-}
-
-.contact-item {
+  }
+  
+  .contact-item {
     display: flex;
     align-items: center;
     gap: 10px;
-}
-
-.icon {
+  }
+  
+  .icon {
     width: 24px;
     height: 24px;
-}
-
-.divider {
+  }
+  
+  .divider {
     margin: 20px 0;
     border-color: #444;
-}
-.footer-content {
+  }
+  
+  .footer-content {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     margin-left: 30px;
     gap: 40px;
-}
-
-.footer-col {
+  }
+  
+  .footer-col {
     flex: 1;
     min-width: 200px;
-}
-
-.footer-top {
+  }
+  
+  .footer-top {
     justify-content: center;
     gap: 40px;
-}
-
-.contact-item img {
+  }
+  
+  .contact-item img {
     background-color: #10b981;
     height: 40px;
     width: 40px;
     border-radius: 50%;
     padding: 10px;
     margin-right: 10px;
-}
-
-.logo-section .logo {
+  }
+  
+  .logo-section .logo {
     width: 180px;
     margin-bottom: 10px;
-}
-
-.footer-col p {
+  }
+  
+  .footer-col p {
     font-size: 14px;
     line-height: 1.6;
     color: #ccc;
-}
-
-.footer-col ul {
+  }
+  
+  .footer-col ul {
     list-style: none;
     padding: 0;
-}
-
-.footer-col ul li {
+  }
+  
+  .footer-col ul li {
     margin-bottom: 10px;
     font-size: 15px;
     cursor: pointer;
-}
-
-.footer-col ul li::before {
+  }
+  
+  .footer-col ul li::before {
     content: "▶";
     margin-right: 8px;
     font-size: 10px;
-}
-
-.subscribe-form label {
+  }
+  
+  .subscribe-form label {
     display: block;
     margin-bottom: 8px;
     font-size: 14px;
-}
-
-.subscribe-form input {
+  }
+  
+  .subscribe-form input {
     width: 100%;
     padding: 8px;
     border: none;
     margin-bottom: 10px;
     border-radius: 4px;
     background-color: #dce6eb;
-}
-
-.subscribe-form button {
+  }
+  
+  .subscribe-form button {
     background-color: #10b981;
     color: white;
     border: none;
@@ -109,4 +110,4 @@
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-}
+  }

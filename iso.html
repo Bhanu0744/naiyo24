@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Cyber Security</title>
+    <title>ISO Registration</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title>Sujata Associates - Company Registration in Kolkata</title> -->
@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="trade.css">
+    <link rel="stylesheet" href="iso.css">
+    <script src="iso.js"></script>
 </head>
 
 <body>
@@ -40,6 +41,7 @@
             </div>
         </div>
     </div>
+    <!-- Navigation -->
     <nav class="bg-white shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-4">
             <div class="flex justify-between items-center py-4">
@@ -53,7 +55,7 @@
                     <a href="#"
                         class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Home</a>
                     <div class="relative group">
-                        <button onclick="toggleDropdown('legalDropdown')"
+                        <button onmouseover="toggleDropdown('legalDropdown')"
                             class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
                             Legal Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
                         </button>
@@ -68,67 +70,141 @@
                     </div>
                 </div>
                 <div class="relative group">
-                    <a href="#"
-                        class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium flex items-center">
+                    <button onmouseover="toggleDropdown('CAservicesDropdown')"
+                        class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
                         CA Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
-                    </a>
+                    </button>
+                    <div id="CAservicesDropdown"
+                        class="absolute hidden bg-[#0c1f36] text-white w-[800px] mt-2 rounded-md shadow-lg z-50 flex gap-6 px-4 py-6">
+                        <div class="min-w-[220px]">
+                            <h4 class="text-green-500 font-semibold mb-2 border-b border-gray-600 pb-1">
+                                Registration Services
+                            </h4>
+                            <a href="propritorship.html" class="block px-1 py-1 hover:text-green-400">Proprietorship
+                                Company Registration</a>
+                            <a href="patnership.html" class="block px-1 py-1 hover:text-green-400">Partnership Company
+                                Registration</a>
+                            <a href="opc.html" class="block px-1 py-1 hover:text-green-400">One Person Company
+                                Registration</a>
+                            <a href="private.html" class="block px-1 py-1 hover:text-green-400">Private Limited Company
+                                Registration</a>
+                            <a href="llp.html" class="block px-1 py-1 hover:text-green-400">LLP Company Registration</a>
+                            <a href="public.html" class="block px-1 py-1 hover:text-green-400">Public Limited Company
+                                Registration</a>
+                            <a href="sec8.html" class="block px-1 py-1 hover:text-green-400">Section 8 Company
+                                Registration</a>
+                            <a href="nidhi.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company
+                                Registration</a>
+                        </div>
+
+                        <div class="min-w-[220px]">
+                            <h4 class="text-green-500 font-semibold mb-2 border-b border-gray-600 pb-1">
+                                ROC Changes Services
+                            </h4>
+                            <a href="name.html" class="block px-1 py-1 hover:text-green-400">Company Name Change</a>
+                            <a href="director.html" class="block px-1 py-1 hover:text-green-400">Director Removal</a>
+                            <a href="addition.html" class="block px-1 py-1 hover:text-green-400">Director Addition</a>
+                            <a href="register.html" class="block px-1 py-1 hover:text-green-400">Address Change</a>
+                            <a href="moa.html" class="block px-1 py-1 hover:text-green-400">MOA Amendment</a>
+                            <a href="winding.html" class="block px-1 py-1 hover:text-green-400">Company Winding Up</a>
+                            <a href="increase.html" class="block px-1 py-1 hover:text-green-400">Authorized Capital
+                                Increase</a>
+                            <a href="close.html" class="block px-1 py-1 hover:text-green-400">LLP Closure</a>
+                            <a href="pvt.html" class="block px-1 py-1 hover:text-green-400">PVT LTD COMPANY</a>
+                            <a href="din.html" class="block px-1 py-1 hover:text-green-400">DIN SURRENDER</a>
+                        </div>
+
+                        <div class="min-w-[220px]">
+                            <h4 class="text-green-500 font-semibold mb-2 border-b border-gray-600 pb-1">
+                                Licensing Services
+                            </h4>
+                            <a href="license.html" class="block px-1 py-1 hover:text-green-400">Trade License
+                                Registration</a>
+                            <a href="fssai.html" class="block px-1 py-1 hover:text-green-400">FSSAI Registration</a>
+                            <a href="shop.html" class="block px-1 py-1 hover:text-green-400">Shop & Establishment</a>
+                            <a href="fire.html" class="block px-1 py-1 hover:text-green-400">Fire License</a>
+                            <a href="pollution.html" class="block px-1 py-1 hover:text-green-400">Pollution License</a>
+                            <a href="import.html" class="block px-1 py-1 hover:text-green-400">Import Export Code</a>
+                            <a href="esi.html" class="block px-1 py-1 hover:text-green-400">ESI & PF Registration</a>
+                            <a href="msme.html" class="block px-1 py-1 hover:text-green-400">MSME Registration</a>
+                            <a href="gst.html" class="block px-1 py-1 hover:text-green-400">GST Registration</a>
+                            <a href="gstreturn.html" class="block px-1 py-1 hover:text-green-400">GST Return Filing</a>
+                        </div>
+
+                        <div class="min-w-[220px]">
+                            <h4 class="text-green-500 font-semibold mb-2 border-b border-gray-600 pb-1">
+                                Compliance Services
+                            </h4>
+                            <a href="#" class="block px-1 py-1 hover:text-green-400">Pvt. Ltd. Annual Compliance</a>
+                            <a href="#" class="block px-1 py-1 hover:text-green-400">LLP Annual Compliance</a>
+                            <a href="#" class="block px-1 py-1 hover:text-green-400">Public Ltd. Annual Compliance</a>
+                            <a href="#" class="block px-1 py-1 hover:text-green-400">Section 8 Annual Compliance</a>
+                            <a href="#" class="block px-1 py-1 hover:text-green-400">Nidhi Company Compliance</a>
+                            <a href="#" class="block px-1 py-1 hover:text-green-400">Proprietorship Compliance</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="relative group">
-                    <button onclick="toggleDropdown('brandingDropdown')"
+                    <button onmouseover="toggleDropdown('brandingDropdown')"
                         class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
                         Company Branding <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </button>
 
                     <div id="brandingDropdown"
                         class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Trade Mark Registration</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Barcode Registration</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">ISO Registration</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Copyright Registration</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Patent Registration</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">startup India Registration</a>
+                        <a href="trade.html" class="block px-4 py-2 hover:bg-green-600">Trade Mark Registration</a>
+                        <a href="bar.html" class="block px-4 py-2 hover:bg-green-600">Barcode Registration</a>
+                        <a href="iso.html" class="block px-4 py-2 hover:bg-green-600">ISO Registration</a>
+                        <a href="copy.html" class="block px-4 py-2 hover:bg-green-600">Copyright Registration</a>
+                        <a href="patent.html" class="block px-4 py-2 hover:bg-green-600">Patent Registration</a>
+                        <a href="start.html" class="block px-4 py-2 hover:bg-green-600">startup India Registration</a>
                     </div>
                 </div>
                 <div class="relative group">
-                    <button onclick="toggleDropdown('servicesDropdown')"
+                    <button onmouseover="toggleDropdown('servicesDropdown')"
                         class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
                         Other Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </button>
                     <div id="servicesDropdown"
                         class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Company Registration in USA</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Company Registration in UK</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Company Registration in Bangladesh</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Company Registration in Srilanka</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Company Registration in China</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Web Services</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Hospital project Management</a>
+                        <a href="usa.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in USA</a>
+                        <a href="uk.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in UK</a>
+                        <a href="bangladesh.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in
+                            Bangladesh</a>
+                        <a href="srilanka.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in
+                            Srilanka</a>
+                        <a href="china.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in
+                            China</a>
+                        <a href="web.html" class="block px-4 py-2 hover:bg-green-600">Web Services</a>
+                        <a href="hospital.html" class="block px-4 py-2 hover:bg-green-600">Hospital project
+                            Management</a>
                     </div>
                 </div>
+
                 <div class="relative group">
-                    <button onclick="toggleDropdown('CompanyDropdown')"
+                    <button onmouseover="toggleDropdown('CompanyDropdown')"
                         class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
                         Company <i class="fas fa-chevron-down ml-1 text-xs"></i>
                     </button>
-                    <div id="Company"
+                    <div id="CompanyDropdown"
                         class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">About Us</a>
-                        <a href="#" class="block px-4 py-2 hover:bg-green-600">Contact Us</a>
+                        <a href="about.html" class="block px-4 py-2 hover:bg-green-600">About Us</a>
+                        <a href="contact.html" class="block px-4 py-2 hover:bg-green-600">Contact Us</a>
                     </div>
+
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-gray-700 focus:outline-none" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+
+                <div class="hidden lg:flex items-center">
+                    <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                        <i class="fas fa-search text-gray-600"></i>
+                    </button>
                 </div>
             </div>
-
-            <!-- Mobile Menu Button -->
-            <button class="lg:hidden text-gray-700 focus:outline-none" id="mobile-menu-btn">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
-
-            <div class="hidden lg:flex items-center">
-                <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
-                    <i class="fas fa-search text-gray-600"></i>
-                </button>
-            </div>
-        </div>
         </div>
 
         <!-- Mobile Menu -->
@@ -152,7 +228,7 @@
 
                 <!-- Page Title -->
                 <h1 class="text-3xl font-bold text-gray-800 mb-4 md:mb-0">
-                    TradeMark Registration
+                    ISO Registration
                 </h1>
 
                 <!-- Breadcrumb -->
@@ -161,7 +237,7 @@
                     <span>&gt;</span>
                     <a href="legal.html" class="text-green-500 hover:text-blue-400">Company Branding</a>
                     <span>&gt;</span>
-                    <span>TradeMark Registration</span>
+                    <span>ISO Registration</span>
                 </nav>
 
             </div>
@@ -169,115 +245,281 @@
     </section>
     <div class="marriage-registration-section">
         <div class="marriage-text">
-            <p>
-                At Sujata Associates, we understand that registering your marriage is an essential step in making your
-                union legally recognized. Our marriage registration services are designed to provide you with a
-                seamless, stress-free experience, allowing you to focus on celebrating your love while we handle the
-                legalities. Our team of experienced professionals offers expert advice and guidance on all aspects of
-                marriage registration, ensuring you understand the requirements and procedures.
+            <p class="paragraph">
+                In today's competitive market, businesses that are known for their reliability tend to attract more
+                customers. ISO certification can offer significant advantages to a company, including increased market
+                value, higher profits, improved cost efficiency, and global recognition. However, it's important to note
+                that the certification process can be both time-consuming and costly, with requirements varying
+                depending on the size of the organization.
             </p>
-            <p>
-                We assist you in preparing all required paperwork, making sure it complies with legal requirements. Our
-                staff helps you fill out the necessary paperwork quickly and accurately.
+            <p class="paragraph">
+                Located in Kolkata, the highly regarded registrar Sujata Associates serves a diverse clientele across
+                India. Our ISO certification services are seamless and budget-friendly, requiring only essential
+                document submissions. You can trust us to handle the entire process while you relax. Even during
+                lockdowns, you can reach out for your ISO certification needs in Kolkata. We are accessible 24/7 with
+                just a simple click, ready to provide you with support.
+
             </p>
-            <p>
-                We oversee the proper authorities’ receipt of your application for marriage registration. We monitor the
-                status of your application and send you updates on a regular basis.
+            <p class="paragraph">
+                Achieve excellence with ISO Certification Services in Kolkata! Get ISO registration in Kolkata to
+                enhance your business standards, credibility, and customer trust. Our expert team ensures a seamless
+                process, guiding you every step of the way. Contact us today for professional ISO certification
+                services!
+
+                Documentation is required for the following:
+
             </p>
-            <p>
-                Online Marriage Registration in Kolkata. Professional marriage registration services in Kolkata. Get
-                your marriage legally registered with ease.
+            <p class="paragraph">
+            <ul style="list-style-type: disc;">
+                <li>Quality Manual</li>
+                <li>Quality Policy</li>
+                <li>Quality Objectives</li>
+                <li>Quality Records</li>
+                <li>Six Procedures</li>
+            </ul>
             </p>
-            <p>
-                Importance Of Trademark Registration in India :-
-                <br>
-            <ol>
-                <li>* Legal protection against fake and fraudulent products is provided by this registration.</li>
-                <li>* A customer is able to identify a product due to its name or logo.</li>
-                <li>* An intangible asset is created for the owner which can be transferred, franchised, or sold.</li>
-                <li> Customers are loyal to the products because of the goodwill and trust created by the trademark.
-                </li>
-                <li>A trademark is a asset. It remains with the firm forever.</li>
-                <li>Trademark helps a start-up business to build brand trust, no matter which field the business is
-                    expanding in</li>
-            </ol>
+            <p class="paragraph">
+                Get in touch with us today to get your ISO certification in Kolkata. But wait? Are you worried that the
+                ongoing Covid-19 pandemic might get in the way of obtaining your certification? Do not worry! Sujata
+                Associates is here for you even during the lockdown. We are here for you 24/7 and we are just a click
+                away!
             </p>
         </div>
         <div class="marriage-image">
-            <img src="../trademark.png" alt="Marriage Registration Services" />
+            <img src="../iso.jpg" alt="Marriage Registration Services" width="500px" height="800px" />
         </div>
     </div>
+
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Why Choose Us</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                <!-- Service items -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 group-hover:from-blue-700 group-hover:to-blue-900 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-clipboard-list text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Budget-Friendly Services</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">At Sujata Associates, we are a seasoned and adaptable
+                        business consulting firm. We are proud to deliver top-notch services in India, with a level of
+                        cost-effectiveness that sets us apart from other companies. Our expertise and experience allow
+                        us to provide unparalleled solutions that meet the unique needs of our clients, making us the
+                        preferred choice for businesses seeking exceptional consulting services</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 group-hover:from-blue-700 group-hover:to-blue-900 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Reputation and Trust</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">With over 25 years of experience, Sujata Associates has
+                        established itself as a trusted provider of legal business solutions. Over the years, we have
+                        diligently built our reputation, and today, we proudly stand as one of the leading business
+                        registration firms in India. Our consistent track record of delivering exceptional services and
+                        our commitment to client satisfaction have earned us a strong position in the industry.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 group-hover:from-blue-700 group-hover:to-blue-900 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-lock text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Information Security</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Client security is our top priority. Our privacy policy and
+                        payment gateways are secure and trustworthy, ensuring 100% confidentiality. Our commitment to
+                        safeguarding our clients' information has resulted in a high rate of repeat business. Guaranteed
+                        satisfaction that will make you come back!</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 group-hover:from-blue-700 group-hover:to-blue-900 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-user-tie text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Your One-Stop Solution</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We have a team of skilled professionals including
+                        Accountants, CAs, Lawyers, Cost Accountants, Ex-Bankers, and Financial Experts, making Sujata
+                        Associates your one-stop solution for all your business legal needs.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 group-hover:from-blue-700 group-hover:to-blue-900 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Satisfying Client Experience</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">With over 1000+ satisfied clients across India, we
+                        prioritize customer satisfaction and deliver with integrity and efficiency. Our focus on brand
+                        visibility and customer targeting results in repeated business from our satisfied clients. Check
+                        out our testimonials!</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 group-hover:from-blue-700 group-hover:to-blue-900 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-user-tie text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Your Legal Advisor</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">SAt Sujata Associates, we go beyond being a business
+                        consulting firm. We are your trusted legal partner, providing comprehensive solutions for your
+                        business needs. Our commitment to going the extra mile for our clients sets us apart.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="legal-services">
         <div class="container">
-            <h1 class="heading">Legal services in India</h1>
+            <h1 class="heading">Benefits of ISO Certification</h1>
             <div class="underline"></div>
 
             <p class="paragraph">
-                Sujata Associates is a renowned law firm in India and takes pride in resolving and concluding
-                challenging
-                legal issues.
-                Our main aim is to develop a good client relationship based on trust & authenticity. We value our
-                clients
-                and believe in an
-                effective legal solution. We are committed to providing relief to our clients.
+                Recent surveys show that over a million companies are certified by ISO 9001:2015. This certification of
+                9001 is the quality management system that helps the company to get benefits like growth, profitability,
+                and cost savings. Let us now discuss the major importance of the ISO Certification.
             </p>
 
             <p class="paragraph">
-                We provide all sorts of legal services in India. Worried about lockdown and COVID-19? Do not worry.
-                We’ve
-                got you covered.
-                We provide all sorts of services online as well. We are just a click away from you. There are rules and
-                regulations for
-                certain things in every country. People will require an attorney or a legal service provider to deal
-                with
-                any breach in those laws.
+                Standardized tag enlistment empowers perceivability on google look for the scanner tag number fasten on
+                the item. On enrollment, Barcode checking will restore item data from a worldwide information base to
+                the perusers on the web.
+
+
             </p>
 
             <p class="paragraph">
-                Let us now discuss some of the legal services that are provided in India.
+                There are various free online tools available to generate barcodes. Manufacturers and packagers spend
+                thousands of rupees printing barcodes on product packaging. Generally, big retail chains such as
+                Walmart, Big Bazaar, Max Fashion, Home Center, Aditya Birla Retail, Shoppers Stop, etc do not accept
+                barcodes except International Barcode.
             </p>
-            <ul class="services-list">
-                <li><strong><a href="#">Family Law:–</a></strong> It is always advised to consult with the family
-                    attorney
-                    before filing for divorce. There can be debts, property division, or child custody to consider. The
-                    attorney helps in drafting a prenup agreement according to marriage requirements in your state and
-                    provides legal assistance.</li>
+            <p class="paragraph">
+                Product rejection due to free barcodes may lead to a big loss by reprinting product packages again with
+                legitimate barcodes.
+            </p>
+            <p class="paragraph">
+                How to apply for International Barcode Registration ?
+            </p>
+            <p class="paragraph">
+                1. Meet and Improve Customer Requirements:- A number of companies and customers look for an ISO
+                Certified company to do business with. Once certified, the ISO process helps in improving customer
+                service by identifying the key areas of the customer’s priority and requirement. It will bring more
+                value to the customer and they will fortify their loyalty to the company.
 
-                <li><strong><a href="#">Civil Law:–</a></strong> Civil law is the most vital part of the law system in a
-                    country. It basically helps in resolving non-criminal disputes with rules, regulations, and judicial
-                    precedents. In the case of real estate, commercial, tax, media industry, sports, or administrative
-                    issues comes under civil law. You’ll require a civil lawyer to deal with any of the mentioned
-                    issues.
-                </li>
-
-                <li><strong><a href="#">Criminal Law:–</a></strong> In case of any commercial offenses, corruption
-                    cases, or
-                    false lawsuits, legal services help you to fight for your rights. The legal service providers help
-                    you
-                    to keep your criminal record clear.</li>
-
-                <li><strong><a href="#">Debt Recovery:–</a></strong> If you have a debt and you’re unable to incur the
-                    money, legal service providers can help in recovery. Through various law procedures like the
-                    contract
-                    act, code of civil procedure, the penal code, etc, the legal service providers can assist you.</li>
-
-                <li><strong><a href="#">Check Bounce:–</a></strong> Check dishonour can lead to various legal issues.
-                    It’s a
-                    common issue these days for huge amounts bearing cheques. You can legally sue the defaulter in case
-                    of a
-                    discharge of any liability. A legal service provider can help you take the required legal actions.
-                </li>
-
-                <li><strong><a href="#">Cyber Law:–</a></strong> It’s a common thing nowadays. A lot of cybercrimes
-                    happen
-                    in the corporate sector. Like data theft, infringement, money transaction hacks, and lots of others.
-                    Sujata Associates has a solution for that. Our expert cyber law experts will take care of any
-                    problem
-                    you have on your hands.</li>
-            </ul>
+            </p>
+            <p class="paragraph">
+                2. Increment in Productivity:- ISO Certification enables a company to reorganize and efficiently grow
+                their resources productivity. ISO’s environmental consideration tendency has developed an
+                efficiency-based methodology which cuts cost and leaves no room for expensive errors.
+            </p>
+            <p class="paragraph">
+                3. Improvement in Consistency of The Operations & Management:- The consistency in the products and
+                services is one of the major parts that ISO focuses on. By quality auditing, the ISO 9001 QMS ensures
+                that the company stays focused by running the operations in a systematic manner. If done in a proper
+                way, regular audits provide the feedback required to correct any issues in the management and keep the
+                company running, uninterrupted.
+            </p>
+            <p class="paragraph">
+                4. Get More Revenue:- As previously mentioned, many companies and customers look for an ISO 9001
+                Certified Company as a ‘must’. Once certified, you can advertise your quality certification and gain
+                those customers by providing them a quote. It will eventually help you to get new companies as clients
+                and as we know, the more customers you gain, the more revenue you earn.
+            </p>
+            <p class="paragraph">
+                5. International Recognition:- ISO 9001 is administrated by the world’s largest standardization
+                organization, ISO with over 1 million companies registered to it. This certification sets the bar for
+                your organization in a very selected group.
+            </p>
         </div>
     </div>
 
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="email" class="icon">
+                    <span>rahul.bhakat@sujataassociates.com</span>
+                </div>
+                <div class="contact-item">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="phone" class="icon">
+                    <span>9038001356</span>
+                </div>
+                <div class="contact-item">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="location" class="icon">
+                    <span>4 Fairlie Place, 5th Floor, Kolkata 700 001, W.B. IN</span>
+                </div>
+            </div>
+        </div>
+
+        <hr class="divider" />
+
+        <div class="footer-content">
+            <div class="footer-col logo-section">
+                <img src="../Logo-new-final.png" alt="Sujata Associates" class="logo" width="100px" height="150px">
+                <!-- Replace 'logo.png' -->
+                <p>
+                    Sujata Associates one of the best company registration in Kolkata. Our expertise lies in delivering
+                    extensive consultancy services to companies, both within the country and overseas. By harnessing the
+                    power of technology, we have devised a seamless approach that simplifies the completion of
+                    governmental and legal formalities. These processes are consolidated within a user-friendly
+                    platform, offering utmost convenience to our clients.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <ul>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Careers</li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>Refund Policy</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <ul>
+                    <li>Private Limited Company Registration</li>
+                    <li>Sec 8 Company Registration</li>
+                    <li>LLP Company Registration</li>
+                    <li>One Person Company Registration</li>
+                    <li>Proprietorship Company Registration</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <form class="subscribe-form">
+                    <label for="email">Email address:</label>
+                    <input type="email" id="email" placeholder="Your email address">
+                    <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+        </div>
+    </footer>
 </body>
 
 </html>
