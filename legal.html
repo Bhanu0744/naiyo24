@@ -189,10 +189,14 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
 
-                <div class="hidden lg:flex items-center">
-                    <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                <div class="hidden lg:flex items-center relative">
+                    <button onclick="toggleSearch()"
+                        class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
                         <i class="fas fa-search text-gray-600"></i>
                     </button>
+                    <input type="text" id="searchInput"
+                        class="absolute right-0 top-12 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
+                        placeholder="Search..." />
                 </div>
             </div>
         </div>
@@ -243,20 +247,16 @@
                 document. A deep comprehension of legal principles and concepts is necessary to express these ideas
                 clearly and concisely in writing.
                 <br>
-                <br>
                 Lawyers and legal professionals usually review legal drafts to ensure their legality and adherence to
                 applicable laws and regulations. Additionally, the involved parties may also review and negotiate these
                 drafts in some cases.
                 <br>
-                <br>
-            <p>
+            <p class="text-gray-600 mb-4 leading-relaxed">
                 Mastering legal drafting is a vital skill for lawyers and legal professionals, as it plays a crucial
                 role in the legal process. It is indispensable for producing clear, accurate, and enforceable legal
                 agreements and documents, ensuring the effectiveness and legitimacy of the written content.
             </p>
-            <br>
-            <br>
-            <p>
+            <p class="text-gray-600 mb-4 leading-relaxed">
                 Sujata Associates takes pride in its pool of highly qualified legal writers who specialize in drafting
                 legal notices for various firms and businesses nationwide. Throughout the process, our in-house lawyers
                 and legal experts will maintain constant communication with you. Once we have comprehensively discussed
@@ -265,7 +265,7 @@
                 Should you have any queries concerning the legal notice drafting process, our dedicated customer support
                 team will be delighted to provide assistance.
             </p>
-            <p>
+            <p class="text-gray-600 mb-4 leading-relaxed">
                 At Sujata Associates, we are a seasoned and adaptable business consulting firm. We are proud to deliver
                 top-notch services in India, with a level of cost-effectiveness that sets us apart from other companies.
                 Our expertise and experience allow us to provide unparalleled solutions that meet the unique needs of

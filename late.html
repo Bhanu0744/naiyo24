@@ -207,10 +207,14 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
 
-                <div class="hidden lg:flex items-center">
-                    <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                <div class="hidden lg:flex items-center relative">
+                    <button onclick="toggleSearch()"
+                        class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
                         <i class="fas fa-search text-gray-600"></i>
                     </button>
+                    <input type="text" id="searchInput"
+                        class="absolute right-0 top-12 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
+                        placeholder="Search..." />
                 </div>
             </div>
         </div>
@@ -334,7 +338,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-chart-line text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Section 8 Company Registration</h3>
@@ -348,7 +352,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-purple-400 to-purple-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-handshake text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Partnership Company Registration</h3>
@@ -362,7 +366,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-user-tie text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Proprietorship Company Registration</h3>
@@ -376,7 +380,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-teal-400 to-teal-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-users text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">LLP Company Registration</h3>
@@ -390,7 +394,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-pink-400 to-pink-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-crown text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">OPC Company Registration</h3>
@@ -405,7 +409,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-red-400 to-red-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-balance-scale text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Best Legal Advice</h3>
@@ -418,7 +422,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-indigo-400 to-indigo-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-heart-broken text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Separation & Divorce</h3>
@@ -431,7 +435,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Child Custody</h3>
@@ -444,7 +448,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-user-secret text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Criminal Law</h3>
@@ -457,7 +461,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-green-400 to--600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-users text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Family Law</h3>
@@ -470,7 +474,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Cyber Crime Law</h3>
@@ -483,7 +487,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Company Law</h3>
@@ -496,7 +500,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Debt Settlement</h3>
@@ -509,7 +513,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Lok Adalat Matters</h3>
@@ -523,7 +527,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Top lawyers for IP registration &
@@ -538,7 +542,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Preparation of sale/rent/mortgage/lease deeds
@@ -552,7 +556,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Negotiation during sale of property</h3>
@@ -565,7 +569,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">
@@ -579,7 +583,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Easement related issues</h3>
@@ -592,7 +596,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Registration of property</h3>
@@ -605,7 +609,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Consumer Forum</h3>
@@ -618,7 +622,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Medical Negligence</h3>
@@ -633,7 +637,7 @@
                     class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
                     <div class="flex items-start space-x-4 mb-6">
                         <div
-                            class="w-16 h-16 bg-gradient-to-br from-yellow-400 to-yellow-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
                             <i class="fas fa-child text-white text-xl"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-900 flex-1">Loan/Credit Card Disputes</h3>

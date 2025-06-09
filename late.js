@@ -58,6 +58,14 @@ function toggleFAQ(button) {
     }
 }
 
+function toggleSearch() {
+    const input = document.getElementById('searchInput');
+    input.classList.toggle('hidden');
+    if (!input.classList.contains('hidden')) {
+      input.focus();
+    }
+  }
+
 function toggleDropdown(id) {
     const dropdown = document.getElementById(id);
     document.querySelectorAll('[id$="Dropdown"]').forEach(d => {

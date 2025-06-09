@@ -191,10 +191,14 @@
                         <i class="fas fa-bars text-xl"></i>
                     </button>
     
-                    <div class="hidden lg:flex items-center">
-                        <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                    <div class="hidden lg:flex items-center relative">
+                        <button onclick="toggleSearch()"
+                            class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
                             <i class="fas fa-search text-gray-600"></i>
                         </button>
+                        <input type="text" id="searchInput"
+                            class="absolute right-0 top-12 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
+                            placeholder="Search..." />
                     </div>
                 </div>
             </div>
@@ -224,7 +228,7 @@
                 </h1>
 
                 <!-- Breadcrumb -->
-                <nav class="text-sm font-medium text-gray-400 space-x-2">
+                <nav class="text-1xl font-medium text-gray-400 space-x-2">
                     <a href="#" class="text-green-500 hover:text-blue-400">Home</a>
                     <span>&gt;</span>
                     <a href="legal.html" class="text-green-500 hover:text-blue-400">Company Branding</a>
@@ -241,34 +245,33 @@
                 Vertical lines on barcodes can be electronically scanned to quickly access information about a product.
                 The use of barcodes, which can include item numbers, serial numbers, and batch numbers, makes it easier
                 to encode specific product details.
-
-
+                <br>
+                <br>
                 Barcoding plays a crucial role in the retail industry, simplifying product identification for various
                 parties such as manufacturers, shippers, and distributors.
-
-
+                <br>
+                <br>
                 Standardized product identification is not limited to the retail sector; it extends to manufacturing
                 networks, grocery stores, transportation, hospitals, and fast-food chains.
-
-
+                <br>
+                <br>
                 EAN-13, which consists of 13 numeric digits, is the most commonly used barcode type, while UPC-A, with
                 12 numeric digits, is widely employed for product identification.
-
-
+                <br>
+                <br>
                 Looking for Barcode Registration in Kolkata? Connect with top Barcode Providers in Kolkata for reliable
                 and efficient services. Get your products ready for the market with ease. Contact us today!
             </p>
             <p>
-
+                <br>
                 DOCUMENTS REQUIRED FOR BARCODE REGISTRATION:-
-
-
-                Company Pan Card A copy of PAN Card of the company is required as Proof of authentication of the
-                business entity.
-                Business Registration Proof Such as GST registration, partnership deed, certificate of incorporation,
-                shop establishment certificate, FSSAI license, etc.
-                Cancelled Cheque A Cancelled Cheque is mandatory to be submitted for verifying bank account details.
-                Product Details Such as product number, serial number, batch number, MRP of the product.
+                <br>
+                <li>Company Pan Card A copy of PAN Card of the company is required as Proof of authentication of the
+                    business entity.</li>
+                <li>Business Registration Proof Such as GST registration, partnership deed, certificate of incorporation,
+                    shop establishment certificate, FSSAI license, etc.</li>
+                <li>Cancelled Cheque A Cancelled Cheque is mandatory to be submitted for verifying bank account details.</li>
+                <li>Product Details Such as product number, serial number, batch number, MRP of the product.</li>
                 Company Letterhead Letter for requesting the allotment of barcode on the company letterhead.
             </p>
         </div>
@@ -484,12 +487,16 @@
                 </ul>
             </div>
 
-            <div class="footer-col">
-                <form class="subscribe-form">
-                    <label for="email">Email address:</label>
-                    <input type="email" id="email" placeholder="Your email address">
-                    <button type="submit">SUBMIT</button>
-                </form>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p>Copyright 2024 Sujata Associates | All Rights Reserved</p>
+                </div>
+                <div class="contact-item">
+                    <p>Terms & Conditions |</p>
+                </div>
+                <div class="contact-item">
+                    <p>Privacy Policy | Refund Policy</p>
+                </div>
             </div>
         </div>
     </footer>

@@ -78,3 +78,10 @@ window.addEventListener("click", function (e) {
         document.querySelectorAll('[id$="Dropdown"]').forEach(d => d.classList.add('hidden'));
     }
 });
+function toggleSearch() {
+    const input = document.getElementById('searchInput');
+    input.classList.toggle('hidden');
+    if (!input.classList.contains('hidden')) {
+      input.focus();
+    }
+  }

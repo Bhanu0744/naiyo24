@@ -134,13 +134,19 @@
                             <h4 class="text-green-500 font-semibold mb-2 border-b border-gray-600 pb-1">
                                 Compliance Services
                             </h4>
-                            <a href="license.html" class="block px-1 py-1 hover:text-green-400">Pvt. Ltd. Annual Compliance</a>
+                            <a href="license.html" class="block px-1 py-1 hover:text-green-400">Pvt. Ltd. Annual
+                                Compliance</a>
                             <a href="llp1.html" class="block px-1 py-1 hover:text-green-400">LLP Annual Compliance</a>
-                            <a href="public1.html" class="block px-1 py-1 hover:text-green-400">Public Ltd. Annual Compliance</a>
-                            <a href="SEC81.html" class="block px-1 py-1 hover:text-green-400">Section 8 Annual Compliance</a>
-                            <a href="nidhi1.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company Compliance</a>
-                            <a href="propret.html" class="block px-1 py-1 hover:text-green-400">Proprietorship Compliance</a>
-                            <a href="patnership1.html" class="block px-1 py-1 hover:text-green-400">Partnership Annual Compliance</a>
+                            <a href="public1.html" class="block px-1 py-1 hover:text-green-400">Public Ltd. Annual
+                                Compliance</a>
+                            <a href="SEC81.html" class="block px-1 py-1 hover:text-green-400">Section 8 Annual
+                                Compliance</a>
+                            <a href="nidhi1.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company
+                                Compliance</a>
+                            <a href="propret.html" class="block px-1 py-1 hover:text-green-400">Proprietorship
+                                Compliance</a>
+                            <a href="patnership1.html" class="block px-1 py-1 hover:text-green-400">Partnership Annual
+                                Compliance</a>
                         </div>
                     </div>
                 </div>
@@ -199,10 +205,14 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
 
-                <div class="hidden lg:flex items-center">
-                    <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                <div class="hidden lg:flex items-center relative">
+                    <button onclick="toggleSearch()"
+                        class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
                         <i class="fas fa-search text-gray-600"></i>
                     </button>
+                    <input type="text" id="searchInput"
+                        class="absolute right-0 top-12 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
+                        placeholder="Search..." />
                 </div>
             </div>
         </div>
@@ -232,7 +242,7 @@
                 </h1>
 
                 <!-- Breadcrumb -->
-                <nav class="text-sm font-medium text-gray-400 space-x-2">
+                <nav class="text-1xl font-medium text-gray-400 space-x-2">
                     <a href="#" class="text-green-500 hover:text-blue-400">Home</a>
                     <span>&gt;</span>
                     <a href="legal.html" class="text-green-500 hover:text-blue-400">Company Branding</a>
@@ -249,31 +259,23 @@
                 Securing a patent registration is essential for safeguarding a design, innovation, or product meeting
                 specific criteria of utility, ethics, and functionality. A patent extends protection to an invention for
                 a span of 20 years, commencing upon filing by the individual.
-
-            </p>
-            <br>
-            <p>
+                <br>
                 Initiating patent registration involves submitting a formal application to the trademark office. The act
                 of publicly introducing the item for sale and enabling its commercial utilization concludes upon
                 publishing a description of the innovation.
-            </p>
-            <br>
-            <p>
+                <br>
                 <b>Benefits of Patent Registration:</b>
-            </p>
-            <br>
-            <ul style="list-style-type: disc;">
+                <br>
+            <ul>
                 <li>Establishing a public record for the company.</li>
                 <li>Authority to sue or file a complaint to the court in case of infringement.</li>
                 <li>Protection from duplication.</li>
                 <li>Rights to import, export, franchise or sell the patented work.</li>
                 <li>Exclusive rewards for the originality.</li>
             </ul>
-            </p>
             <br>
-            <p>
-                In Kolkata, Sujata Associates provides skilled and enhanced patent consultation services by utilising
-                cutting-edge tactics. With expertise and honesty, we strive to offer the best client solutions.
+            In Kolkata, Sujata Associates provides skilled and enhanced patent consultation services by utilising
+            cutting-edge tactics. With expertise and honesty, we strive to offer the best client solutions.
 
             </p>
         </div>
@@ -398,7 +400,7 @@
             </p>
 
             <p class="paragraph">
-            <ul style="list-style-type: disc;">
+            <ul>
                 <li>Ordinary application</li>
                 <li>Convention application</li>
                 <li>Provision application</li>
@@ -406,12 +408,9 @@
                 <li>Divisional Application</li>
                 <li>National phase PCT Application</li>
             </ul>
-            </p>
             <br>
-            <p class="paragraph">
-                Steps to Get Your Patent Registration:
-            </p>
-            <ul class="services-list" style="list-style-type: disc;">
+            Steps to Get Your Patent Registration:
+            <ul>
                 <li>The foremost step is to do a patent search fore-filling up the application. As if the invention is
                     found similar to any earlier arts then it may be challenged by the Indian Patent office.</li>
 
@@ -427,6 +426,7 @@
                 <li>If no issues occurred or the examiner gets a valid reason, then the authorized body will grant the
                     patent.</li>
             </ul>
+            </p>
         </div>
     </div>
     <footer class="footer">
@@ -489,6 +489,18 @@
                     <input type="email" id="email" placeholder="Your email address">
                     <button type="submit">SUBMIT</button>
                 </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p>Copyright 2024 Sujata Associates | All Rights Reserved</p>
+                </div>
+                <div class="contact-item">
+                    <p>Terms & Conditions |</p>
+                </div>
+                <div class="contact-item">
+                    <p>Privacy Policy | Refund Policy</p>
+                </div>
             </div>
         </div>
     </footer>

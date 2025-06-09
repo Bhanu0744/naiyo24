@@ -138,11 +138,16 @@
                             <a href="license.html" class="block px-1 py-1 hover:text-green-400">Pvt. Ltd. Annual
                                 Compliance</a>
                             <a href="llp1.html" class="block px-1 py-1 hover:text-green-400">LLP Annual Compliance</a>
-                            <a href="public1.html" class="block px-1 py-1 hover:text-green-400">Public Ltd. Annual Compliance</a>
-                            <a href="SEC81.html" class="block px-1 py-1 hover:text-green-400">Section 8 Annual Compliance</a>
-                            <a href="nidhi1.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company Compliance</a>
-                            <a href="propret.html" class="block px-1 py-1 hover:text-green-400">Proprietorship Compliance</a>
-                            <a href="patnership1.html" class="block px-1 py-1 hover:text-green-400">Partnership Annual Compliance</a>
+                            <a href="public1.html" class="block px-1 py-1 hover:text-green-400">Public Ltd. Annual
+                                Compliance</a>
+                            <a href="SEC81.html" class="block px-1 py-1 hover:text-green-400">Section 8 Annual
+                                Compliance</a>
+                            <a href="nidhi1.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company
+                                Compliance</a>
+                            <a href="propret.html" class="block px-1 py-1 hover:text-green-400">Proprietorship
+                                Compliance</a>
+                            <a href="patnership1.html" class="block px-1 py-1 hover:text-green-400">Partnership Annual
+                                Compliance</a>
                         </div>
                     </div>
                 </div>
@@ -201,10 +206,14 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
 
-                <div class="hidden lg:flex items-center">
-                    <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                <div class="hidden lg:flex items-center relative">
+                    <button onclick="toggleSearch()"
+                        class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
                         <i class="fas fa-search text-gray-600"></i>
                     </button>
+                    <input type="text" id="searchInput"
+                        class="absolute right-0 top-12 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
+                        placeholder="Search..." />
                 </div>
             </div>
         </div>
@@ -402,17 +411,17 @@
             <p class="paragraph">
                 Protecting trademarks under the Trademark Act of 1999 is a mandatory thing in India. Few documents are
                 required to be submitted while registering a trademark.
-
-
-                Logo design or numbers or trademark.
-                Description of the applicant including address, name, nature of the business, etc.
-                The service or the product which is required for the registration.
-                Power of the Attorney (Signed by the Applicant).
-                The date of the first usage of the trademark.
-                One should carry a list of all the goods and services (provided by the firm or the business or the
-                person) at the time of the registration.
+            <ol style="list-style-type: disc;">
+                <li>Logo design or numbers or trademark.</li>
+                <li>Description of the applicant including address, name, nature of the business, etc.</li>
+                <li>The service or the product which is required for the registration.</li>
+                <li>Power of the Attorney (Signed by the Applicant).</li>
+                <li>The date of the first usage of the trademark.</li>
+                <li>One should carry a list of all the goods and services (provided by the firm or the business or the
+                    person) at the time of the registration.</li>
+            </ol>
             </p>
-
+            <br>
             <p class="paragraph">
                 Sujata Associates is one of the most reliable legal service providers in Kolkata. With 20 years of
                 professional experience in the field, we aim to serve our clients in the best possible way. We will help
@@ -490,8 +499,16 @@
                 </form>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Sujata Associates. All rights reserved.</p>
+        <div class="contact-info">
+            <div class="contact-item">
+                <p>Copyright 2024 Sujata Associates | All Rights Reserved</p>
+            </div>
+            <div class="contact-item">
+                <p>Terms & Conditions |</p>
+            </div>
+            <div class="contact-item">
+                <p>Privacy Policy | Refund Policy</p>
+            </div>
         </div>
     </footer>
 </body>

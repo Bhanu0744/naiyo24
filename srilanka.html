@@ -199,10 +199,14 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
 
-                <div class="hidden lg:flex items-center">
-                    <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                <div class="hidden lg:flex items-center relative">
+                    <button onclick="toggleSearch()"
+                        class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
                         <i class="fas fa-search text-gray-600"></i>
                     </button>
+                    <input type="text" id="searchInput"
+                        class="absolute right-0 top-12 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
+                        placeholder="Search..." />
                 </div>
             </div>
         </div>
@@ -249,32 +253,25 @@
                 Sujata Associates is a distinguished firm specializing in corporate registration services, deeply
                 committed to aiding both startups and established enterprises in adhering to national and international
                 legal requirements.
-            </p>
             <br>
-            <p>
                 Our services encompass dependable and cost-effective solutions for registering companies in diverse
                 countries, allowing the flexibility to opt for either online or offline registration methods.
                 Recognizing the demanding schedules of business owners, our primary objective is to streamline the
                 registration process. To achieve this, we have devised clear and user-friendly protocols, making it
                 effortless for our clients to complete their business registrations.
-            </p>
             <br>
-            <p>
                 Sri Lanka, strategically positioned at the crossroads of South Asia and the Far East, presents alluring
                 investment prospects for companies venturing into new markets. This is attributed to its well-educated
                 workforce and favorable government incentives and tax policies.
 
-            </p>
             <br>
-            <p>
                 For those contemplating the establishment of a foreign business in Sri Lanka, Sujata Associates is
                 well-prepared to assist you in selecting the most appropriate business structure. We offer invaluable
                 insights into the array of options at your disposal, and our team of experts will seamlessly guide you
                 through each stage of the establishment process, ensuring a successful and hassle-free registration
                 experience.
-            </p>
             <br>
-            <ol style="list-style-type: disc;">
+            <ol>
                 <h2>Process:-</h2>
                 <li> Name Reservation</li>
                 <li> Register an account with ERO</li>
@@ -282,6 +279,7 @@
                 <li> Submit articles of association</li>
                 <li> Give public notice of incorporation</li>
             </ol>
+            </p>
         </div>
         <div class="marriage-image">
             <img src="../Srilanka.jpg" alt="Marriage Registration Services" />
@@ -475,6 +473,17 @@
                     <input type="email" id="email" placeholder="Your email address">
                     <button type="submit">SUBMIT</button>
                 </form>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p>Copyright 2024 Sujata Associates | All Rights Reserved</p>
+                </div>
+                <div class="contact-item">
+                    <p>Terms & Conditions |</p>
+                </div>
+                <div class="contact-item">
+                    <p>Privacy Policy | Refund Policy</p>
+                </div>
             </div>
         </div>
     </footer>
