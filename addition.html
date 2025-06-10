@@ -137,11 +137,16 @@
                             <a href="ltd.html" class="block px-1 py-1 hover:text-green-400">Pvt. Ltd. Annual
                                 Compliance</a>
                             <a href="llp1.html" class="block px-1 py-1 hover:text-green-400">LLP Annual Compliance</a>
-                            <a href="public1.html" class="block px-1 py-1 hover:text-green-400">Public Ltd. Annual Compliance</a>
-                            <a href="SEC81.html" class="block px-1 py-1 hover:text-green-400">Section 8 Annual Compliance</a>
-                            <a href="nidhi1.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company Compliance</a>
-                            <a href="propret.html" class="block px-1 py-1 hover:text-green-400">Proprietorship Compliance</a>
-                            <a href="patnership1.html" class="block px-1 py-1 hover:text-green-400">Partnership Annual Compliance</a>
+                            <a href="public1.html" class="block px-1 py-1 hover:text-green-400">Public Ltd. Annual
+                                Compliance</a>
+                            <a href="SEC81.html" class="block px-1 py-1 hover:text-green-400">Section 8 Annual
+                                Compliance</a>
+                            <a href="nidhi1.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company
+                                Compliance</a>
+                            <a href="propret.html" class="block px-1 py-1 hover:text-green-400">Proprietorship
+                                Compliance</a>
+                            <a href="patnership1.html" class="block px-1 py-1 hover:text-green-400">Partnership Annual
+                                Compliance</a>
                         </div>
                     </div>
                 </div>
@@ -200,10 +205,14 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
 
-                <div class="hidden lg:flex items-center">
-                    <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                <div class="hidden lg:flex items-center relative">
+                    <button onclick="toggleSearch()"
+                        class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
                         <i class="fas fa-search text-gray-600"></i>
                     </button>
+                    <input type="text" id="searchInput"
+                        class="absolute right-0 top-12 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
+                        placeholder="Search..." />
                 </div>
             </div>
         </div>
@@ -270,7 +279,7 @@
             </p>
         </div>
         <div class="marriage-image">
-            <img src="../addition.jpg" alt="Marriage Registration Services" width="500px" height="300px" />
+            <img src="../addition.jpg" alt="Marriage Registration Services" width="350px" height="150px" />
         </div>
     </div>
     <section class="py-20 bg-white">
@@ -385,20 +394,18 @@
             <h1 class="heading"><b>Documents Required for Moa Amendment</b></h1>
             <div class="underline"></div>
             <p class="paragraph">
-            <ul style="list-style-type: disc;">
+            <ul>
                 <li> A meeting must be held by the Board of Directors</li>
                 <li> General meeting of the members of the company</li>
                 <li> Passing necessary resolution and filing forms like MGT-14, INC-22 OR INC-23, SH-7</li>
             </ul>
-            </p>
             <br>
-            <p class="paragraph">
-                Amendment can be required any time, even during this Covid-19 pandemic. Do not worry, Sujata Associates
-                is here for you. We have a simple and easy online process to deal with the legalities for your company
-                amendment of MOA and it’s budget-friendly as well. We will assist you throughout the entire procedure
-                and will take care of all the necessary resolutions like providing timelines, documentation, and
-                compliance filing. If you’re looking for a trusted legal service provider for your Company MOA Amendment
-                in Kolkata, look no further. Sujata Associates is here for you.
+            Amendment can be required any time, even during this Covid-19 pandemic. Do not worry, Sujata Associates
+            is here for you. We have a simple and easy online process to deal with the legalities for your company
+            amendment of MOA and it’s budget-friendly as well. We will assist you throughout the entire procedure
+            and will take care of all the necessary resolutions like providing timelines, documentation, and
+            compliance filing. If you’re looking for a trusted legal service provider for your Company MOA Amendment
+            in Kolkata, look no further. Sujata Associates is here for you.
             </p>
         </div>
     </div>
@@ -466,6 +473,18 @@
                     <input type="email" id="email" placeholder="Your email address">
                     <button type="submit">SUBMIT</button>
                 </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p>Copyright 2024 Sujata Associates | All Rights Reserved</p>
+                </div>
+                <div class="contact-item">
+                    <p>Terms & Conditions |</p>
+                </div>
+                <div class="contact-item">
+                    <p>Privacy Policy | Refund Policy</p>
+                </div>
             </div>
         </div>
     </footer>

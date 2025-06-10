@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="propretorship.css">
+    <link rel="stylesheet" href="din.css">
     <script src="bangladesh.js"></script>
 </head>
 
@@ -138,11 +138,16 @@
                             <a href="license.html" class="block px-1 py-1 hover:text-green-400">Pvt. Ltd. Annual
                                 Compliance</a>
                             <a href="llp1.html" class="block px-1 py-1 hover:text-green-400">LLP Annual Compliance</a>
-                            <a href="public1.html" class="block px-1 py-1 hover:text-green-400">Public Ltd. Annual Compliance</a>
-                            <a href="SEC81.html" class="block px-1 py-1 hover:text-green-400">Section 8 Annual Compliance</a>
-                            <a href="nidhi1.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company Compliance</a>
-                            <a href="propret.html" class="block px-1 py-1 hover:text-green-400">Proprietorship Compliance</a>
-                            <a href="patnership1.html" class="block px-1 py-1 hover:text-green-400">Partnership Annual Compliance</a>
+                            <a href="public1.html" class="block px-1 py-1 hover:text-green-400">Public Ltd. Annual
+                                Compliance</a>
+                            <a href="SEC81.html" class="block px-1 py-1 hover:text-green-400">Section 8 Annual
+                                Compliance</a>
+                            <a href="nidhi1.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company
+                                Compliance</a>
+                            <a href="propret.html" class="block px-1 py-1 hover:text-green-400">Proprietorship
+                                Compliance</a>
+                            <a href="patnership1.html" class="block px-1 py-1 hover:text-green-400">Partnership Annual
+                                Compliance</a>
                         </div>
                     </div>
                 </div>
@@ -201,10 +206,14 @@
                     <i class="fas fa-bars text-xl"></i>
                 </button>
 
-                <div class="hidden lg:flex items-center">
-                    <button class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                <div class="hidden lg:flex items-center relative">
+                    <button onclick="toggleSearch()"
+                        class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
                         <i class="fas fa-search text-gray-600"></i>
                     </button>
+                    <input type="text" id="searchInput"
+                        class="absolute right-0 top-12 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
+                        placeholder="Search..." />
                 </div>
             </div>
         </div>
@@ -260,20 +269,19 @@
             <br>
             <p class="paragraph">
             <p>Reasons to Surrender your DIN:-</p>
-            <ul style="list-style-type: disc;">
-                <br>
-                <ul style="list-style-type: disc;">
-                    <li>Owners have multiple DINs</li>
-                    <li>DIN through fraudulent</li>
-                    <li>Insolvent Director</li>
-                    <li>Director is no longer associated with the company</li>
-                </ul>
-                <p>The procedure to surrender DIN is a legal process that will require the DIR-5 form filing and
-                    documentation.
-                </p>
+            <br>
+            <ul>
+                <li>Owners have multiple DINs</li>
+                <li>DIN through fraudulent</li>
+                <li>Insolvent Director</li>
+                <li>Director is no longer associated with the company</li>
+            </ul>
+            <p>The procedure to surrender DIN is a legal process that will require the DIR-5 form filing and
+                documentation.
+            </p>
         </div>
         <div class="marriage-image">
-            <img src="../din.jpg" alt="Marriage Registration Services" width="500px" height="300px" />
+            <img src="../din.jpg" alt="Marriage Registration Services" width="500px" height="100px" />
         </div>
     </div>
     <section class="py-20 bg-white">
@@ -388,7 +396,7 @@
             <h1 class="heading"><b>Documents required for DIN Surrender:-</b></h1>
             <div class="underline"></div>
             <p class="paragraph">
-            <ul style="list-style-type: disc;">
+            <ul>
                 <li> Identity proof – Voter ID/PAN/Passport/ Driving License/Aadhaar Card</li>
                 <li> Recent passport-sized photo</li>
                 <li> Residential proof – Voter ID/ Electricity bill/Telephone bill</li>
@@ -465,7 +473,17 @@
                     <button type="submit">SUBMIT</button>
                 </form>
             </div>
-        </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p>Copyright 2024 Sujata Associates | All Rights Reserved</p>
+                </div>
+                <div class="contact-item">
+                    <p>Terms & Conditions |</p>
+                </div>
+                <div class="contact-item">
+                    <p>Privacy Policy | Refund Policy</p>
+                </div>
+            </div>
     </footer>
 </body>
 

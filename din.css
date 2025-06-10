@@ -32,12 +32,12 @@
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
-    font-size: 16px;
+    font-size: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .legal-services .heading {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 700;
     color: #222;
     margin-bottom: 10px;
@@ -52,7 +52,7 @@
 
 .legal-services .paragraph {
     color: #555;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.8;
     margin-bottom: 20px;
 }
@@ -60,7 +60,7 @@
 .legal-services .services-list {
     padding-left: 20px;
     color: #444;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.6;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .legal-services-section .legal-heading {
-    font-size: 28px;
+    font-size: 25px;
     font-weight: 700;
     color: #222;
     margin-bottom: 10px;
