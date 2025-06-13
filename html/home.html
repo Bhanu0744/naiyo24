@@ -1,627 +1,1363 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="home.css">
-    <div class="topbar">
-        <div class="topbar-left">
-            <span><i class="fa fa-phone"></i> Call us: 9038001356</span>
-            <span class="separator">|</span>
-            <span><i class="fa fa-envelope"></i> Email: rahul.bhakat@sujataassociates.com</span>
-        </div>
-        <div class="topbar-right">
-            <span><i class="fa fa-question-circle"></i> Have any questions?</span>
-            <a href="#" class="visit-btn">VISIT OUR IT WEBSITE</a>
-        </div>
-    </div>
-    <div class="l2">
-        <div class="logo">
-            <img src="../assets/Logo-new-final.png" alt="image">
-        </div>
-        <nav class="nav-links">
-            <a href="#">Home<span class="arrow1"></span></a>
-            <a href="#">Legal Services <span class="arrow2"></span></a>
-            <a href="#">CA Services <span class="arrow3"></span></a>
-            <a href="#">Company Branding <span class="arrow4"></span></a>
-            <a href="#">Other Services <span class="arrow5"></span></a>
-            <a href="#">Company <span class="arrow6"></span></a>
-        </nav>
-        <div class="search-icon">
-            <i class="fa fa-search"></i>
-        </div>
-    </div>
-    </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Sujata Associates - Company Registration in Kolkata</title> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/late.css">
+    <script src="../js/late.js"></script>
 </head>
 
-<body>
-    <div class="image">
-        <button class="nav-button-unicode prev-button-unicode">
-            ◀
+<body class="font-inter bg-gray-50">
+    <!-- Top Bar -->
+    <div class="bg-gradient-to-r from-slate-800 to-slate-700 text-white py-3 px-4">
+        <div class="container mx-auto flex flex-col sm:flex-row justify-between items-center text-sm">
+            <div class="flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-6 mb-2 sm:mb-0">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-phone text-green-400"></i>
+                    <span>Call us: 9038001356</span>
+                </div>
+                <div class="hidden sm:block text-gray-400">|</div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-envelope text-green-400"></i>
+                    <span>rahul.bhakat@sujataassociates.com</span>
+                </div>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="flex items-center space-x-2">
+                    <i class="fas fa-question-circle text-blue-400"></i>
+                    <span>Have any questions?</span>
+                </span>
+                <a href="#"
+                    class="bg-green-500 hover:bg-green-600 px-4 py-2 rounded-full text-xs font-semibold transition-all duration-300 transform hover:scale-105">
+                    VISIT OUR IT WEBSITE
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <div class="flex items-center">
+                    <!-- <div class="text-2xl font-bold gradient-text">Sujata Associates</div> -->
+                    <img src="../assets/Logo-new-final.png" alt="Description"
+                        class="h-auto object-cover rounded-lg shadow-lg">
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="#"
+                        class="text-gray-700 hover:text-primary transition-colors duration-300 font-medium">Home</a>
+                    <div class="relative group">
+                        <button onmouseover="toggleDropdown('legalDropdown')"
+                            class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
+                            Legal Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                        </button>
+                        <div id="legalDropdown"
+                            class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
+                            <a href="../html/cybersecurity.html" class="block px-4 py-2 hover:bg-green-600">Cyber
+                                Security</a>
+                            <a href="../html/criminallaw.html" class="block px-4 py-2 hover:bg-green-600">Criminal
+                                Law</a>
+                            <a href="../html/property.html" class="block px-4 py-2 hover:bg-green-600">Property
+                                Registration</a>
+                            <a href="../html/legal.html" class="block px-4 py-2 hover:bg-green-600">Legal Drafting</a>
+                            <a href="../html/marriage.html" class="block px-4 py-2 hover:bg-green-600">Marriage
+                                Registration</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button onmouseover="toggleDropdown('CAservicesDropdown')"
+                        class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
+                        CA Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div id="CAservicesDropdown"
+                        class="absolute hidden bg-[#0c1f36] text-white w-[1000px] mt-2 rounded-md shadow-lg z-50 flex gap-6 px-5 py-6">
+                        <div class="min-w-[220px]">
+                            <h4 class="text-green-500 font-semibold mb-2 border-b border-gray-600 pb-1">
+                                Registration Services
+                            </h4>
+                            <a href="../html/propritorship.html"
+                                class="block px-1 py-1 hover:text-green-400">Proprietorship
+                                Company Registration</a>
+                            <a href="../html/patnership.html" class="block px-1 py-1 hover:text-green-400">Partnership
+                                Company
+                                Registration</a>
+                            <a href="../html/opc.html" class="block px-1 py-1 hover:text-green-400">One Person Company
+                                Registration</a>
+                            <a href="../html/private.html" class="block px-1 py-1 hover:text-green-400">Private Limited
+                                Company
+                                Registration</a>
+                            <a href="../html/llp.html" class="block px-1 py-1 hover:text-green-400">LLP Company
+                                Registration</a>
+                            <a href="../html/public.html" class="block px-1 py-1 hover:text-green-400">Public Limited
+                                Company
+                                Registration</a>
+                            <a href="../html/sec8.html" class="block px-1 py-1 hover:text-green-400">Section 8 Company
+                                Registration</a>
+                            <a href="../html/nidhi.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company
+                                Registration</a>
+                        </div>
+
+                        <div class="min-w-[220px]">
+                            <h4 class="text-green-500 font-semibold mb-2 border-b border-gray-600 pb-1">
+                                ROC Changes Services
+                            </h4>
+                            <a href="../html/name.html" class="block px-1 py-1 hover:text-green-400">Company Name
+                                Change</a>
+                            <a href="../html/director.html" class="block px-1 py-1 hover:text-green-400">Director
+                                Removal</a>
+                            <a href="../html/addition.html" class="block px-1 py-1 hover:text-green-400">Director
+                                Addition</a>
+                            <a href="../html/register.html" class="block px-1 py-1 hover:text-green-400">Registered
+                                Office
+                                Address Change</a>
+                            <a href="../html/moa.html" class="block px-1 py-1 hover:text-green-400">MOA Amendment</a>
+                            <a href="../html/winding.html" class="block px-1 py-1 hover:text-green-400">Company Winding
+                                Up</a>
+                            <a href="../html/increase.html" class="block px-1 py-1 hover:text-green-400">Increase
+                                Authorized
+                                Capital</a>
+                            <a href="../html/close.html" class="block px-1 py-1 hover:text-green-400">LLP Closure</a>
+                            <a href="../html/pvt.html" class="block px-1 py-1 hover:text-green-400">PVT LTD COMPANY</a>
+                            <a href="../html/din.html" class="block px-1 py-1 hover:text-green-400">DIN SURRENDER</a>
+                        </div>
+
+                        <div class="min-w-[220px]">
+                            <h4 class="text-green-500 font-semibold mb-2 border-b border-gray-600 pb-1">
+                                Licensing Services
+                            </h4>
+                            <a href="../html/trade.html" class="block px-1 py-1 hover:text-green-400">Trade License
+                                Registration</a>
+                            <a href="../html/fssai.html" class="block px-1 py-1 hover:text-green-400">FSSAI
+                                Registration</a>
+                            <a href="../html/shop.html" class="block px-1 py-1 hover:text-green-400">Shop &
+                                Establishment</a>
+                            <a href="../html/fire.html" class="block px-1 py-1 hover:text-green-400">Fire License</a>
+                            <a href="../html/pollution.html" class="block px-1 py-1 hover:text-green-400">Pollution
+                                License</a>
+                            <a href="../html/import.html" class="block px-1 py-1 hover:text-green-400">Import Export
+                                Code</a>
+                            <a href="../html/esi.html" class="block px-1 py-1 hover:text-green-400">ESI & PF
+                                Registration</a>
+                            <a href="../html/msme.html" class="block px-1 py-1 hover:text-green-400">MSME
+                                Registration</a>
+                            <a href="../html/gst.html" class="block px-1 py-1 hover:text-green-400">GST Registration</a>
+                            <a href="../html/gstreturn.html" class="block px-1 py-1 hover:text-green-400">GST Return
+                                Filing</a>
+                        </div>
+
+                        <div class="min-w-[220px]">
+                            <h4 class="text-green-500 font-semibold mb-2 border-b border-gray-600 pb-1">
+                                Compliance Services
+                            </h4>
+                            <a href="../html/license.html" class="block px-1 py-1 hover:text-green-400">Pvt. Ltd. Annual
+                                Compliance</a>
+                            <a href="../html/llp1.html" class="block px-1 py-1 hover:text-green-400">LLP Annual
+                                Compliance</a>
+                            <a href="../html/public1.html" class="block px-1 py-1 hover:text-green-400">Public Ltd.
+                                Annual
+                                Compliance</a>
+                            <a href="../html/SEC81.html" class="block px-1 py-1 hover:text-green-400">Section 8 Annual
+                                Compliance</a>
+                            <a href="../html/nidhi1.html" class="block px-1 py-1 hover:text-green-400">Nidhi Company
+                                Compliance</a>
+                            <a href="../html/propret.html" class="block px-1 py-1 hover:text-green-400">Proprietorship
+                                Compliance</a>
+                            <a href="../html/patnership1.html" class="block px-1 py-1 hover:text-green-400">Partnership
+                                Annual
+                                Compliance</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button onmouseover="toggleDropdown('brandingDropdown')"
+                        class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
+                        Company Branding <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+
+                    <div id="brandingDropdown"
+                        class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
+                        <a href="../html/trade.html" class="block px-4 py-2 hover:bg-green-600">Trade Mark
+                            Registration</a>
+                        <a href="../html/bar.html" class="block px-4 py-2 hover:bg-green-600">Barcode Registration</a>
+                        <a href="../html/iso.html" class="block px-4 py-2 hover:bg-green-600">ISO Registration</a>
+                        <a href="../html/copy.html" class="block px-4 py-2 hover:bg-green-600">Copyright
+                            Registration</a>
+                        <a href="../html/patent.html" class="block px-4 py-2 hover:bg-green-600">Patent Registration</a>
+                        <a href="../html/start.html" class="block px-4 py-2 hover:bg-green-600">startup India
+                            Registration</a>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <button onmouseover="toggleDropdown('servicesDropdown')"
+                        class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
+                        Other Services <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div id="servicesDropdown"
+                        class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
+                        <a href="../html/usa.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in
+                            USA</a>
+                        <a href="../html/uk.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in
+                            UK</a>
+                        <a href="../html/bangladesh.html" class="block px-4 py-2 hover:bg-green-600">Company
+                            Registration in
+                            Bangladesh</a>
+                        <a href="../html/srilanka.html" class="block px-4 py-2 hover:bg-green-600">Company Registration
+                            in
+                            Srilanka</a>
+                        <a href="../html/china.html" class="block px-4 py-2 hover:bg-green-600">Company Registration in
+                            China</a>
+                        <a href="../html/web.html" class="block px-4 py-2 hover:bg-green-600">Web Services</a>
+                        <a href="../html/hospital.html" class="block px-4 py-2 hover:bg-green-600">Hospital project
+                            Management</a>
+                    </div>
+                </div>
+
+                <div class="relative group">
+                    <button onmouseover="toggleDropdown('CompanyDropdown')"
+                        class="text-gray-700 hover:text-green-600 transition font-medium flex items-center">
+                        Company <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </button>
+                    <div id="CompanyDropdown"
+                        class="absolute hidden bg-[#0c1f36] text-white w-60 mt-2 rounded-md shadow-lg z-50">
+                        <a href="../html/about.html" class="block px-4 py-2 hover:bg-green-600">About Us</a>
+                        <a href="../html/contact.html" class="block px-4 py-2 hover:bg-green-600">Contact Us</a>
+                    </div>
+
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button class="lg:hidden text-gray-700 focus:outline-none" id="mobile-menu-btn">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+
+                <div class="hidden lg:flex items-center relative">
+                    <button onclick="toggleSearch()"
+                        class="bg-gray-100 hover:bg-gray-200 p-3 rounded-full transition-colors duration-300">
+                        <i class="fas fa-search text-gray-600"></i>
+                    </button>
+                    <input type="text" id="searchInput"
+                        class="absolute right-0 top-12 w-64 px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-green-400 transition-all duration-300"
+                        placeholder="Search..." />
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="lg:hidden hidden bg-white border-t" id="mobile-menu">
+            <div class="px-4 py-2 space-y-2">
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Home</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Legal Services</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">CA Services</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Company Branding</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Other Services</a>
+                <a href="#" class="block py-2 text-gray-700 hover:text-primary">Company</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-bg relative overflow-hidden min-h-screen flex items-center"
+        style="background-image: url('../assets/cour-img.jpg'); background-size: cover; background-position: center;">
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-4xl mx-auto text-center text-white">
+                <h1 class="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+                    Company Registration in
+                    <span class="block text-yellow-400"> Kolkata</span>
+                </h1>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <button
+            class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-4 rounded-full transition-all duration-300">
+            <i class="fas fa-chevron-left"></i>
         </button>
-        <button class="nav-button-unicode next-button-unicode">
-            ▶
+        <button
+            class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/10 backdrop-blur-md hover:bg-white/20 text-white p-4 rounded-full transition-all duration-300">
+            <i class="fas fa-chevron-right"></i>
         </button>
-        <div class="content">
-            <h1 style="color: white;">Company Registered in Kolkata</h1>
-        </div>
-    </div>
-    <div class="services-container">
-        <div class="service-card bg-image-1">
-            <h1>Company Registration in <span class="city">Kolkata</span></h1>
-            <button class="service-button">
-                <h2 class="card-1">REGISTRATION IN KOLKATA<i class="fas fa-arrow-right">→</i></h2>
-            </button>
-        </div>
-        <div class="service-card bg-image-2">
-            <h1>Corporate Legal Services</h1>
-            <button class="service-button">
-                <h2>LEGAL SERVICE<i class="fas fa-arrow-right">→</i></h2>
-            </button>
-        </div>
-        <div class="service-card bg-image-3">
-            <h1>Criminal Legal Services</h1>
-            <button class="service-button">
-                <h2>CRIMINAL LEGAL SERVICES<i class="fas fa-arrow-right">→</i></h2>
-            </button>
-        </div>
-    </div>
-    <div class="main">
-        <div class="headline">
-            <h1 style="color: black;">Our Services</h1>
-            <div class="underline1"></div>
-            <div class="box">
-                <div class="services-grid">
-                    <div class="service-box">
-                        <div class="service-title-row">
-                            <div class="icon-wrapper green">
-                                <img src="../assets/private.png" alt="Private Limited">
-                            </div>
-                            <div class="service-title">Private Limited Company Registration</div>
-                        </div>
-                        <div class="service-text">
-                            We offer expert assistance in Private Limited Company Registration in Kolkata, making sure
-                            fast
-                            approvals, legal compliance, and smooth setup for your growing business.
-                        </div>
-                    </div>
+    </section>
 
-                    <div class="service-box">
-                        <div class="service-title-row">
-                            <div class="icon-wrapper dark">
-                                <img src="../assets/growth.png" alt="Section 8">
-                            </div>
-                            <div class="service-title">Section 8 Company Registration</div>
+    <!-- Service Cards -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                <!-- card-1 -->
+                <div class="service-card-hover bg-white rounded-2xl overflow-hidden shadow-xl group cursor-pointer">
+                    <div class="h-80 relative"
+                        style="background-image: url('../assets/Register.jpg'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Company Registration in <span
+                                    class="text-yellow-400">Kolkata</span></h3>
+                            <button
+                                class="bg-white/20 backdrop-blur-md hover:bg-white/30 px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2">
+                                <span>REGISTRATION IN KOLKATA</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
                         </div>
-                        <div class="service-text">
-                            Get professional help with Section 8 Company Registration in Kolkata for NGOs and
-                            non-profits,
-                            making sure proper documentation and compliance with all legal formalities.
-                        </div>
-                    </div>
-                    <div class="service-box">
-                        <div class="service-title-row">
-                            <div class="icon-wrapper green">
-                                <img src="../assets/shake.png" alt="Partnership">
-                            </div>
-                            <div class="service-title">Partnership Company Registration</div>
-                        </div>
-                        <div class="service-text">
-                            Our services make Partnership Company Registration in Kolkata simple and hassle-free, from
-                            drafting partnership deeds to completing all legal and government filing processes.
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="services-info">
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-monitor">
-                            <img src="../assets/bedilu.jpg" alt="bedilu">
-                        </div>
-                        <div class="service-title">Proprietorship Company Registration</div>
-                    </div>
-                    <div class="service-text">
-                        We streamline Proprietorship Company Registration in Kolkata, helping individual entrepreneurs
-                        quickly establish their business with all necessary licenses and tax registrations.
                     </div>
                 </div>
 
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper dark icon-calendar">
+                <div class="service-card-hover bg-white rounded-2xl overflow-hidden shadow-xl group cursor-pointer">
+                    <div class="h-80 relative"
+                        style="background-image: url('../assets/criminal.jpg'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Corporate Legal Services</h3>
+                            <button
+                                class="bg-white/20 backdrop-blur-md hover:bg-white/30 px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2">
+                                <span>LEGAL SERVICE</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
                         </div>
-                        <div class="service-title">LLP Company Registration</div>
-                    </div>
-                    <div class="service-text">
-                        Our team handles complete LLP Company Registration in Kolkata, offering legal guidance, name
-                        reservation, and document filing for a secure and flexible business structure.
                     </div>
                 </div>
 
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
+                <div class="service-card-hover bg-white rounded-2xl overflow-hidden shadow-xl group cursor-pointer">
+                    <div class="h-80 relative"
+                        style="background-image: url('../assets/criminal.jpg'); background-size: cover; background-position: center;">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <div class="absolute bottom-6 left-6 right-6 text-white">
+                            <h3 class="text-2xl font-bold mb-4">Criminal Legal Services</h3>
+                            <button
+                                class="bg-white/20 backdrop-blur-md hover:bg-white/30 px-6 py-3 rounded-full font-semibold transition-all duration-300 flex items-center space-x-2">
+                                <span>CRIMINAL LEGAL SERVICES</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
                         </div>
-                        <div class="service-title">OPC Company Registration</div>
-                    </div>
-                    <div class="service-text">
-                        Simplify OPC Company Registration in Kolkata with our expert services, ideal for solo
-                        entrepreneurs
-                        seeking limited liability and structured business operations under one name.
-                    </div>
-                </div>
-            </div>
-
-            <div class="services-info">
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Best Legal Advice</div>
-                    </div>
-                    <div class="service-text">
-                        Access to top-notch legal advice from experienced professionals, tailored to your specific
-                        situation
-                        and legal needs.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Separation & Divorce</div>
-                    </div>
-                    <div class="service-text">
-                        Compassionate guidance and legal support for navigating separation and divorce proceedings,
-                        prioritizing your well-being and rights.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Child Custody</div>
-                    </div>
-                    <div class="service-text">
-                        Advocacy and representation in child custody matters, ensuring the best interests of the child
-                        are
-                        upheld.
-                    </div>
-                </div>
-            </div>
-            <div class="services-info">
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Criminal Law</div>
-                    </div>
-                    <div class="service-text">
-                        Comprehensive legal services for criminal law matters, including defense representation and
-                        advocacy
-                        in court.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Family Law</div>
-                    </div>
-                    <div class="service-text">
-                        Expertise in family law matters, including divorce, adoption, guardianship, and inheritance
-                        issues.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Cyber Crime Law</div>
-                    </div>
-                    <div class="service-text">
-                        Specialized legal assistance for victims and defendants involved in cybercrime cases, ensuring
-                        fair
-                        treatment and protection of rights.
-                    </div>
-                </div>
-            </div>
-
-            <div class="services-info">
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Company Law</div>
-                    </div>
-                    <div class="service-text">
-                        Guidance and compliance services for company law matters, ensuring adherence to legal
-                        regulations
-                        and corporate governance standards.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Debt Settlement</div>
-                    </div>
-                    <div class="service-text">
-                        Negotiation and settlement services for debt-related disputes, facilitating mutually acceptable
-                        resolutions.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Lok Adalat Matters</div>
-                    </div>
-                    <div class="service-text">
-                        Representation and advocacy in Lok Adalat proceedings, promoting alternative dispute resolution
-                        and
-                        timely resolution of disputes.
-                    </div>
-                </div>
-            </div>
-
-            <div class="services-info">
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Top lawyers for IP registration & infringement petition</div>
-                    </div>
-                    <div class="service-text">
-                        Access to top legal talent for intellectual property registration and infringement petitions,
-                        safeguarding your intellectual assets.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Preparation of sale/rent/mortgage/lease deeds</div>
-                    </div>
-                    <div class="service-text">
-                        Assistance in drafting and preparing legal documents for property transactions, ensuring clarity
-                        and
-                        enforceability of terms.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Negotiation during sale of property</div>
-                    </div>
-                    <div class="service-text">
-                        Skilled negotiation services during property transactions, maximizing value and protecting your
-                        interests
-                    </div>
-                </div>
-            </div>
-
-            <div class="services-info">
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Title of Property issues</div>
-                    </div>
-                    <div class="service-text">
-                        Resolution of title-related issues through legal expertise and due diligence, ensuring clear and
-                        marketable title to the property.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Easement related issues</div>
-                    </div>
-                    <div class="service-text">
-                        Legal assistance in resolving easement-related disputes and issues, ensuring clarity and
-                        enforcement
-                        of easement rights.
-                    </div>
-                </div>
-
-                <div class="service-box">
-                    <div class="service-title-row">
-                        <div class="icon-wrapper green icon-user">
-                        </div>
-                        <div class="service-title">Registration of property</div>
-                    </div>
-                    <div class="service-text">
-                        Facilitation of property registration processes, ensuring compliance with legal formalities and
-                        protecting your ownership rights.
-                    </div>
-                </div>
-            </div>
-
-            <div class="services-info">
-            <div class="service-box">
-                <div class="service-title-row">
-                    <div class="icon-wrapper green icon-user">
-                    </div>
-                    <div class="service-title">Consumer Forum</div>
-                </div>
-                <div class="service-text">
-                    Representation and advocacy in consumer dispute resolution forums, ensuring fair treatment and
-                    compensation for consumer grievances.
-                </div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-title-row">
-                    <div class="icon-wrapper green icon-user">
-                    </div>
-                    <div class="service-title">Medical Negligence</div>
-                </div>
-                <div class="service-text">
-                    Legal recourse and advocacy for victims of medical negligence, seeking compensation and
-                    accountability for substandard medical care. Insurance Claims: Assistance in navigating insurance
-                    claim processes, ensuring fair evaluation and settlement of claim
-                </div>
-            </div>
-
-            <div class="service-box">
-                <div class="service-title-row">
-                    <div class="icon-wrapper green icon-user">
-                    </div>
-                    <div class="service-title">Loan/Credit Card Disputes</div>
-                </div>
-                <div class="service-text">
-                    Legal representation and advocacy for disputes related to loans and credit cards, ensuring fair
-                    treatment and resolution.
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    <div class="para">
-        Who we are
-        <div class="underline"></div>
-    </div>
-    <div class="text">
-        <p>At Sujata Associates, we are driven to assist entrepreneurs in turning their business aspirations into
-            reality through secure and effective Company Registration in Kolkata. We are a team of seasoned business
-            experts who know what it takes to establish a new company and here to simplify the process, hasten it, and
-            make it stress-free. With years of experience in hands-on work and an intimate grasp of legal and regulatory
-            obligations, we provide customized advice for every form of Company Registration in Kolkata—whether it is
-            Private Limited Companies, LLPs, One Person Companies, or Sole Proprietorships. We feel that company
-            formation should not be daunting and are dedicated to providing company formation a trouble-free experience.
-            From deciding on the proper business structure to making the necessary documents, filing with the Ministry
-            of Corporate Affairs, and securing approvals—everything to do with Company Registration in Kolkata is taken
-            care of by us. Our professionals work closely with clients so that each step is taken with care, accuracy,
-            and complete conformance with the law. It's our commitment to simplicity, rapid service, and sustained
-            support that differentiates Sujata Associates. We do not just assist in Company Registration in Kolkata but
-            also offer complementary services such as GST registration, trademark filing, compliance filing, and
-            business guidance. We're not just consultants—We're your partners for growth. We understand that each
-            business is unique, so our Company Registration solutions in Kolkata are customized to suit your unique
-            objectives. If you're just beginning or expanding a current business, we have the expertise and assistance
-            you require to get registered properly and concentrate on what matters most—developing your business. If you
-            are seeking efficient, affordable, and expert assistance with Company Registration in Kolkata, Sujata
-            Associates is at your service. Let us deal with the paperwork, deadlines, and legalities, so that you can
-            focus on establishing a thriving business with confidence. Begin with us today—company registration made
-            easy.</p>
-        <button class="button">view more</button>
-    </div>
-    </div>
-    <div class="space">
-        <div class="gap">
-            <div class="question">
-                <div class="free">
-                    <h1>Frequently Asked Questions</h1>
-                    <div class="under"></div>
-                </div>
-                <div class="tab">
-                    <div class="quest">
-                        <button class="q1">How to get a company registered / registration in Kolkata ?<span
-                                class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">What is company registration ?<span class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">Can I register the company at my home address ?<span
-                                class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">What types of businesses can be registered through company registration
-                            services?<span class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">What documents are required for company registration in Kolkata or
-                            India?<span class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">Can I register a company if I am not a resident of the country where I want
-                            to establish my business ?<span class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">What is the process for registering a company with your company registration
-                            services ?<span class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">How long does the company registration process typically take ?<span
-                                class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">Can I change my company name or business structure after registration?<span
-                                class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">Is it possible to register a company with multiple shareholders or partners
-                            ?<span class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">What are the documents required for Private Company Registration ?<span
-                                class="icon">+</span></button>
-                    </div>
-                    <div class="quest">
-                        <button class="q1">Do you offer post-registration support and assistance with business banking
-                            setup ?<span class="icon">+</span></button>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="query">
-        <div class="query-container">
-            <div class="query-text">
-                <h2>GET A CALL BACK</h2>
-                <p>If you need to speak to us about a general query fill<br>
-                    in the form below and we will call you back within<br>
-                    the same working day.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
             </div>
-            <form class="query-form">
-                <label for="topic">How can we help? *</label>
-                <div class="form-row">
-                    <select id="topic" required>
-                        <option value="">I would like to discuss:</option>
-                        <option value="registration">Company Registration</option>
-                        <option value="legal">Legal Advice</option>
-                        <option value="support">Customer Support</option>
-                    </select>
-                    <input type="email" placeholder="You Email" required>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-8xl mx-auto">
+                <!-- Service items -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-building text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Private Limited Company Registration</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We offer expert assistance in Private Limited Company
+                        Registration in Kolkata, ensuring fast approvals, legal compliance, and smooth setup for your
+                        growing business.</p>
                 </div>
-                <div class="form-row">
-                    <input type="tel" placeholder="You phone number" required>
-                    <button type="submit">Submit Now</button>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-chart-line text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Section 8 Company Registration</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Get professional help with Section 8 Company Registration
+                        in Kolkata for NGOs and non-profits, ensuring proper documentation and compliance with all legal
+                        formalities.</p>
                 </div>
-            </form>
-        </div>
-    </div>
-    <div class="testimonials">
-        <h3 class="section-title">Client's Testimonials</h3>
-        <div class="testimonial-wrapper">
-            <div class="testimonial">
-                <div class="img-1">
-                    <img src="../assets/legal.jpg" alt="Abdush Shamim Sekh">
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-handshake text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Partnership Company Registration</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Our services make Partnership Company Registration in
+                        Kolkata simple and hassle-free, from drafting partnership deeds to completing all legal and
+                        government filing processes.</p>
                 </div>
-                <div class="para-1">
-                    <p class="testimonial-text">
-                        Thank you, Sujata Associates, and their legal team, for all of your help. Registering my
-                        sole proprietorship with Sujata Associates was a great experience. Thank you for making the
-                        company registration process smoothly.
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-user-tie text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Proprietorship Company Registration</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">We streamline Proprietorship Company Registration in
+                        Kolkata, helping individual entrepreneurs quickly establish their business with all necessary
+                        licenses and tax registrations.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">LLP Company Registration</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Our team handles complete LLP Company Registration in
+                        Kolkata, offering legal guidance, name reservation, and document filing for a secure and
+                        flexible business structure.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-crown text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">OPC Company Registration</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Simplify OPC Company Registration in Kolkata with our
+                        expert services, ideal for solo entrepreneurs seeking limited liability and structured business
+                        operations under one name.</p>
+                </div>
+
+                <!-- Legal Services -->
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-balance-scale text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Best Legal Advice</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Access to top-notch legal advice from experienced
+                        professionals, tailored to your specific situation and legal needs.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-heart-broken text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Separation & Divorce</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Compassionate guidance and legal support for navigating
+                        separation and divorce proceedings, prioritizing your well-being and rights.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Child Custody</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Advocacy and representation in child custody matters,
+                        ensuring the best interests of the child are upheld.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-user-secret text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Criminal Law</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Comprehensive legal services for criminal law matters,
+                        including defense representation and advocacy in court.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-users text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Family Law</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Expertise in family law matters, including divorce,
+                        adoption, guardianship, and inheritance issues.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Cyber Crime Law</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Specialized legal assistance for victims and defendants
+                        involved in cybercrime cases, ensuring fair treatment and protection of rights.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Company Law</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Guidance and compliance services for company law matters,
+                        ensuring adherence to legal regulations and corporate governance standards.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Debt Settlement</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Negotiation and settlement services for debt-related
+                        disputes, facilitating mutually acceptable resolutions.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Lok Adalat Matters</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Representation and advocacy in Lok Adalat proceedings,
+                        promoting alternative dispute resolution and timely resolution of disputes.
                     </p>
-                    <div class="testimonial-info">
-                        <strong>Abdush Shamim Sekh</strong><br>
-                        <span>Director of, Sugarvision Technology Pvt. Ltd.</span>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Top lawyers for IP registration &
+                            infringement petition</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Access to top legal talent for intellectual property
+                        registration and infringement petitions, safeguarding your intellectual assets.
+                    </p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Preparation of sale/rent/mortgage/lease deeds
+                        </h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Assistance in drafting and preparing legal documents for
+                        property transactions, ensuring clarity and enforceability of terms.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Negotiation during sale of property</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Skilled negotiation services during property transactions,
+                        maximizing value and protecting your interests.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">
+                            Title of Property issues</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Resolution of title-related issues through legal expertise
+                        and due diligence, ensuring clear and marketable title to the property.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Easement related issues</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Legal assistance in resolving easement-related disputes and
+                        issues, ensuring clarity and enforcement of easement rights</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Registration of property</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Facilitation of property registration processes, ensuring
+                        compliance with legal formalities and protecting your ownership rights.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Consumer Forum</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Representation and advocacy in consumer dispute resolution
+                        forums, ensuring fair treatment and compensation for consumer grievances.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Medical Negligence</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Legal recourse and advocacy for victims of medical
+                        negligence, seeking compensation and accountability for substandard medical care. Insurance
+                        Claims: Assistance in navigating insurance claim processes, ensuring fair evaluation and
+                        settlement of claims.</p>
+                </div>
+
+                <div
+                    class="group bg-gray-50 hover:bg-white rounded-2xl p-8 transition-all duration-300 hover:shadow-xl cursor-pointer">
+                    <div class="flex items-start space-x-4 mb-6">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center transform -rotate-3 group-hover:rotate-0 transition-transform duration-300">
+                            <i class="fas fa-child text-white text-xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 flex-1">Loan/Credit Card Disputes</h3>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed">Legal representation and advocacy for disputes related to
+                        loans and credit cards, ensuring fair treatment and resolution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-8xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl md:text-5xl font-bold mb-4">Who We Are</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="text-lg leading-relaxed space-y-6 text-gray-300">
+                    <p>At Sujata Associates, we are driven to assist entrepreneurs in turning their business aspirations
+                        into reality through secure and effective Company Registration in Kolkata. We are a team of
+                        seasoned business experts who understand what it takes to establish a new company and are here
+                        to simplify the process, accelerate it, and make it stress-free.</p>
+
+                    <p>With years of hands-on experience and an intimate grasp of legal and regulatory obligations, we
+                        provide customized advice for every form of Company Registration in Kolkata—whether it's Private
+                        Limited Companies, LLPs, One Person Companies, or Sole Proprietorships.</p>
+
+                    <p>We believe that company formation should not be daunting and are dedicated to providing a
+                        trouble-free experience. From deciding on the proper business structure to preparing the
+                        necessary documents, filing with the Ministry of Corporate Affairs, and securing
+                        approvals—everything related to Company Registration in Kolkata is handled by us.</p>
+                </div>
+
+                <div class="text-left mt-12">
+                    <button
+                        class="bg-green-500 hover:bg-green-600 px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 transform hover:scale-105 hover:shadow-xl">
+                        view more
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="w-full mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto rounded-full"></div>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>How to get a company registered / registration in Kolkata?</span>
+                            <span class="icon text-xl font-bold bg-transparent">+</span>
+
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            With our expert services, you can gain knowledge about the registration of Private
+                            Companies. Typically, this entire process can be completed within a span of 10-15 days. All
+                            that is required from you is to fill out a brief questionnaire that will take approximately
+                            10 minutes of your time.
+                        </div>
+                    </div>
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>What is company registration ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            Company Registration in Kolkata is the legal process of incorporating a business under
+                            government regulations. It provides a legal identity, tax benefits, and limited liability
+                            protection. Common types include Private Limited, LLP, OPC, and Proprietorship. Sujata
+                            Associates offers fast and hassle-free business registration in Kolkata.
+                        </div>
+                    </div>
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>Can I register the company at my home address ? ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            Certainly! You have the option to register your company at your residential address, which
+                            is entirely permissible under the law. Initiating your company from the comfort of your home
+                            or even a garage is acceptable. All you need to provide as proof of your residential address
+                            are documents like a rent agreement or an electricity bill.
+                        </div>
+                    </div>
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>What types of businesses can be registered through company registration services
+                                ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            We offer company registration services for a wide range of business types, including limited
+                            liability companies (LLCs), partnerships, sole proprietorships, and corporations. Whether
+                            you are a small startup, a freelancer, or an established enterprise, we can help you
+                            register your business and obtain the necessary legal status.
+                        </div>
+                    </div>
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>What documents are required for company registration in Kolkata or India ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            The specific documentation requirements may vary depending on the jurisdiction and business
+                            type. However, common documents typically include identification proof of the company's
+                            owners or directors, proof of address, memorandum and articles of association, and a
+                            completed registration application form. Our team will provide you with a detailed checklist
+                            and guide you through the specific requirements for your business registration.
+                        </div>
+                    </div>
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>Can I register a company if I am not a resident of the country where I want to
+                                establish my business ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            In many jurisdictions, it is possible for non-residents to register a company. However,
+                            specific regulations and requirements may vary. Our team can assist you in understanding the
+                            eligibility criteria, documentation needed, and any additional considerations for
+                            non-resident company registration.
+                        </div>
+                    </div>
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>What is the process for registering a company with your company registration services
+                                ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            Our company registration process is designed to be efficient and streamlined. You can start
+                            by contacting us or visiting our website to provide us with the necessary details. We will
+                            guide you through the required documentation, legal formalities, and assist you in choosing
+                            the right business structure. Our experienced team will handle the registration process on
+                            your behalf, ensuring compliance with all regulatory requirements.
+                        </div>
+                    </div>
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>How long does the company registration process typically take ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            With expert assistance, company registration in Kolkata usually takes 7 to 10 working days,
+                            depending on document verification and government approvals.
+                        </div>
+                    </div>
+
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>Can I change my company name or business structure after registration ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            Yes, it is possible to change your company name or business structure after registration.
+                            However, the process and requirements for such changes may vary depending on the
+                            jurisdiction. Our team can assist you with the necessary procedures and documentation to
+                            facilitate any changes you may require.
+                        </div>
+                    </div>
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>Is it possible to register a company with multiple shareholders or partners ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            Yes, you can register a company with multiple shareholders or partners. Different business
+                            structures have varying requirements for the number and roles of shareholders or partners.
+                            We can advise you on the most suitable structure for your specific situation and assist with
+                            the registration process accordingly.
+                        </div>
+                    </div>
+
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>What are the documents required for Private Company Registration ?</span>
+                            <span class="icon text-xl font-bold">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            Pan Card, Photograph, Identity Proof, Director’s Address Proof, and Business Address Proof.
+                        </div>
+                    </div>
+
+                    <div class="quest border border-gray-300 rounded-xl overflow-hidden">
+                        <button onclick="toggleFAQ(this)"
+                            class="q1 w-full flex justify-between items-center px-6 py-2 bg-white hover:bg-green-400 transition-all duration-300 font-medium text-left">
+                            <span>Do you offer post-registration support and assistance with business banking setup
+                                ?</span>
+                            <span class="icon text-xl font-bold ">+</span>
+                        </button>
+                        <div class="answer hidden px-6 py-2 bg-gray-50 text-gray-600 border-t">
+                            Yes, we provide post-registration support to help you navigate the initial stages of your
+                            business. We can assist with setting up business bank accounts, obtaining corporate
+                            debit/credit cards, and connecting you with trusted financial institutions to facilitate
+                            smooth financial operations.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-20 bg-gradient-to-br from-slate-800 to-slate-900 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-4xl md:text-5xl font-bold mb-6">GET A CALL BACK</h2>
+                        <p class="text-xl text-gray-300 mb-8 leading-relaxed">
+                            If you need to speak to us about a general query, fill in the form and we will call you back
+                            within the same working day.
+                        </p>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20">
+                        <form class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium mb-2">How can we help? *</label>
+                                <select
+                                    class="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-green-500 transition-colors duration-300">
+                                    <option value="">I would like to discuss:</option>
+                                    <option value="registration">Company Registration</option>
+                                    <option value="legal">Legal Advice</option>
+                                    <option value="support">Customer Support</option>
+                                </select>
+                            </div>
+
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <input type="email" placeholder="Your Email"
+                                    class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-green-500 transition-colors duration-300">
+                                <input type="tel" placeholder="Your Phone Number"
+                                    class="px-4 py-3 rounded-xl bg-white/10 border border-white/20 text-white placeholder-gray-300 focus:outline-none focus:border-green-500 transition-colors duration-300">
+                            </div>
+
+                            <button type="submit"
+                                class="w-full bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105">
+                                Submit Now
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-            <div class="testimonial">
-                <div class="img-1">
-                    <img src="../assets/legal.jpg" alt="Abdush Shamim Sekh">
+        </div>
+    </section>
+    <div class="testimonials-section">
+        <h3 class="section-title">Client’s Testimonials</h3>
+        <div class="testimonial-container">
+
+            <div class="testimonial-card">
+                <img src="../assets/suvajit-photo.jpg" alt="Suvajit Ranjan Roy" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        I had a great experience with Sujata Associates for my company registration in Kolkata.
+                        The team was professional, responsive, and supportive throughout. Everything was completed
+                        on time without any hassle. Truly reliable and highly recommended service
+                    </p>
+                    <h4>Suvajit Ranjan Roy</h4>
+                    <p class="designation">Director of, Ethicalead Solution Pvt. Ltd.</p>
                 </div>
-                <div class="para-1">
-                    <p class="testimonial-text">
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/amit-photo.jpeg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        I talked to a few lawyers and they all agreed that it would be a challenging case.
+                        One of them recommended Sujata Associates, whose staff worked very hard to gather data
+                        and experts to support our trademark case. Professionals from Sujata Associates were able
+                        to resolve our situation.
+                    </p>
+                    <h4>Amit Kumar Dutta</h4>
+                    <p class="designation">Director of, Sugarvision Technology Pvt. Ltd.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/abdus-photo.jpeg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Thank you, Sujata Associates, and their legal team, for all of your help. Registering my sole
+                        proprietorship with Sujata Associates was a great experience. Thank you for making the company
+                        registration process smoothly."
+                    </p>
+                    <h4>Abdush Shamim Sekh</h4>
+                    <p class="designation">Director of, Sugarvision Technology Pvt. Ltd.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/soumya-photo.jpeg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
                         "Sujata Associates handled my company registration in Kolkata efficiently. Their in-depth
                         knowledge and helpful attitude made the entire process smooth. I’m grateful for their support
                         and would definitely choose them again for any business legal services."
+
                     </p>
-                    <div class="testimonial-info">
-                        <strong>Soumyajyoti Das</strong><br>
-                        <span>Director of, poppyplum Trading Pvt. Ltd.</span>
-                    </div>
+                    <h4>SoumyaJyoti Das</h4>
+                    <p class="designation">Director of, Poppyplum Trading Pvt. Ltd.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/adtijia-photo.jpeg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "I couldn't be happier with the services provided by Sujata Associates. Their team was extremely
+                        knowledgeable, professional, and efficient throughout the entire process. They guided me
+                        step-by-step and made sure all the necessary paperwork and legal requirements were handled
+                        seamlessly. Thanks to their expertise, my company registration was completed smoothly and in a
+                        timely manner. I highly recommend Sujata Associates to anyone looking for reliable and top-notch
+                        registration services.".
+                    </p>
+                    <h4>Adrija Chakraborty</h4>
+                    <p class="designation">Director of, Fadhel Impex Pvt. Ltd.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "I am immensely grateful to Sujata Associates for their exceptional services. From the moment
+                        I reached out to them, they were prompt in responding to my queries and provided clear and
+                        detailed information. Their team demonstrated a deep understanding of the registration process
+                        and offered valuable guidance in selecting the appropriate legal structure for my business. With
+                        their support and expertise, I successfully registered my company without any hassle. I
+                        wholeheartedly endorse Sujata Associates for their professionalism and dedication."
+
+                    </p>
+                    <h4>ujjal Chatterjee</h4>
+                    <p class="designation">Director of, Fadhel Impex Pvt. Ltd.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "I can't thank Sujata Associates enough for their outstanding support and expertise in
+                        registering my company. Their team went above and beyond to ensure a smooth and efficient
+                        registration process. They were readily available to answer my questions, patiently explaining
+                        each step involved and clarifying any doubts I had. The attention to detail and commitment to
+                        excellence exhibited by Sujata Associates truly set them apart. I am incredibly satisfied with
+                        their services and would confidently refer them to anyone in need of reliable and trustworthy
+                        company registration assistance."
+
+                    </p>
+                    <h4>Debomoy Chatterjee</h4>
+                    <p class="designation">Director of, DBRK MARKETING PRIVATE LIMITED.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "I can't thank Sujata Associates enough for their outstanding support and expertise in
+                        registering my company. Their team went above and beyond to ensure a smooth and efficient
+                        registration process. They were readily available to answer my questions, patiently explaining
+                        each step involved and clarifying any doubts I had. The attention to detail and commitment to
+                        excellence exhibited by Sujata Associates truly set them apart. I am incredibly satisfied with
+                        their services and would confidently refer them to anyone in need of reliable and trustworthy
+                        company registration assistance."
+
+                    </p>
+                    <h4>Ganesh Madhu</h4>
+                    <p class="designation">Director of, CREATIONS PRIVATE LIMITED..</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "I can't thank Sujata Associates enough for their outstanding support and expertise in
+                        registering my company. Their team went above and beyond to ensure a smooth and efficient
+                        registration process. They were readily available to answer my questions, patiently explaining
+                        each step involved and clarifying any doubts I had. The attention to detail and commitment to
+                        excellence exhibited by Sujata Associates truly set them apart. I am incredibly satisfied with
+                        their services and would confidently refer them to anyone in need of reliable and trustworthy
+                        company registration assistance."
+
+                    </p>
+                    <h4>Gourab Sarkar</h4>
+                    <p class="designation">Director of, SMGA GLOBAL INDUSTRIES PRIVATE LIMITED.</p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Perfect person to take care in customer service as I experienced. Excellent service given and
+                        undoubtedly please I request you to go for Sujata Associates whenever you require any assistance
+                        regarding your business."
+
+                    </p>
+                    <h4>Indrani Paul</h4>
+                    <p class="designation">Director of, PAGLAITVFX (OPC) PRIVATE LIMITED.
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Perfect person to take care in customer service as I experienced. Excellent service given and
+                        undoubtedly please I request you to go for Sujata Associates whenever you require any assistance
+                        regarding your business."
+
+                    </p>
+                    <h4>Abhirup Bose</h4>
+                    <p class="designation">Director of, Aeshnava Aesthetics Pvt. Ltd.
+
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Perfect person to take care in customer service as I experienced. Excellent service given and
+                        undoubtedly please I request you to go for Sujata Associates whenever you require any assistance
+                        regarding your business."
+
+                    </p>
+                    <h4>Apurba Das</h4>
+                    <p class="designation">Director of, Gotlancer Private Limited Pvt. Ltd.
+
+
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Perfect person to take care in customer service as I experienced. Excellent service given and
+                        undoubtedly please I request you to go for Sujata Associates whenever you require any assistance
+                        regarding your business."
+
+                    </p>
+                    <h4>Raja Dutta</h4>
+                    <p class="designation">Director of, Nutzen Consultancy Services Pvt. Ltd.
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Perfect person to take care in customer service as I experienced. Excellent service given and
+                        undoubtedly please I request you to go for Sujata Associates whenever you require any assistance
+                        regarding your business."
+
+                    </p>
+                    <h4>Tania Ray</h4>
+                    <p class="designation">Director of, Adya Heritage Private Limited
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Perfect person to take care in customer service as I experienced. Excellent service given and
+                        undoubtedly please I request you to go for Sujata Associates whenever you require any assistance
+                        regarding your business."
+
+                    </p>
+                    <h4>Vinay Dubey</h4>
+                    <p class="designation">Director of, Eauzo Kart private
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/ujjal-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Perfect person to take care in customer service as I experienced. Excellent service given and
+                        undoubtedly please I request you to go for Sujata Associates whenever you require any assistance
+                        regarding your business."
+
+                    </p>
+                    <h4>Partha Dey</h4>
+                    <p class="designation">Director of, Agroplaza Smart Farming And Trading Private Limited
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/dipak-photo.jpeg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Sujata Associates has a team of experts that can register a company and they are well aware of
+                        what is needed for a startup. I’m pleased with the team’s always excellent service and prompt
+                        answers. The finest location for company registration online."
+
+                    </p>
+                    <h4>DIPAK BHUNIYA</h4>
+                    <p class="designation">Director of, AACB Installation Services Pvt. Ltd.
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/jinia-photo.jpeg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "Sujata Associates made my company registration process in Kolkata seamless and stress-free.
+                        Their expert guidance, quick service, and transparent communication truly impressed me. I highly
+                        recommend them to anyone starting a business in Kolkata."
+
+                    </p>
+                    <h4>Jinia Gupta</h4>
+                    <p class="designation">Director of, Ethicalead Solution Pvt. Ltd.
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/jana-photo.jpg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "I wholeheartedly recommend Sujata Associates to any general counsel or business in need of
+                        elite knowledge to handle a range of issues. My firsthand experiences with the Sujata Associates
+                        Team have left me quite impressed with their versatility in problem-solving."
+
+                    </p>
+                    <h4>Abanti Kumar Jana</h4>
+                    <p class="designation">Director of, Supercon Infra Solutions Pvt. Ltd.
+                    </p>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <img src="../assets/bikash-photo.jpeg" alt="Amit Kumar Dutta" class="testimonial-img">
+                <div class="testimonial-text">
+                    <p>
+                        "I would choose Sujata Associates above other firms because of their affordable service prices
+                        for a range of legal services, fantastic team, and hassle-free experience. I had a great
+                        experience and thought the hour-long complimentary consultation was worthwhile. I appreciate
+                        your assistance in registering the company."
+
+                    </p>
+                    <h4>Bikash Choudhury</h4>
+                    <p class="designation">Partner of, A1 Grain Global LLP.
+                    </p>
                 </div>
             </div>
         </div>
     </div>
-    <div class="client">
-        <div class="brand">
-            <img src="../assets/rishi.jpg" alt="img" width="200px" height="150px">
-            <img src="../assets/choice.jpg" alt="omg" width="200px" height="150px">
-            <img src="../assets/logitech.jpg" alt="omg" width="200px" height="150px">
-            <img src="../assets/hindi.jpg" alt="omg" width="200px" height="150px">
-            <img src="../assets/appayan.jpg" alt="omg" width="200px" height="150px">
-            <img src="../assets/best.jpg" alt="omg" width="200px" height="150px">
-            <img src="../assets/blue.jpg" alt="omg" width="200px" height="150px">
-            <img src="../assets/hamp.jpg" alt="omg" width="200px" height="150px">
-            <img src="../assets/sa.jpg" alt="omg" width="200px" height="150px">
-            <img src="../assets/hard.jpg" alt="omg" width="200px" height="150px">
+
+    <div class="logo-slider">
+        <div class="logo-track">
+            <img src="../assets/logitech.jpg" alt="Logo 1" />
+            <img src="../assets/best.jpg" alt="Logo 2" />
+            <img src="../assets/choice.jpg" alt="Logo 3" />
+            <img src="../assets/hamp.jpg" alt="Logo 4" />
+            <img src="../assets/hard.jpg" alt="Logo 5" />
+            <!-- Repeat logos to make it seamless -->
+            <img src="../assets/hindi.jpg" alt="Logo 1" />
+            <img src="../assets/danier.jpg" alt="Logo 2" />
+            <img src="../assets/blue.jpg" alt="Logo 3" />
+            <img src="../assets/rishi.jpg" alt="Logo 4" />
+            <img src="../assets/appayan.jpg" alt="Logo 5" />
         </div>
     </div>
+    <a href="https://api.whatsapp.com/send?phone=919038001356" class="whatsapp-float" target="_blank"
+        aria-label="Chat on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
     <footer class="footer">
         <div class="footer-top">
-            <div class="footer-contact">
+            <div class="contact-info">
                 <div class="contact-item">
-                    <p><span class="icon">📧</span>rahul.bhakat@sujataassociates.com</p>
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/new-post.png" alt="email" class="icon">
+                    <span>rahul.bhakat@sujataassociates.com</span>
                 </div>
                 <div class="contact-item">
-                    <p><span class="icon">📞</span>9038001356</p>
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="phone" class="icon">
+                    <span>9038001356</span>
                 </div>
                 <div class="contact-item">
-                    <p><span class="icon">📍</span>4 Fairlie Place, 5th Floor, Kolkata 700 001, W.B. IN</p>
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/marker.png" alt="location" class="icon">
+                    <span>4 Fairlie Place, 5th Floor, Kolkata 700 001, W.B. IN</span>
                 </div>
             </div>
+        </div>
 
-            <div class="footer-columns">
-                <div class="footer-about">
-                    <img src="../assets/Logo-new-final.png" alt="Sujata Associates Logo" class="footer-logo" />
-                    <p>
-                        Sujata Associates one of the best company registration in Kolkata. Our
-                        expertise lies in delivering extensive consultancy services to companies,
-                        both within the country and overseas. By harnessing the power of technology,
-                        we have devised a seamless approach that simplifies the completion of
-                        governmental and legal formalities. These processes are consolidated within
-                        a user-friendly platform, offering utmost convenience to our clients.
-                    </p>
-                </div>
+        <hr class="divider" />
 
-                <div class="footer-links">
-                    <ul>
-                        <li><strong>About</strong></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Terms & Conditions</a></li>
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Refund Policy</a></li>
-                    </ul>
-                </div>
+        <div class="footer-content">
+            <div class="footer-col logo-section">
+                <img src="../assets/Logo-new-final.png" alt="Sujata Associates" class="logo" width="100px"
+                    height="150px">
+                <!-- Replace 'logo.png' -->
+                <p>
+                    Sujata Associates one of the best company registration in Kolkata. Our expertise lies in delivering
+                    extensive consultancy services to companies, both within the country and overseas. By harnessing the
+                    power of technology, we have devised a seamless approach that simplifies the completion of
+                    governmental and legal formalities. These processes are consolidated within a user-friendly
+                    platform, offering utmost convenience to our clients.
+                </p>
+            </div>
 
-                <div class="footer-links">
-                    <ul>
-                        <li><strong>Services</strong></li>
-                        <li><a href="#">Private Limited Company Registration</a></li>
-                        <li><a href="#">Sec 8 Company Registration</a></li>
-                        <li><a href="#">LLP Company Registration</a></li>
-                        <li><a href="#">One Person Company Registration</a></li>
-                        <li><a href="#">Proprietorship Company Registration</a></li>
-                    </ul>
-                </div>
+            <div class="footer-col">
+                <ul>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Careers</li>
+                    <li>Terms & Conditions</li>
+                    <li>Privacy Policy</li>
+                    <li>Refund Policy</li>
+                </ul>
+            </div>
 
-                <div class="footer-newsletter">
+            <div class="footer-col">
+                <ul>
+                    <li>Private Limited Company Registration</li>
+                    <li>Sec 8 Company Registration</li>
+                    <li>LLP Company Registration</li>
+                    <li>One Person Company Registration</li>
+                    <li>Proprietorship Company Registration</li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <form class="subscribe-form">
                     <label for="email">Email address:</label>
-                    <input type="email" id="email" placeholder="Your email address" />
+                    <input type="email" id="email" placeholder="Your email address">
                     <button type="submit">SUBMIT</button>
+                </form>
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <p>Copyright 2024 Sujata Associates | All Rights Reserved</p>
                 </div>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <p>Copyright 2024 Sujata Associates | All Rights Reserved</p>
-                    </div>
-                    <div class="contact-item">
-                        <p>Terms & Conditions |</p>
-                    </div>
-                    <div class="contact-item">
-                        <p>Privacy Policy | Refund Policy</p>
-                    </div>
+                <div class="contact-item">
+                    <p>Terms & Conditions |</p>
+                </div>
+                <div class="contact-item">
+                    <p>Privacy Policy | Refund Policy</p>
                 </div>
             </div>
         </div>
     </footer>
-
 </body>
 
 </html>
