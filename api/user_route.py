@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from models import User, CyberComplaint, CriminalComplaint, PropertyRegistration
+from models import User, CyberComplaint, CriminalComplaint, PropertyRegistration, LegalComplaint
 from extensions import db  
 
 user_bp = Blueprint('user_bp', __name__)
@@ -108,3 +108,46 @@ def create_property_registration():
         return jsonify(new_registration.to_dict()), 201
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+@user_bp.route('/legal-complaint', methods=['GET'])
+def get_legal_complaint():
+    complaints = LegalComplaint.query.all()
+    return jsonify([complaint.to_dict() for complaint in complaints])
+
+@user_bp.route('/legal-complaint', methods=['POST'])
+def create_legal_complaint():
+    data = request.get_json()
+    new_complaint = LegalComplaint(
+        case_no=data['case_no'],
+        complainant_name=data['complainant_name'],
+        complainant_address=data['complainant_address'],
+        complainant_contact=data['complainant_contact'],
+        complainant_email=data['complainant_email'],
+        respondent_name=data['respondent_name'],
+        respondent_address=data['respondent_address'],
+        respondent_contact=data['respondent_contact'],
+        respondent_email=data['respondent_email'],
+        relevant_act=data['relevant_act'],
+        complainant_full_name=data['complainant_full_name'],
+        complainant_full_address=data['complainant_full_address'],
+        complainant_contact_details=data['complainant_contact_details'],
+        respondent_full_name=data['respondent_full_name'],
+        respondent_full_address=data['respondent_full_address'],
+        respondent_contact_details=data['respondent_contact_details'],
+        facts=data['facts'],
+        cause_of_action=data['cause_of_action'],
+        relief_sought=data['relief_sought'],
+        documents=data['documents'],
+        place=data['place'],
+        date_filed=data['date_filed'],
+        verified_by=data['verified_by'],
+        verified_date=data['verified_date']
+    )
+
+    db.session.add(new_complaint)
+    db.session.commit()
+
+    return jsonify(new_complaint.to_dict()), 201
+
+
+

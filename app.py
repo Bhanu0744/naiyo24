@@ -155,6 +155,47 @@ def property_registration():
         logger.exception("Error in /property-registration")
         return f"Internal Server Error: {e}", 500
         
+@app.route('/legal-complaint', methods=['POST'])
+def legal_complaint():
+    try:
+        data = request.get_json()
+        case_no = data.get('case_no')
+        complainant_name = data.get('complainant_name')
+        complainant_address = data.get('complainant_address')
+        complainant_contact = data.get('complainant_contact')
+        complainant_email = data.get('complainant_email')
+        respondent_name = data.get('respondent_name')
+        respondent_address = data.get('respondent_address')
+        respondent_contact = data.get('respondent_contact')
+        respondent_email = data.get('respondent_email')
+        relevant_act = data.get('relevant_act')
+        complainant_full_name = data.get('complainant_full_name')
+        complainant_full_address = data.get('complainant_full_address')
+        complainant_contact_details = data.get('complainant_contact_details')
+        respondent_full_name = data.get('respondent_full_name')
+        respondent_full_address = data.get('respondent_full_address')
+        respondent_contact_details = data.get('respondent_contact_details')
+        facts = data.get('facts')
+        cause_of_action = data.get('cause_of_action')
+        relief_sought = data.get('relief_sought')
+        documents = data.get('documents')
+        place = data.get('place')
+        date_filed = data.get('date_filed')
+        verified_by = data.get('verified_by')
+        verified_date = data.get('verified_date')
+
+        logger.debug(f"Received: {case_no}, {complainant_name}, {complainant_address}, {complainant_contact}, {complainant_email}, {respondent_name}, {respondent_address}, {respondent_contact}, {respondent_email}, {relevant_act}, {complainant_full_name}, {complainant_full_address}, {complainant_contact_details}, {respondent_full_name}, {respondent_full_address}, {respondent_contact_details}, {facts}, {cause_of_action}, {relief_sought}, {documents}, {place}, {date_filed}, {verified_by}, {verified_date}")
+
+        conn = get_db_connection()
+        cursor = conn.cursor()
+        cursor.execute(query, data)
+        conn.commit()
+        cursor.close()
+        conn.close()
+        return jsonify({"message": "Legal complaint submitted successfully"}), 200
+    except Exception as e:
+        logger.exception("Error in /legal-complaint")
+        return f"Internal Server Error: {e}", 500
 
 if __name__ == "__main__":
     app.run(debug=True)

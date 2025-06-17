@@ -135,3 +135,60 @@ class PropertyRegistration(db.Model):
             "sale_date": self.sale_date,
             "submitted_at": self.submitted_at
         }
+    
+class LegalComplaint(db.Model):
+    __tablename__ = 'legal_complaints'
+    id = db.Column(db.Integer, primary_key=True)
+    case_no = db.Column(db.Text)
+    complainant_name = db.Column(db.Text)
+    complainant_address = db.Column(db.Text)
+    complainant_contact = db.Column(db.Text)
+    complainant_email = db.Column(db.Text)
+    respondent_name = db.Column(db.Text)
+    respondent_address = db.Column(db.Text)
+    respondent_contact = db.Column(db.Text)
+    respondent_email = db.Column(db.Text)
+    relevant_act = db.Column(db.Text)
+    complainant_full_name = db.Column(db.Text)
+    complainant_full_address = db.Column(db.Text)
+    complainant_contact_details = db.Column(db.Text)
+    respondent_full_name = db.Column(db.Text)
+    respondent_full_address = db.Column(db.Text)
+    respondent_contact_details = db.Column(db.Text)
+    facts = db.Column(db.Text)
+    cause_of_action = db.Column(db.Text)
+    relief_sought = db.Column(db.Text)
+    documents = db.Column(db.Text)
+    place = db.Column(db.Text)
+    date_filed = db.Column(db.Date)
+    verified_by = db.Column(db.Text)
+    verified_date = db.Column(db.Date)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "case_no": self.case_no,
+            "complainant_name": self.complainant_name,
+            "complainant_address": self.complainant_address,
+            "complainant_contact": self.complainant_contact,
+            "complainant_email": self.complainant_email,
+            "respondent_name": self.respondent_name,
+            "respondent_address": self.respondent_address,
+            "respondent_contact": self.respondent_contact,
+            "respondent_email": self.respondent_email,
+            "relevant_act": self.relevant_act,
+            "complainant_full_name": self.complainant_full_name,
+            "complainant_full_address": self.complainant_full_address,
+            "complainant_contact_details": self.complainant_contact_details,
+            "respondent_full_name": self.respondent_full_name,
+            "respondent_full_address": self.respondent_full_address,
+            "respondent_contact_details": self.respondent_contact_details,
+            "facts": self.facts,
+            "cause_of_action": self.cause_of_action,
+            "relief_sought": self.relief_sought,
+            "documents": self.documents,
+            "place": self.place,
+            "date_filed": self.date_filed,
+            "verified_by": self.verified_by,
+            "verified_date": self.verified_date
+        }
