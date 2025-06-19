@@ -1,6 +1,7 @@
 # models.py
 from extensions import db
 from datetime import datetime
+import base64
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -201,7 +202,7 @@ class LegalComplaint(db.Model):
             "verified_date": self.verified_date
         }
 
-class MarriageComplaint(db.Model):
+class MarriageComplaintForm(db.Model):
     __tablename__ = 'marriage_complaints'
     id = db.Column(db.Integer, primary_key=True)
     id_proof = db.Column(db.Text)
@@ -255,7 +256,7 @@ class MarriageComplaint(db.Model):
         }
 
 class TrademarkComplaint(db.Model):
-    __tablename__ = 'trademark_complaints'
+    __tablename__ = 'trademark_applications'
     id = db.Column(db.Integer, primary_key=True)
     id_proof = db.Column(db.Text)
     applicant_name = db.Column(db.Text)
@@ -284,6 +285,8 @@ class TrademarkComplaint(db.Model):
     agent_name = db.Column(db.Text)
     agent_reg_no = db.Column(db.Text)
     power_of_attorney = db.Column(db.Text)
+    date = db.Column(db.Text)
+    place = db.Column(db.Text)
 
     def to_dict(self):
         return {
@@ -300,7 +303,7 @@ class TrademarkComplaint(db.Model):
             "nature_of_business": self.nature_of_business,
             "trademark_name": self.trademark_name,
             "mark_type": self.mark_type,
-            "logo": self.logo,
+            "logo": base64.b64encode(self.logo).decode('utf-8') if self.logo else None,
             "logo_filename": self.logo_filename,
             "logo_mimetype": self.logo_mimetype,
             "class_of_goods": self.class_of_goods,
@@ -314,8 +317,16 @@ class TrademarkComplaint(db.Model):
             "priority_app_no": self.priority_app_no,
             "agent_name": self.agent_name,
             "agent_reg_no": self.agent_reg_no,
-            "power_of_attorney": self.power_of_attorney
+            "power_of_attorney": self.power_of_attorney,
+            "date": self.date,
+            "place": self.place
         }
+
+    def get_logo_base64(self):
+        if self.logo:
+            return base64.b64encode(self.logo.encode()).decode()
+        return None
+    
 class BarcodeRequest(db.Model):
     __tablename__ = 'barcode_requests'
     id = db.Column(db.Integer, primary_key=True)
@@ -329,6 +340,12 @@ class BarcodeRequest(db.Model):
     barcode_options = db.Column(db.Text)
     barcode_format = db.Column(db.Text)
     barcode_purpose = db.Column(db.Text)
+    declarant_name = db.Column(db.Text)
+    declaration_date = db.Column(db.Text)
+    submitted_at = db.Column(db.Text)
+    status = db.Column(db.Text)
+    remarks = db.Column(db.Text)
+    submitted_by = db.Column(db.Text)
 
     def to_dict(self):
         return {
@@ -343,15 +360,18 @@ class BarcodeRequest(db.Model):
             "barcode_options": self.barcode_options,
             "barcode_format": self.barcode_format,
             "barcode_purpose": self.barcode_purpose,
+            "declarant_name": self.declarant_name,
+            "declaration_date": self.declaration_date,
             "submitted_at": self.submitted_at,
             "status": self.status,
             "remarks": self.remarks,
-            "submitted_by": self.submitted_by,
-            "submitted_at": self.submitted_at
+            "submitted_by": self.submitted_by
+
         }
 class ISOApplication(db.Model):
     __tablename__ = 'iso_certifications'
     id = db.Column(db.Integer, primary_key=True)
+    id_proof = db.Column(db.Text)
     org_name = db.Column(db.Text)
     org_type = db.Column(db.Text)
     address = db.Column(db.Text)
@@ -525,7 +545,7 @@ class PatentApplication(db.Model):
         }
     
 class StartupRegistration(db.Model):
-    __tablename__ = 'startup_registrations'
+    __tablename__ = 'startup_registration'
     id = db.Column(db.Integer, primary_key=True)
     id_proof = db.Column(db.Text)
     entity_name = db.Column(db.Text)
@@ -632,7 +652,7 @@ class LLCRegistration(db.Model):
         }
     
 class CompanyRegistration(db.Model):
-    __tablename__ = 'company_registration'
+    __tablename__ = 'uk_registration'
     id = db.Column(db.Integer, primary_key=True)
     id_proof = db.Column(db.Text)
     proposed_name = db.Column(db.Text)
@@ -681,7 +701,7 @@ class CompanyRegistration(db.Model):
         }
 
 class ChinaRegistration(db.Model):
-    __tablename__ = 'china_registrations'
+    __tablename__ = 'china_registration'
     id = db.Column(db.Integer, primary_key=True)
     id_proof = db.Column(db.Text)
     company_name_chinese = db.Column(db.Text)

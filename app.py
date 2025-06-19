@@ -252,7 +252,7 @@ def submit_marriage_complaint():
         conn = get_db_connection()
         cur = conn.cursor()
         cur.execute("""
-                    INSERT INTO marriage_complaints (id_proof, complainant_name, comp_age, comp_gender, comp_parent, comp_address, comp_contact, comp_email, spouse_name, spouse_age, spouse_gender, spouse_parent, spouse_address, spouse_contact, spouse_email, marriage_date, marriage_place, marriage_type, marriage_cert_issued, marriage_reg_applied, reg_applied_date, complaint_nature) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                    INSERT INTO marriage_complaints (id_proof, complainant_name, comp_age, comp_gender, comp_parent, comp_address, comp_contact, comp_email, spouse_name, spouse_age, spouse_gender, spouse_parent, spouse_address, spouse_contact, spouse_email, marriage_date, marriage_place, marriage_type, marriage_cert_issued, marriage_reg_applied, reg_applied_date, complaint_nature) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
                     (id_proof, complainant_name, comp_age, comp_gender, comp_parent, comp_address, comp_contact, comp_email, spouse_name, spouse_age, spouse_gender, spouse_parent, spouse_address, spouse_contact, spouse_email, marriage_date, marriage_place, marriage_type, marriage_cert_issued, marriage_reg_applied, reg_applied_date, complaint_nature))
         conn.commit()
         cur.close()
@@ -260,7 +260,8 @@ def submit_marriage_complaint():
         return jsonify({'message': 'Complaint submitted successfully'}), 201
     except Exception as e:
         logger.exception("Error in /submit-marriage-complaint")
-        return f"Internal Server Error: {e}", 500
+        return jsonify({'error': str(e)}), 500
+
     
 @app.route("/trademark")
 def trademark():
@@ -297,19 +298,22 @@ def trademark_complaint():
         agent_name = data.get('agent_name')
         agent_reg_no = data.get('agent_reg_no')
         power_of_attorney = data.get('power_of_attorney')
+        date = data.get('date')
+        place = data.get('place')
 
-        logger.debug(f"Received: {id_proof}, {applicant_name}, {applicant_type}, {address}, {state}, {pin_code}, {email}, {mobile}, {nationality}, {nature_of_business}, {trademark_name}, {mark_type}, {logo}, {logo_filename}, {logo_mimetype}, {class_of_goods}, {description}, {mark_used}, {first_use_date}, {first_use_place}, {priority_claim}, {priority_country}, {priority_date}, {priority_app_no}, {agent_name}, {agent_reg_no}, {power_of_attorney}")
+        logger.debug(f"Received: {id_proof}, {applicant_name}, {applicant_type}, {address}, {state}, {pin_code}, {email}, {mobile}, {nationality}, {nature_of_business}, {trademark_name}, {mark_type}, {logo}, {logo_filename}, {logo_mimetype}, {class_of_goods}, {description}, {mark_used}, {first_use_date}, {first_use_place}, {priority_claim}, {priority_country}, {priority_date}, {priority_app_no}, {agent_name}, {agent_reg_no}, {power_of_attorney}, {date}, {place}")
 
         conn = get_db_connection()
         cursor = conn.cursor()
-        cursor.execute("""INSERT INTO trademark_complaints (id_proof, applicant_name, applicant_type, address, state, pin_code, email, mobile, nationality, nature_of_business, trademark_name, mark_type, logo, logo_filename, logo_mimetype, class_of_goods, description, mark_used, first_use_date, first_use_place, priority_claim, priority_country, priority_date, priority_app_no, agent_name, agent_reg_no, power_of_attorney) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (id_proof, applicant_name, applicant_type, address, state, pin_code, email, mobile, nationality, nature_of_business, trademark_name, mark_type, logo, logo_filename, logo_mimetype, class_of_goods, description, mark_used, first_use_date, first_use_place, priority_claim, priority_country, priority_date, priority_app_no, agent_name, agent_reg_no, power_of_attorney))
+        cursor.execute("""INSERT INTO trademark_complaints (id_proof, applicant_name, applicant_type, address, state, pin_code, email, mobile, nationality, nature_of_business, trademark_name, mark_type, logo, logo_filename, logo_mimetype, class_of_goods, description, mark_used, first_use_date, first_use_place, priority_claim, priority_country, priority_date, priority_app_no, agent_name, agent_reg_no, power_of_attorney, date, place) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                    (id_proof, applicant_name, applicant_type, address, state, pin_code, email, mobile, nationality, nature_of_business, trademark_name, mark_type, logo, logo_filename, logo_mimetype, class_of_goods, description, mark_used, first_use_date, first_use_place, priority_claim, priority_country, priority_date, priority_app_no, agent_name, agent_reg_no, power_of_attorney, date, place))
         conn.commit()
         cursor.close()
         conn.close()
         return jsonify({'message': 'Complaint submitted successfully'}), 201
     except Exception as e:
         logger.exception("Error in /trademark-complaint")
+        return jsonify({'error': str(e)}), 500
 
 @app.route("/barcode-form")
 def barcode_form():
@@ -329,6 +333,12 @@ def submit_barcode_form():
         barcode_options = data.get('barcode_options')
         barcode_format = data.get('barcode_format')
         barcode_purpose = data.get('barcode_purpose')
+        declarant_name = data.get('declarant_name')
+        declaration_date = data.get('declaration_date')
+        submitted_at = data.get('submitted_at')
+        status = data.get('status')
+        remarks = data.get('remarks')
+        submitted_by = data.get('submitted_by')
 
         logger.debug(f"Received: {id_proof}, {business_name}, {contact_person}, {address}, {phone}, {email}, {gstin}, {barcode_options}, {barcode_format}, {barcode_purpose}")
 
@@ -337,8 +347,10 @@ def submit_barcode_form():
         cursor.execute("""
         INSERT INTO barcode_requests (
             id_proof, business_name, contact_person, address, phone,
-            email, gstin, barcode_options, barcode_format, barcode_purpose
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            email, gstin, barcode_options, barcode_format, barcode_purpose,
+            declarant_name, declaration_date, submitted_at, status, remarks,
+            submitted_by
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """, (
         data.get('id_proof'),
         data.get('business_name'),
@@ -367,6 +379,13 @@ def iso_form():
 def submit_iso_form():
     try:
         data = request.get_json()
+        id_proof = data.get('id_proof')
+        org_name = data.get('org_name')
+        org_type = data.get('org_type')
+        address = data.get('address')
+        city = data.get('city')
+        state = data.get('state')
+        pin = data.get('pin')
         id_proof = data.get('id_proof')
         org_name = data.get('org_name')
         org_type = data.get('org_type')
@@ -626,18 +645,36 @@ def submit_company_registration():
         submission_date = data.get('submission_date')
 
         logger.debug(f"Received: {id_proof}, {proposed_name}, {company_type}, {registered_office_address}, {office_location}, {director_name}, {dob}, {nationality}, {occupation}, {service_address}, {residential_address}, {secretary_name}, {secretary_address}, {total_shares}, {share_value}, {currency}, {shareholder_1}, {shareholder_2}, {signature}, {submission_date}")
+        
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
-        INSERT INTO company_registration (id_proof, proposed_name, company_type, registered_office_address, office_location, director_name, dob, nationality, occupation, service_address, residential_address, secretary_name, secretary_address, total_shares, share_value, currency, shareholder_1, shareholder_2, signature, submission_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (id_proof, proposed_name, company_type, registered_office_address, office_location, director_name, dob, nationality, occupation, service_address, residential_address, secretary_name, secretary_address, total_shares, share_value, currency, shareholder_1, shareholder_2, signature, submission_date))
-        conn.commit()   
+            INSERT INTO uk_registration (
+                id_proof, proposed_name, company_type, registered_office_address,
+                office_location, director_name, dob, nationality, occupation,
+                service_address, residential_address, secretary_name, secretary_address,
+                total_shares, share_value, currency, shareholder_1, shareholder_2,
+                signature, submission_date
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """, (
+            id_proof, proposed_name, company_type, registered_office_address,
+            office_location, director_name, dob, nationality, occupation,
+            service_address, residential_address, secretary_name, secretary_address,
+            total_shares, share_value, currency, shareholder_1, shareholder_2,
+            signature, submission_date
+        ))
+        conn.commit()
         cursor.close()
         conn.close()
+
         return jsonify({'message': 'Company registration submitted successfully'}), 201
+
     except Exception as e:
         logger.exception("Error in /company-registration")
-        return f"Internal Server Error: {e}", 500
+        return jsonify({"error": str(e)}), 500
+
+
+
 
 @app.route('/china-registration')
 def china_registration_form():
