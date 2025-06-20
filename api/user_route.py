@@ -561,30 +561,37 @@ def get_web_service_form():
 
 @user_bp.route('/web-service-form', methods=['POST'])
 def create_web_service_form():
-    data = request.get_json()
-    new_form = WebServiceForm(
-        id_proof=data['id_proof'],
-        full_name=data['full_name'],
-        company_name=data['company_name'],
-        email=data['email'],
-        phone=data['phone'],
-        address=data['address'],
-        services=data['services'],
-        project_description=data['project_description'],
-        target_audience=data['target_audience'],
-        existing_website=data['existing_website'],
-        website_url=data['website_url'],
-        preferred_technology=data['preferred_technology'],
-        content_availability=data['content_availability'],
-        example_websites=data['example_websites'],
-        color_scheme=data['color_scheme'],
-        start_date=data['start_date'],
-        deadline=data['deadline'],
-        budget_range=data['budget_range'],
-        notes=data['notes'],
-        signature=data['signature'],
-        form_date=data['form_date'] 
-    )
+    try:
+        data = request.get_json()
+        new_registration = WebServiceForm(
+            id_proof=data['id_proof'],
+            full_name=data['full_name'],
+            company_name=data['company_name'],
+            email=data['email'],
+            phone=data['phone'],
+            address=data['address'],
+            services=data['services'],
+            project_description=data['project_description'],
+            target_audience=data['target_audience'],
+            existing_website=data['existing_website'],
+            website_url=data['website_url'],
+            preferred_technology=data['preferred_technology'],
+            content_availability=data['content_availability'],
+            example_websites=data['example_websites'],
+            color_scheme=data['color_scheme'],
+            start_date=data['start_date'],
+            deadline=data['deadline'],
+            budget_range=data['budget_range'],
+            notes=data['notes'],
+            signature=data['signature'],
+            form_date=data['form_date']
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+        
 
 @user_bp.route('/proprietor-registration', methods=['GET'])
 def get_proprietor_registration():
