@@ -802,12 +802,12 @@ def submit_proprietor_form():
         declaration_date = data.get('declaration_date')
         submitted_at = data.get('submitted_at')
 
-        logger.debug(f"Received: {id_proof}, {full_name}, {parent_name}, {dob}, {gender}, {aadhaar}, {pan}, {mobile}, {email}, {res_address}, {res_pin}, {firm_name}, {business_type}, {nature}, {business_address}, {business_city}, {business_pin}, {commencement_date}, {website}, {bank_name}, {account_type}, {ifsc}, {branch_address}, {registrations}, {place}, {declaration_date}")
+        logger.debug(f"Received: {id_proof}, {full_name}, {parent_name}, {dob}, {gender}, {aadhaar}, {pan}, {mobile}, {email}, {res_address}, {res_pin}, {firm_name}, {business_type}, {nature}, {business_address}, {business_city}, {business_pin}, {commencement_date}, {website}, {bank_name}, {account_type}, {ifsc}, {branch_address}, {registrations}, {place}, {declaration_date}, {submitted_at}")
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
-        INSERT INTO proprietor_registration (id_proof, full_name, parent_name, dob, gender, aadhaar, pan, mobile, email, res_address, res_pin, firm_name, business_type, nature, business_address, business_city, business_pin, commencement_date, website, bank_name, account_type, ifsc, branch_address, registrations, place, declaration_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (id_proof, full_name, parent_name, dob, gender, aadhaar, pan, mobile, email, res_address, res_pin, firm_name, business_type, nature, business_address, business_city, business_pin, commencement_date, website, bank_name, account_type, ifsc, branch_address, registrations, place, declaration_date))
+        INSERT INTO proprietor_registration (id_proof, full_name, parent_name, dob, gender, aadhaar, pan, mobile, email, res_address, res_pin, firm_name, business_type, nature, business_address, business_city, business_pin, commencement_date, website, bank_name, account_type, ifsc, branch_address, registrations, place, declaration_date, submitted_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                    (id_proof, full_name, parent_name, dob, gender, aadhaar, pan, mobile, email, res_address, res_pin, firm_name, business_type, nature, business_address, business_city, business_pin, commencement_date, website, bank_name, account_type, ifsc, branch_address, registrations, place, declaration_date, submitted_at))
         conn.commit()
         cursor.close()
         conn.close()
@@ -839,39 +839,40 @@ def submit_partnership_form():
         duration_from = data.get('duration_from')
         duration_to = data.get('duration_to')
 
-        partner_names = request.form.getlist('partner_name[]')
-        father_names = request.form.getlist('father_name[]')
-        partner_addresses = request.form.getlist('partner_address[]')
-        ages = request.form.getlist('age[]')
-        pans = request.form.getlist('pan[]')
-        shares = request.form.getlist('share[]')
-        capital_names = request.form.getlist('capital_partner_name[]')
-        contributions = request.form.getlist('capital_contribution[]')
+        partner_names = data.get('partner_names', [])
+        father_names = data.get('father_names', [])
+        partner_addresses = data.get('partner_addresses', [])
+        ages = data.get('ages', [])
+        pans = data.get('pans', [])
+        shares = data.get('shares', [])
+        capital_names = data.get('capital_names', [])
+        contributions = data.get('contributions', [])
 
         bank_name = data.get('bank_name')
         branch = data.get('branch')
         account_number = data.get('account_number')
-
+        signature = data.get('signature')
+        submitted_at = data.get('submitted_at')
         logger.debug(f"Received: {id_proof}, {firm_name}, {business_nature}, {address}, {city}, {state}, {pincode}, {phone}, {email}, {commencement_date}, {duration_type}, {duration_from}, {duration_to}, {partner_names}, {father_names}, {partner_addresses}, {ages}, {pans}, {shares}, {capital_names}, {contributions}, {bank_name}, {branch}, {account_number}, {signature}, {submitted_at}")
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
         INSERT INTO partnership_registration (id_proof, firm_name, business_nature, address, city, state, pincode, phone, email, commencement_date, duration_type, duration_from, duration_to, partner_names, father_names, partner_addresses, ages, pans, shares, capital_names, contributions, bank_name, branch, account_number, signature, submitted_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (id_proof, firm_name, business_nature, address, city, state, pincode, phone, email, commencement_date, duration_type, duration_from, duration_to, partner_names, father_names, partner_addresses, ages, pans, shares, capital_names, contributions, bank_name, branch, account_number,))
+                    (id_proof, firm_name, business_nature, address, city, state, pincode, phone, email, commencement_date, duration_type, duration_from, duration_to, partner_names, father_names, partner_addresses, ages, pans, shares, capital_names, contributions, bank_name, branch, account_number, signature, submitted_at))
         
         for i in range(len(partner_names)):
             cursor.execute("""
             INSERT INTO partnership_partners (firm_name, partner_name, father_name, address, age, pan, share) VALUES (%s, %s, %s, %s, %s, %s, %s)""",
                         (firm_name, partner_names[i], father_names[i], partner_addresses[i], ages[i], pans[i], shares[i]))
             conn.commit()
-            for i in range(len(capital_names)):
-                cursor.execute("""
-                INSERT INTO partnership_capital (firm_name, capital_partner_name, capital_contribution) VALUES (%s, %s, %s)""",
+        for i in range(len(capital_names)):
+            cursor.execute("""
+                           INSERT INTO partnership_capital (firm_name, capital_partner_name, capital_contribution) VALUES (%s, %s, %s)""",
                             (firm_name, capital_names[i], contributions[i]))
-                conn.commit()
-                cursor.close()
-                conn.close()
-                return jsonify({'message': 'Partnership registration submitted successfully'}), 201
+            conn.commit()
+            cursor.close()
+            conn.close()
+            return jsonify({'message': 'Partnership registration submitted successfully'}), 201
     except Exception as e:
         logger.exception("Error in /partnership-form")
         return f"Internal Server Error: {e}", 500

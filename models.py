@@ -1,7 +1,7 @@
 # models.py
 from extensions import db
 from datetime import datetime
-import base64
+import base64, json
 
 class User(db.Model):
     __tablename__ = 'users'
@@ -835,6 +835,7 @@ class ProprietorRegistration(db.Model):
     registrations = db.Column(db.Text)
     place = db.Column(db.Text)
     declaration_date = db.Column(db.Text)
+    submitted_at = db.Column(db.Text)
 
     def to_dict(self):
         return {
@@ -864,11 +865,13 @@ class ProprietorRegistration(db.Model):
             "branch_address": self.branch_address,
             "registrations": self.registrations,
             "place": self.place,
-            "declaration_date": self.declaration_date
+            "declaration_date": self.declaration_date,
+            "submitted_at": self.submitted_at
         }
     
 class PartnershipRegistration(db.Model):
     __tablename__ = 'partnership_registration'
+    
     id = db.Column(db.Integer, primary_key=True)
     id_proof = db.Column(db.Text)
     firm_name = db.Column(db.Text)
@@ -894,7 +897,9 @@ class PartnershipRegistration(db.Model):
     bank_name = db.Column(db.Text)
     branch = db.Column(db.Text)
     account_number = db.Column(db.Text)
-    
+    signature = db.Column(db.Text)          # ✅ Fixed
+    submitted_at = db.Column(db.Text)       # ✅ Fixed
+
     def to_dict(self):
         return {
             "id": self.id,
@@ -921,7 +926,9 @@ class PartnershipRegistration(db.Model):
             "contributions": self.contributions,
             "bank_name": self.bank_name,
             "branch": self.branch,
-            "account_number": self.account_number
+            "account_number": self.account_number,
+            "signature": self.signature,
+            "submitted_at": self.submitted_at
         }
 class OPCRegistration(db.Model):
     __tablename__ = 'opc_registration'
@@ -1038,6 +1045,7 @@ class PrivateCompanyRegistration(db.Model):
 class LLPRegistration(db.Model):
     __tablename__ = 'llp_registrations'
     id = db.Column(db.Integer, primary_key=True)
+    llp_name = db.Column(db.Text)
     id_proof = db.Column(db.Text)
     name = db.Column(db.Text)
     nic_main = db.Column(db.Text)

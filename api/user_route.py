@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from models import User, CyberComplaint, CriminalComplaint, PropertyRegistration, LegalComplaint, MarriageComplaintForm, TrademarkComplaint, BarcodeRequest, ISOApplication, CopyrightRegistration, PatentApplication, StartupRegistration, LLCRegistration, CompanyRegistration, ChinaRegistration, WebServiceForm, ProprietorRegistration, PartnershipRegistration, OPCRegistration, PrivateCompanyRegistration, LLPRegistration, PublicLimitedCompanyRegistration, Sec8CompanyRegistration, NameRegistration, DirectorAppointment, CompanyWindingUp, CompanyStrikeoff, DinSurrender,TradeLicense, TradeLicenseRenewal, ShopEstablishment, FireNOCApplication, PollutionConsent, GSTRegistration, IECApplication, EnterpriseRegistration, GSTRegistration
+from models import User, CyberComplaint, PublicLimitedCompanyRegistration, CriminalComplaint, PropertyRegistration, LegalComplaint, MarriageComplaintForm, TrademarkComplaint, BarcodeRequest, ISOApplication, CopyrightRegistration, PatentApplication, StartupRegistration, LLCRegistration, CompanyRegistration, ChinaRegistration, WebServiceForm, ProprietorRegistration, PartnershipRegistration, OPCRegistration, PrivateCompanyRegistration, LLPRegistration, PublicLimitedCompanyRegistration, Sec8CompanyRegistration, NameRegistration, DirectorAppointment, CompanyWindingUp, CompanyStrikeoff, DinSurrender,TradeLicense, TradeLicenseRenewal, ShopEstablishment, FireNOCApplication, PollutionConsent, GSTRegistration, IECApplication, EnterpriseRegistration, GSTRegistration
 from extensions import db  
 
 user_bp = Blueprint('user_bp', __name__) 
@@ -600,36 +600,43 @@ def get_proprietor_registration():
 
 @user_bp.route('/proprietor-registration', methods=['POST'])
 def create_proprietor_registration():
-    data = request.get_json()
-    new_registration = ProprietorRegistration(
-        id_proof=data['id_proof'],
-        full_name=data['full_name'],
-        parent_name=data['parent_name'],
-        dob=data['dob'],
-        gender=data['gender'],
-        aadhaar=data['aadhaar'],
-        pan=data['pan'],
-        mobile=data['mobile'],
-        email=data['email'],
-        res_address=data['res_address'],
-        res_pin=data['res_pin'],
-        firm_name=data['firm_name'],
-        business_type=data['business_type'],
-        nature=data['nature'],
-        business_address=data['business_address'],
-        business_city=data['business_city'],
-        business_pin=data['business_pin'],
-        commencement_date=data['commencement_date'],
-        website=data['website'],
-        bank_name=data['bank_name'],
-        account_type=data['account_type'],
-        ifsc=data['ifsc'],
-        branch_address=data['branch_address'],
-        registrations=data['registrations'],
-        place=data['place'],
-        declaration_date=data['declaration_date'],
-        submitted_at=data['submitted_at']
-    )
+    try:
+        data = request.get_json()
+        new_registration = ProprietorRegistration(
+            id_proof=data['id_proof'],
+            full_name=data['full_name'],
+            parent_name=data['parent_name'],
+            dob=data['dob'],
+            gender=data['gender'],
+            aadhaar=data['aadhaar'],
+            pan=data['pan'],
+            mobile=data['mobile'],
+            email=data['email'],
+            res_address=data['res_address'],
+            res_pin=data['res_pin'],
+            firm_name=data['firm_name'],
+            business_type=data['business_type'],
+            nature=data['nature'],
+            business_address=data['business_address'],
+            business_city=data['business_city'],
+            business_pin=data['business_pin'],
+            commencement_date=data['commencement_date'],
+            website=data['website'],
+            bank_name=data['bank_name'],
+            account_type=data['account_type'],
+            ifsc=data['ifsc'],
+            branch_address=data['branch_address'],
+            registrations=data['registrations'],
+            place=data['place'],
+            declaration_date=data['declaration_date'],
+            submitted_at=data['submitted_at']
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+    
 
 @user_bp.route('/partnership-form', methods=['GET'])
 def get_partnership_form():
@@ -638,33 +645,42 @@ def get_partnership_form():
 
 @user_bp.route('/partnership-form', methods=['POST'])
 def create_partnership_form():
-    data = request.get_json()
-    new_registration = PartnershipRegistration(
-        id_proof=data['id_proof'],
-        firm_name=data['firm_name'],
-        business_nature=data['business_nature'],
-        address=data['address'],
-        city=data['city'],
-        state=data['state'],
-        pincode=data['pincode'],
-        phone=data['phone'],
-        email=data['email'],
-        commencement_date=data['commencement_date'],
-        duration_type=data['duration_type'],
-        duration_from=data['duration_from'],
-        duration_to=data['duration_to'],
-        partner_names=data['partner_names'],
-        father_names=data['father_names'],
-        partner_addresses=data['partner_addresses'],
-        ages=data['ages'],
-        pans=data['pans'],
-        shares=data['shares'],
-        capital_names=data['capital_names'],
-        contributions=data['contributions'],
-        bank_name=data['bank_name'],
-        branch=data['branch'],
-        account_number=data['account_number']
-    )
+    try:
+        data = request.get_json()
+        new_registration = PartnershipRegistration(
+            id_proof=data['id_proof'],
+            firm_name=data['firm_name'],
+            business_nature=data['business_nature'],
+            address=data['address'],
+            city=data['city'],
+            state=data['state'],
+            pincode=data['pincode'],
+            phone=data['phone'],
+            email=data['email'],
+            commencement_date=data['commencement_date'],
+            duration_type=data['duration_type'],
+            duration_from=data['duration_from'],
+            duration_to=data['duration_to'],
+            partner_names=data['partner_names'],
+            father_names=data['father_names'],
+            partner_addresses=data['partner_addresses'],
+            ages=data['ages'],
+            pans=data['pans'],
+            shares=data['shares'],
+            capital_names=data['capital_names'],
+            contributions=data['contributions'],
+            bank_name=data['bank_name'],
+            branch=data['branch'],
+            account_number=data['account_number'],
+            signature = data['signature'],
+            submitted_date = data['submitted_at']
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+        
 
 @user_bp.route('/opc-registration', methods=['GET'])
 def get_opc_registration():
@@ -673,44 +689,47 @@ def get_opc_registration():
 
 @user_bp.route('/opc-registration', methods=['POST'])
 def create_opc_registration():
-    data = request.get_json()
-    new_registration = OPCRegistration(
-        id_proof=data['id_proof'],
-        company_name=data['company_name'],
-        state=data['state'],
-        auth_capital=data['auth_capital'],
-        paid_capital=data['paid_capital'],
-        main_activity=data['main_activity'],
-        full_name=data['full_name'],
-        father_name=data['father_name'],
-        dob=data['dob'],
-        nationality=data['nationality'],
-        pan=data['pan'],
-        aadhaar=data['aadhaar'],
-        din=data['din'],
-        mobile=data['mobile'],
-        email=data['email'],
-        res_address=data['res_address'],
-        occupation=data['occupation'],
-        nominee_name=data['nominee_name'],
-        nominee_father=data['nominee_father'],
-        nominee_dob=data['nominee_dob'],
-        nominee_pan=data['nominee_pan'],
-        nominee_aadhaar=data['nominee_aadhaar'],
-        nominee_address=data['nominee_address'],
-        nominee_relation=data['nominee_relation'],
-        office_address=data['office_address'],
-        office_city=data['office_city'],
-        office_state=data['office_state'],
-        office_pin=data['office_pin'],
-        office_email=data['office_email'],
-        office_phone=data['office_phone'],
-        declarant_name=data['declarant_name'],
-        declaration_date=data['declaration_date']
-    )
-    db.session.add(new_registration)
-    db.session.commit()
-    return jsonify(new_registration.to_dict()), 201 
+    try:
+        data = request.get_json()
+        new_registration = OPCRegistration(
+            id_proof=data['id_proof'],
+            company_name=data['company_name'],
+            state=data['state'],
+            auth_capital=data['auth_capital'],
+            paid_capital=data['paid_capital'],
+            main_activity=data['main_activity'],
+            full_name=data['full_name'],
+            father_name=data['father_name'],
+            dob=data['dob'],
+            nationality=data['nationality'],
+            pan=data['pan'],
+            aadhaar=data['aadhaar'],
+            din=data['din'],
+            mobile=data['mobile'],
+            email=data['email'],
+            res_address=data['res_address'],
+            occupation=data['occupation'],
+            nominee_name=data['nominee_name'],
+            nominee_father=data['nominee_father'],
+            nominee_dob=data['nominee_dob'],
+            nominee_pan=data['nominee_pan'],
+            nominee_aadhaar=data['nominee_aadhaar'],
+            nominee_address=data['nominee_address'],
+            nominee_relation=data['nominee_relation'],
+            office_address=data['office_address'],
+            office_city=data['office_city'],
+            office_state=data['office_state'],
+            office_pin=data['office_pin'],
+            office_email=data['office_email'],
+            office_phone=data['office_phone'],
+            declarant_name=data['declarant_name'],
+            declaration_date=data['declaration_date']
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201 
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500 
 
 @user_bp.route('/private-company-registration', methods=['GET'])
 def get_private_company_registration():
@@ -719,24 +738,30 @@ def get_private_company_registration():
 
 @user_bp.route('/private-company-registration', methods=['POST'])
 def create_private_company_registration():
-    data = request.get_json()
-    new_registration = PrivateCompanyRegistration(
-        id_proof=data['id_proof'],
-        proposed_name=data['proposed_name'],
-        business_activity=data['business_activity'],
-        nic_code=data['nic_code'],
-        objectives=data['objectives'],
-        registered_office=data['registered_office'],
-        email=data['email'],
-        mobile=data['mobile'],
-        authorized_capital=data['authorized_capital'],
-        paidup_capital=data['paidup_capital'],
-        director_name=data['director_name'],
-        director_din=data['director_din'],
-        director_address=data['director_address'],
-        director_nationality=data['director_nationality'],
-        director_role=data['director_role']
-    )
+    try:
+        data = request.get_json()
+        new_registration = PrivateCompanyRegistration(
+            id_proof=data['id_proof'],
+            proposed_name=data['proposed_name'],
+            business_activity=data['business_activity'],
+            nic_code=data['nic_code'],
+            objectives=data['objectives'],
+            registered_office=data['registered_office'],
+            email=data['email'],
+            mobile=data['mobile'],
+            authorized_capital=data['authorized_capital'],
+            paidup_capital=data['paidup_capital'],
+            director_name=data['director_name'],
+            director_din=data['director_din'],
+            director_address=data['director_address'],
+            director_nationality=data['director_nationality'],
+            director_role=data['director_role']
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201 
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @user_bp.route('/llp-registration', methods=['GET'])
 def get_llp_registration():
@@ -745,43 +770,46 @@ def get_llp_registration():
 
 @user_bp.route('/llp-registration', methods=['POST'])
 def create_llp_registration():
-    data = request.get_json()
-    new_registration = LLPRegistration(
-        id_proof=data['id_proof'],
-        llp_name=data['llp_name'],
-        nic_main=data['nic_main'],
-        nic_desc=data['nic_desc'],
-        address_line=data['address_line'],
-        city=data['city'],
-        state=data['state'],
-        pincode=data['pincode'],
-        email=data['email'],
-        mobile=data['mobile'],
-        partner1_name=data['partner1_name'],
-        partner1_din=data['partner1_din'],
-        partner1_pan=data['partner1_pan'],
-        partner1_aadhaar=data['partner1_aadhaar'],
-        partner1_address=data['partner1_address'],
-        partner1_email=data['partner1_email'],
-        partner1_mobile=data['partner1_mobile'],
-        partner1_nationality=data['partner1_nationality'],
-        partner1_occupation=data['partner1_occupation'],
-        partner1_capital=data['partner1_capital'],
-        partner2_name=data['partner2_name'],
-        partner2_din=data['partner2_din'],
-        partner2_pan=data['partner2_pan'],
-        partner2_aadhaar=data['partner2_aadhaar'],
-        partner2_address=data['partner2_address'],
-        partner2_email=data['partner2_email'],
-        partner2_mobile=data['partner2_mobile'],
-        partner2_nationality=data['partner2_nationality'],
-        partner2_occupation=data['partner2_occupation'],
-        partner2_capital=data['partner2_capital'],
-        total_capital=data['total_capital']
-    )
-    db.session.add(new_registration)
-    db.session.commit()
-    return jsonify(new_registration.to_dict()), 201
+    try:
+        data = request.get_json()
+        new_registration = LLPRegistration(
+            id_proof=data['id_proof'],
+            llp_name=data['llp_name'],
+            nic_main=data['nic_main'],
+            nic_desc=data['nic_desc'],
+            address_line=data['address_line'],
+            city=data['city'],
+            state=data['state'],
+            pincode=data['pincode'],
+            email=data['email'],
+            mobile=data['mobile'],
+            partner1_name=data['partner1_name'],
+            partner1_din=data['partner1_din'],
+            partner1_pan=data['partner1_pan'],
+            partner1_aadhaar=data['partner1_aadhaar'],
+            partner1_address=data['partner1_address'],
+            partner1_email=data['partner1_email'],
+            partner1_mobile=data['partner1_mobile'],
+            partner1_nationality=data['partner1_nationality'],
+            partner1_occupation=data['partner1_occupation'],
+            partner1_capital=data['partner1_capital'],
+            partner2_name=data['partner2_name'],
+            partner2_din=data['partner2_din'],
+            partner2_pan=data['partner2_pan'],
+            partner2_aadhaar=data['partner2_aadhaar'],
+            partner2_address=data['partner2_address'],
+            partner2_email=data['partner2_email'],
+            partner2_mobile=data['partner2_mobile'],
+            partner2_nationality=data['partner2_nationality'],
+            partner2_occupation=data['partner2_occupation'],
+            partner2_capital=data['partner2_capital'],
+            total_capital=data['total_capital']
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @user_bp.route('/public-limited-registration', methods=['GET'])
 def get_public_limited_registration():
@@ -790,29 +818,33 @@ def get_public_limited_registration():
 
 @user_bp.route('/public-limited-registration', methods=['POST'])
 def create_public_limited_registration():
-    data = request.get_json()
-    new_registration = PublicLimitedCompanyRegistration(
-        id_proof=data['id_proof'],
-        company_name_1=data['company_name_1'],
-        company_name_2=data['company_name_2'],
-        business_activity=data['business_activity'],
-        authorized_capital=data['authorized_capital'],
-        paidup_capital=data['paidup_capital'],
-        address=data['address'],
-        city=data['city'],
-        state=data['state'],
-        pin=data['pin'],
-        email=data['email'],
-        phone=data['phone'],
-        main_object=data['main_object'],
-        date=data['date'],
-        place=data['place'],
-        applicant_name=data['applicant_name'],
-        signature=data['signature']
-    )
-    db.session.add(new_registration)
-    db.session.commit()
-    return jsonify(new_registration.to_dict()), 201
+    try:
+        data = request.get_json()
+        new_registration = PublicLimitedCompanyRegistration(
+            id_proof=data['id_proof'],
+            company_name_1=data['company_name_1'],
+            company_name_2=data['company_name_2'],
+            business_activity=data['business_activity'],
+            authorized_capital=data['authorized_capital'],
+            paidup_capital=data['paidup_capital'],
+            address=data['address'],
+            city=data['city'],
+            state=data['state'],
+            pin=data['pin'],
+            email=data['email'],
+            phone=data['phone'],
+            main_object=data['main_object'],
+            date=data['date'],
+            place=data['place'],
+            applicant_name=data['applicant_name'],
+            signature=data['signature']
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 
 @user_bp.route('/sec8-company-registration', methods=['GET'])
 def get_sec8_company_registration():
@@ -821,26 +853,29 @@ def get_sec8_company_registration():
 
 @user_bp.route('/sec8-company-registration', methods=['POST'])
 def create_sec8_company_registration():
-    data = request.get_json()
-    new_registration = Sec8CompanyRegistration(
-        id_proof=data['id_proof'],
-        name_pref_1=data['name_pref_1'],
-        name_pref_2=data['name_pref_2'],
-        objectives=data['objectives'],
-        nature_of_work=data['nature_of_work'],
-        reg_address=data['reg_address'],
-        reg_city=data['reg_city'],
-        reg_state=data['reg_state'],
-        reg_pincode=data['reg_pincode'],
-        reg_email=data['reg_email'],
-        reg_phone=data['reg_phone'],
-        directors=data['directors'],
-        authorized_capital=data['authorized_capital'],
-        paid_up_capital=data['paid_up_capital']
-    )
-    db.session.add(new_registration)
-    db.session.commit()
-    return jsonify(new_registration.to_dict()), 201
+    try:
+        data = request.get_json()
+        new_registration = Sec8CompanyRegistration(
+            id_proof=data['id_proof'],
+            name_pref_1=data['name_pref_1'],
+            name_pref_2=data['name_pref_2'],
+            objectives=data['objectives'],
+            nature_of_work=data['nature_of_work'],
+            reg_address=data['reg_address'],
+            reg_city=data['reg_city'],
+            reg_state=data['reg_state'],
+            reg_pincode=data['reg_pincode'],
+            reg_email=data['reg_email'],
+            reg_phone=data['reg_phone'],
+            directors=data['directors'],
+            authorized_capital=data['authorized_capital'],
+            paid_up_capital=data['paid_up_capital']
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @user_bp.route('/name-registration', methods=['GET'])
 def get_name_registration():
@@ -849,27 +884,29 @@ def get_name_registration():
 
 @user_bp.route('/name-registration', methods=['POST'])
 def create_name_registration():
-    data = request.get_json()
-    new_registration = NameRegistration(
-        id_proof=data['id_proof'],
-        current_name=data['current_name'],
-        cin=data['cin'],
-        company_type=data['company_type'],
-        incorporation_date=data['incorporation_date'],
-        registered_address=data['registered_address'],
-        proposed_name=data['proposed_name'],
-        name_srn=data['name_srn'],
-        reason=data['reason'],
-        board_meeting_date=data['board_meeting_date'],
-        resolution_date=data['resolution_date'],
-        director_name=data['director_name'],
-        director_din=data['director_din'],
-        submission_date=data['submission_date']
-    )
-    db.session.add(new_registration)
-    db.session.commit()
-    return jsonify(new_registration.to_dict()), 201
-
+    try:
+        data = request.get_json()
+        new_registration = NameRegistration(
+            id_proof=data['id_proof'],
+            current_name=data['current_name'],
+            cin=data['cin'],
+            company_type=data['company_type'],
+            incorporation_date=data['incorporation_date'],
+            registered_address=data['registered_address'],
+            proposed_name=data['proposed_name'],
+            name_srn=data['name_srn'],
+            reason=data['reason'],
+            board_meeting_date=data['board_meeting_date'],
+            resolution_date=data['resolution_date'],
+            director_name=data['director_name'],
+            director_din=data['director_din'],
+            submission_date=data['submission_date']
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 @user_bp.route('/director-appointment', methods=['GET'])
 def get_director_appointment():
     registrations = DirectorAppointment.query.all()
