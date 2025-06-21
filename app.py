@@ -470,7 +470,6 @@ def patent_form():
 def submit_patent_application():
     try:
         data = request.get_json()
-        id_proof = data.get('id_proof')
         applicant_name = data.get('applicant_name')
         applicant_nationality = data.get('applicant_nationality')
         applicant_address = data.get('applicant_address')
@@ -493,13 +492,13 @@ def submit_patent_application():
         place = data.get('place')
         date = data.get('date')
         signature = data.get('signature')
-
-        logger.debug(f"Received: {id_proof}, {applicant_name}, {applicant_nationality}, {applicant_address}, {applicant_contact}, {applicant_email}, {category}, {inventor1_name}, {inventor1_nationality}, {inventor1_address}, {inventor2_name}, {inventor2_nationality}, {inventor2_address}, {title}, {application_type}, {statement}, {inventor1_signature}, {inventor2_signature}, {attachments}, {applicant_sign_name}, {place}, {date}, {signature}")
+            
+        logger.debug(f"Received: {applicant_name}, {applicant_nationality}, {applicant_address}, {applicant_contact}, {applicant_email}, {category}, {inventor1_name}, {inventor1_nationality}, {inventor1_address}, {inventor2_name}, {inventor2_nationality}, {inventor2_address}, {title}, {application_type}, {statement}, {inventor1_signature}, {inventor2_signature}, {attachments}, {applicant_sign_name}, {place}, {date}, {signature}")
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
-        INSERT INTO patent_applications (id_proof, applicant_name, applicant_nationality, applicant_address, applicant_contact, applicant_email, category, inventor1_name, inventor1_nationality, inventor1_address, inventor2_name, inventor2_nationality, inventor2_address, title, application_type, statement, inventor1_signature, inventor2_signature, attachments, applicant_sign_name, place, date, signature) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (id_proof, applicant_name, applicant_nationality, applicant_address, applicant_contact, applicant_email, category, inventor1_name, inventor1_nationality, inventor1_address, inventor2_name, inventor2_nationality, inventor2_address, title, application_type, statement, inventor1_signature, inventor2_signature, attachments, applicant_sign_name, place, date, signature))
+        INSERT INTO patent_applications (applicant_name, applicant_nationality, applicant_address, applicant_contact, applicant_email, category, inventor1_name, inventor1_nationality, inventor1_address, inventor2_name, inventor2_nationality, inventor2_address, title, application_type, statement, inventor1_signature, inventor2_signature, attachments, applicant_sign_name, place, date, signature) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                    (applicant_name, applicant_nationality, applicant_address, applicant_contact, applicant_email, category, inventor1_name, inventor1_nationality, inventor1_address, inventor2_name, inventor2_nationality, inventor2_address, title, application_type, statement, inventor1_signature, inventor2_signature, attachments, applicant_sign_name, place, date, signature))
         conn.commit()
         cursor.close()
         conn.close()
@@ -516,11 +515,10 @@ def startup_form():
 def submit_startup_form():
     try:
         data = request.get_json()
-        id_proof = data.get('id_proof')
         entity_name = data.get("entity_name")
         entity_type = data.get("entity_type")
-        reg_number = data.get("registration_number")
-        reg_date = data.get("registration_date")
+        registration_number = data.get("registration_number")
+        registration_date = data.get("registration_date")
         cin = data.get("cin")
         pan = data.get("pan")
         website = data.get("website")
@@ -543,12 +541,12 @@ def submit_startup_form():
         funding_date = data.get("funding_date")
         submit_date = data.get("submit_date")
 
-        logger.debug(f"Received: {id_proof}, {entity_name}, {entity_type}, {reg_number}, {reg_date}, {cin}, {pan}, {website}, {address}, {city}, {state}, {pin}, {phone}, {email}, {founder_name}, {founder_role}, {founder_mobile}, {founder_email}, {description}, {innovation_type}, {scalability}, {funding_received}, {invester_name}, {funding_amount}, {funding_date}, {submit_date}")
+        logger.debug(f"Received: {entity_name}, {entity_type}, {registration_number}, {registration_date}, {cin}, {pan}, {website}, {address}, {city}, {state}, {pin}, {phone}, {email}, {founder_name}, {founder_role}, {founder_mobile}, {founder_email}, {description}, {innovation_type}, {scalability}, {funding_received}, {invester_name}, {funding_amount}, {funding_date}, {submit_date}")
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
-        INSERT INTO startup_registrations (id_proof, entity_name, entity_type, reg_number, reg_date, cin, pan, website, address, city, state, pin, phone, email, founder_name, founder_role, founder_mobile, founder_email, description, innovation_type, scalability, funding_received, invester_name, funding_amount, funding_date, submit_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (id_proof, entity_name, entity_type, reg_number, reg_date, cin, pan, website, address, city, state, pin, phone, email, founder_name, founder_role, founder_mobile, founder_email, description, innovation_type, scalability, funding_received, invester_name, funding_amount, funding_date, submit_date))
+        INSERT INTO startup_registrations (id_proof, entity_name, entity_type, registration_number, registration_date, cin, pan, website, address, city, state, pin, phone, email, founder_name, founder_role, founder_mobile, founder_email, description, innovation_type, scalability, funding_received, invester_name, funding_amount, funding_date, submit_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                    (entity_name, entity_type, registration_number, registration_date, cin, pan, website, address, city, state, pin, phone, email, founder_name, founder_role, founder_mobile, founder_email, description, innovation_type, scalability, funding_received, invester_name, funding_amount, funding_date, submit_date))
         conn.commit()
         cursor.close()
         conn.close()

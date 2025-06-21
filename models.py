@@ -475,9 +475,7 @@ class CopyrightRegistration(db.Model):
         }
 class PatentApplication(db.Model):
     __tablename__ = 'patent_applications'
-    id = db.Column(db.Integer, primary_key=True)
-    id_proof = db.Column(db.Text)
-    applicant_name = db.Column(db.Text)
+    applicant_name = db.Column(db.Text, primary_key=True)
     applicant_nationality = db.Column(db.Text)
     applicant_address = db.Column(db.Text)
     applicant_contact = db.Column(db.Text)
@@ -502,8 +500,6 @@ class PatentApplication(db.Model):
 
     def to_dict(self):
         return {
-            "id": self.id,
-            "id_proof": self.id_proof,
             "applicant_name": self.applicant_name,
             "applicant_nationality": self.applicant_nationality,
             "applicant_address": self.applicant_address,
@@ -530,12 +526,10 @@ class PatentApplication(db.Model):
     
 class StartupRegistration(db.Model):
     __tablename__ = 'startup_registration'
-    id = db.Column(db.Integer, primary_key=True)
-    id_proof = db.Column(db.Text)
-    entity_name = db.Column(db.Text)
+    entity_name = db.Column(db.Text, primary_key=True)
     entity_type = db.Column(db.Text)
-    reg_number = db.Column(db.Text)
-    reg_date = db.Column(db.Text)
+    registration_number = db.Column(db.Text)
+    registration_date = db.Column(db.Text)
     cin = db.Column(db.Text)
     pan = db.Column(db.Text)
     website = db.Column(db.Text)
@@ -560,12 +554,10 @@ class StartupRegistration(db.Model):
 
     def to_dict(self):
         return {
-            "id": self.id,
-            "id_proof": self.id_proof,
             "entity_name": self.entity_name,
             "entity_type": self.entity_type,
-            "reg_number": self.reg_number,
-            "reg_date": self.reg_date,
+            "registration_number": self.registration_number,
+            "registration_date": self.registration_date,
             "cin": self.cin,
             "pan": self.pan,
             "website": self.website,

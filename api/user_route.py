@@ -362,7 +362,6 @@ def create_patent_application():
     try:
         data = request.get_json()
         new_application = PatentApplication(
-            id_proof=data['id_proof'],
             applicant_name=data['applicant_name'],
             applicant_nationality=data['applicant_nationality'],
             applicant_address=data['applicant_address'],
@@ -403,11 +402,10 @@ def create_startup_registration():
     try:
         data = request.get_json()
         new_registration = StartupRegistration(
-            id_proof=data['id_proof'],
             entity_name=data['entity_name'],
             entity_type=data['entity_type'],
-            reg_number=data['reg_number'],
-            reg_date=data['reg_date'],
+            registration_number=data['registration_number'],
+            registration_date=data['registration_date'],
             cin=data['cin'],
             pan=data['pan'],
             website=data['website'],
