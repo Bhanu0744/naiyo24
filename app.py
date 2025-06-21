@@ -372,14 +372,6 @@ def iso_form():
 def submit_iso_form():
     try:
         data = request.get_json()
-        id_proof = data.get('id_proof')
-        org_name = data.get('org_name')
-        org_type = data.get('org_type')
-        address = data.get('address')
-        city = data.get('city')
-        state = data.get('state')
-        pin = data.get('pin')
-        id_proof = data.get('id_proof')
         org_name = data.get('org_name')
         org_type = data.get('org_type')
         address = data.get('address')

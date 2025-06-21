@@ -275,7 +275,6 @@ def create_iso_application():
     try:
         data = request.get_json()
         new_application = ISOApplication(
-            id_proof=data['id_proof'],
             org_name=data['org_name'],
             org_type=data['org_type'],
             address=data['address'],

@@ -357,9 +357,7 @@ class BarcodeRequest(db.Model):
         }
 class ISOApplication(db.Model):
     __tablename__ = 'iso_certifications'
-    id = db.Column(db.Integer, primary_key=True)
-    id_proof = db.Column(db.Text)
-    org_name = db.Column(db.Text)
+    org_name = db.Column(db.Text, primary_key=True)
     org_type = db.Column(db.Text)
     address = db.Column(db.Text)
     city = db.Column(db.Text)
@@ -394,7 +392,6 @@ class ISOApplication(db.Model):
     auth_designation = db.Column(db.Text)
     def to_dict(self):
         return {
-            "id": self.id,
             "org_name": self.org_name,
             "org_type": self.org_type,
             "address": self.address,
