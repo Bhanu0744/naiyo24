@@ -323,7 +323,6 @@ def barcode_form():
 def submit_barcode_form():
     try:
         data = request.get_json()
-        id_proof = data.get('id_proof')
         business_name = data.get('business_name')
         contact_person = data.get('contact_person')
         address = data.get('address')
@@ -335,24 +334,18 @@ def submit_barcode_form():
         barcode_purpose = data.get('barcode_purpose')
         declarant_name = data.get('declarant_name')
         declaration_date = data.get('declaration_date')
-        submitted_at = data.get('submitted_at')
-        status = data.get('status')
-        remarks = data.get('remarks')
-        submitted_by = data.get('submitted_by')
 
-        logger.debug(f"Received: {id_proof}, {business_name}, {contact_person}, {address}, {phone}, {email}, {gstin}, {barcode_options}, {barcode_format}, {barcode_purpose}")
+        logger.debug(f"Received: {business_name}, {contact_person}, {address}, {phone}, {email}, {gstin}, {barcode_options}, {barcode_format}, {barcode_purpose}, {declarant_name}, {declaration_date}")
 
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
         INSERT INTO barcode_requests (
-            id_proof, business_name, contact_person, address, phone,
+            business_name, contact_person, address, phone,
             email, gstin, barcode_options, barcode_format, barcode_purpose,
-            declarant_name, declaration_date, submitted_at, status, remarks,
-            submitted_by
-        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            declarant_name, declaration_date
+        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
     """, (
-        data.get('id_proof'),
         data.get('business_name'),
         data.get('contact_person'),
         data.get('address'),

@@ -329,9 +329,7 @@ class TrademarkComplaint(db.Model):
     
 class BarcodeRequest(db.Model):
     __tablename__ = 'barcode_requests'
-    id = db.Column(db.Integer, primary_key=True)
-    id_proof = db.Column(db.Text)
-    business_name = db.Column(db.Text)
+    business_name = db.Column(db.Text, primary_key=True)
     contact_person = db.Column(db.Text)
     address = db.Column(db.Text)
     phone = db.Column(db.Text)
@@ -342,15 +340,9 @@ class BarcodeRequest(db.Model):
     barcode_purpose = db.Column(db.Text)
     declarant_name = db.Column(db.Text)
     declaration_date = db.Column(db.Text)
-    submitted_at = db.Column(db.Text)
-    status = db.Column(db.Text)
-    remarks = db.Column(db.Text)
-    submitted_by = db.Column(db.Text)
 
     def to_dict(self):
         return {
-            "id": self.id,
-            "id_proof": self.id_proof,
             "business_name": self.business_name,
             "contact_person": self.contact_person,
             "address": self.address,
@@ -362,11 +354,6 @@ class BarcodeRequest(db.Model):
             "barcode_purpose": self.barcode_purpose,
             "declarant_name": self.declarant_name,
             "declaration_date": self.declaration_date,
-            "submitted_at": self.submitted_at,
-            "status": self.status,
-            "remarks": self.remarks,
-            "submitted_by": self.submitted_by
-
         }
 class ISOApplication(db.Model):
     __tablename__ = 'iso_certifications'

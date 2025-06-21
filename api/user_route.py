@@ -247,7 +247,6 @@ def create_barcode_request():
     try:
         data = request.get_json()
         new_request = BarcodeRequest(
-            id_proof=data['id_proof'],
             business_name=data['business_name'],
             contact_person=data['contact_person'],
             address=data['address'],
@@ -259,11 +258,6 @@ def create_barcode_request():
             barcode_purpose=data['barcode_purpose'],
             declarant_name=data['declarant_name'],
             declaration_date=data['declaration_date'],
-            submitted_at=data['submitted_at'],
-            status=data['status'],
-            remarks=data['remarks'],
-            submitted_by=data['submitted_by']
-
         )
         db.session.add(new_request)
         db.session.commit()
