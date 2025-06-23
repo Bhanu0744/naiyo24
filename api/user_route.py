@@ -1,4 +1,9 @@
 from flask import Blueprint, request, jsonify
+from fastapi import FastAPI, UploadFile, File, HTTPException
+from werkzeug.utils import secure_filename
+import datetime
+
+
 from models import User, CyberComplaint, PublicLimitedCompanyRegistration, CriminalComplaint, PropertyRegistration, LegalComplaint, MarriageComplaintForm, TrademarkComplaint, BarcodeRequest, ISOApplication, CopyrightRegistration, PatentApplication, StartupRegistration, LLCRegistration, CompanyRegistration, ChinaRegistration, WebServiceForm, ProprietorRegistration, PartnershipRegistration, OPCRegistration, PrivateCompanyRegistration, LLPRegistration, PublicLimitedCompanyRegistration, Sec8CompanyRegistration, NameRegistration, DirectorAppointment, CompanyWindingUp, CompanyStrikeoff, DinSurrender,TradeLicense, TradeLicenseRenewal, ShopEstablishment, FireNOCApplication, PollutionConsent, GSTRegistration, IECApplication, EnterpriseRegistration, GSTRegistration
 from extensions import db  
 
@@ -24,28 +29,51 @@ def get_cyber_complaints():
 
 @user_bp.route('/cyber-complaint', methods=['POST'])
 def create_cyber_complaint():
-    data = request.get_json()
-    new_complaint = CyberComplaint(
-        full_name=data['full_name'],
-        gender=data['gender'],
-        dob=data['dob'],
-        crime_types=data['crime_types'],
-        incident_datetime=data['incident_datetime'],
-        platform=data['platform'],
-        description=data['description'],
-        evidence=data['evidence'],
-        accused_name=data['accused_name'],
-        accused_contact=data['accused_contact'],
-        address=data['address'],
-        email=data['email'],
-        mobile=data['mobile'],
-        id_proof=data['id_proof'],
-        place=data['place'],
-        signature=data['signature']
-    )
-    db.session.add(new_complaint)
-    db.session.commit()
-    return jsonify(new_complaint.to_dict()), 201
+    if 'file' not in request.files:
+        return jsonify({'error': 'No file part'}), 400
+    
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'error': 'No selected file'}), 400
+    
+    # Validate PDF
+    if not file.filename.lower().endswith('.pdf'):
+        return jsonify({'error': 'Only PDF files are allowed'}), 400
+    try:
+        filename = secure_filename(file.filename)
+        content = file.read()
+        data = request.form
+        dob = datetime.datetime.strptime(data['dob'], '%Y-%m-%d').date() if data.get('dob') else None
+        incident_datetime = datetime.datetime.strptime(data['incident_datetime'], '%Y-%m-%dT%H:%M') if data.get('incident_datetime') else None
+        data = request.get_json()
+        async def upload_pdf(pdf_file: UploadFile = File(...)):
+            if not pdf_file.filename.endswith('.pdf'):
+                raise HTTPException(status_code=400, detail="Only PDF files are allowed.")
+            content = await pdf_file.read()
+            new_complaint = CyberComplaint(
+            full_name=data.get('full_name'),
+            gender=data.get('gender'),
+            dob=dob,
+            crime_types=data.getlist('crime_types'),  # For multiple selections
+            incident_datetime=incident_datetime,
+            platform=data.get('platform'),
+            description=data.get('description'),
+            evidence=content,
+            accused_name=data.get('accused_name'),
+            accused_contact=data.get('accused_contact'),
+            address=data.get('address'),
+            email=data.get('email'),
+            mobile=data.get('mobile'),
+            id_proof=data.get('id_proof'),
+            place=data.get('place'),
+            signature=data.get('signature')
+        )
+            db.session.add(new_complaint)
+            db.session.commit()
+            return jsonify(new_complaint.to_dict()), 201
+    except Exception as e:
+        db.session.rollback()
+        return jsonify({'error': str(e)}), 500
 
 @user_bp.route('/criminal-law-complaint', methods=['GET'])
 def get_criminal_complaints():
@@ -442,31 +470,31 @@ def get_llc_registration():
 
 @user_bp.route('/llc-registration', methods=['POST'])
 def create_llc_registration():
-    data = request.get_json()
-    new_registration = LLCRegistration(
-        id_proof=data['id_proof'],
-        company_name=data['company_name'],
-        buisness_address=data['buisness_address'],
-        mailing_address=data['mailing_address'],
-        agent_name=data['agent_name'],
-        agent_address=data['agent_address'],
-        buisness_phone=data['buisness_phone'],
-        duration=data['duration'],
-        submit_date=data['submit_date'],
-        owner_name=data['owner_name'],
-        owner_address=data['owner_address'],
-        owner_email=data['owner_email'],
-        owner_role=data['owner_role'],
-        manager_name=data['manager_name'],
-        manager_address=data['manager_address'],
-        option=data['option'],
-        organization_type=data['organization_type'],
-        signature=data['signature'],
-        submitted_date=data['submitted_date']
-    )
-    db.session.add(new_registration)
-    db.session.commit()
-    return jsonify(new_registration.to_dict()), 201
+    try:
+        data = request.get_json()
+        new_registration = LLCRegistration(
+            company_name=data['company_name'],
+            buisness_address=data['buisness_address'],
+            mailing_address=data['mailing_address'],
+            agent_name=data['agent_name'],
+            agent_address=data['agent_address'],
+            buisness_phone=data['buisness_phone'],
+            duration=data['duration'],
+            submit_date=data['submit_date'],
+            owner_name=data['owner_name'],
+            owner_address=data['owner_address'],
+            owner_email=data['owner_email'],
+            owner_role=data['owner_role'],
+            manager_name=data['manager_name'],
+            manager_address=data['manager_address'],
+            organization_type=data['organization_type'],
+            signature=data['signature'],
+            )
+        db.session.add(new_registration)
+        db.session.commit()
+        return jsonify(new_registration.to_dict()), 201
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
 
 @user_bp.route('/company-registration', methods=['GET'])
 def get_company_registration():
@@ -478,7 +506,6 @@ def create_company_registration():
     try:
         data = request.get_json()
         new_registration = CompanyRegistration(
-            id_proof=data['id_proof'],
             proposed_name=data['proposed_name'],
             company_type=data['company_type'],
             registered_office_address=data['registered_office_address'],

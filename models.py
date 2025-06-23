@@ -39,7 +39,7 @@ class CyberComplaint(db.Model):
     incident_datetime = db.Column(db.DateTime)
     platform = db.Column(db.Text)
     description = db.Column(db.Text)
-    evidence = db.Column(db.Text)
+    evidences = db.relationship('Evidence', backref='complaint', lazy=True)
     accused_name = db.Column(db.Text)
     accused_contact = db.Column(db.Text)
     accused_profile = db.Column(db.Text)
@@ -60,12 +60,29 @@ class CyberComplaint(db.Model):
             "incident_datetime": self.incident_datetime,
             "platform": self.platform,
             "description": self.description,
-            "evidence": self.evidence,
+            "evidences": [evidence.to_dict() for evidence in self.evidences],
             "accused_name": self.accused_name,
             "accused_contact": self.accused_contact,
             "accused_profile": self.accused_profile,
             "place": self.place,
             "signature": self.signature,
+        }
+class Evidence(db.Model):
+    __tablename__ = 'evidence'
+    
+    id = db.Column(db.Integer, primary_key=True)
+    complaint_id = db.Column(db.Integer, db.ForeignKey('cyber_complaints.id'), nullable=False)
+    filename = db.Column(db.String(255), nullable=False)
+    content_type = db.Column(db.String(100))
+    file_data = db.Column(db.LargeBinary)
+    uploaded_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    def to_dict(self):
+        return {
+            "id": self.id,
+            "filename": self.filename,
+            "content_type": self.content_type,
+            "uploaded_at": self.uploaded_at.isoformat() if self.uploaded_at else None
         }
     
 class CriminalComplaint(db.Model):
@@ -583,9 +600,7 @@ class StartupRegistration(db.Model):
     
 class LLCRegistration(db.Model):
     __tablename__ = 'llc_registrations'
-    id = db.Column(db.Integer, primary_key=True)
-    id_proof = db.Column(db.Text)
-    company_name = db.Column(db.Text)
+    company_name = db.Column(db.Text, primary_key=True)
     buisness_address = db.Column(db.Text)
     mailing_address = db.Column(db.Text)
     agent_name = db.Column(db.Text)
@@ -599,14 +614,12 @@ class LLCRegistration(db.Model):
     owner_role = db.Column(db.Text)
     manager_name = db.Column(db.Text)
     manager_address = db.Column(db.Text)
-    option = db.Column(db.Text)
     organization_type = db.Column(db.Text)
     signature = db.Column(db.Text)
 
     def to_dict(self):
         return {
             "id": self.id,
-            "id_proof": self.id_proof,
             "company_name": self.company_name,
             "buisness_address": self.buisness_address,
             "mailing_address": self.mailing_address,
@@ -621,17 +634,14 @@ class LLCRegistration(db.Model):
             "owner_role": self.owner_role,
             "manager_name": self.manager_name,
             "manager_address": self.manager_address,
-            "option": self.option,
             "organization_type": self.organization_type,
             "signature": self.signature,
-            "submit_date": self.submit_date
+           
         }
     
 class CompanyRegistration(db.Model):
     __tablename__ = 'uk_registration'
-    id = db.Column(db.Integer, primary_key=True)
-    id_proof = db.Column(db.Text)
-    proposed_name = db.Column(db.Text)
+    proposed_name = db.Column(db.Text, primary_key=True)
     company_type = db.Column(db.Text)
     registered_office_address = db.Column(db.Text)
     office_location = db.Column(db.Text)
@@ -653,8 +663,6 @@ class CompanyRegistration(db.Model):
 
     def to_dict(self):
         return {    
-            "id": self.id,
-            "id_proof": self.id_proof,
             "proposed_name": self.proposed_name,
             "company_type": self.company_type,
             "registered_office_address": self.registered_office_address,

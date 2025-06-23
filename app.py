@@ -2,9 +2,11 @@ from flask import Flask, render_template, request, redirect, jsonify
 from extensions import db
 from datetime import datetime
 import psycopg2
+from psycopg2 import sql
 import logging
 from flask_cors import CORS
 from api.user_route import user_bp 
+import os
 
 app = Flask(__name__)
 CORS(app)
@@ -66,37 +68,82 @@ def cyber_complaint():
 @app.route('/cyber-complaint', methods=['POST'])
 def submit_complaint_json():
     try:
-        data = request.get_json()
-        full_name = data.get('full_name')
-        gender = data.get('gender')
-        dob = data.get('dob')
-        address = data.get('address')
-        email = data.get('email')
-        mobile = data.get('mobile')
-        id_proof = data.get('id_proof')
-        crime_types = ', '.join(data.get('crime_types', []))
-        incident_datetime = data.get('incident_datetime')
-        platform = data.get('platform')
-        description = data.get('description')
-        evidence = data.get('evidence')
-        accused_name = data.get('accused_name')
-        accused_contact = data.get('accused_contact')
-        accused_profile = data.get('accused_profile')
-        place = data.get('place')
-        signature = data.get('signature')
+        form_data = {
+            'full_name': request.form.get('full_name'),
+            'gender': request.form.get('gender'),
+            'dob': request.form.get('dob'),
+            'address': request.form.get('address'),
+            'email': request.form.get('email'),
+            'mobile': request.form.get('mobile'),
+            'id_proof': request.form.get('id_proof'),
+            'crime_types': request.form.getlist('crime_types'),
+            'incident_datetime': request.form.get('incident_datetime'),
+            'platform': request.form.get('platform'),
+            'description': request.form.get('description'),
+            'evidence_description': request.form.get('evidence_description'),
+            'accused_name': request.form.get('accused_name'),
+            'accused_contact': request.form.get('accused_contact'),
+            'accused_profile': request.form.get('accused_profile'),
+            'place': request.form.get('place'),
+            'signature': request.form.get('signature')
+        }
 
-        logger.debug(f"Received: {full_name}, {gender}, {dob}, {address}, {email}, {mobile}, {id_proof}, {crime_types}, {incident_datetime}, {platform}, {description}, {evidence}, {accused_name}, {accused_contact}, {accused_profile}, {place}, {signature}")
+        logger.debug(f"Received form data: {form_data}")
+        
         conn = get_db_connection()
         cur = conn.cursor()
-        cur.execute('INSERT INTO cyber_complaints (full_name, gender, dob, address, email, mobile, id_proof, crime_types, incident_datetime, platform, description, evidence, accused_name, accused_contact, accused_profile, place, signature) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)',
-                    (full_name, gender, dob, address, email, mobile, id_proof, crime_types, incident_datetime, platform, description, evidence, accused_name, accused_contact, accused_profile, place, signature))
-        conn.commit()
-        cur.close()
-        conn.close()
-        return jsonify({'message': 'Complaint submitted successfully!'}), 200
+        
+        # Insert complaint
+        cur.execute(
+            sql.SQL("""
+                    INSERT INTO complaints (
+                    full_name, gender, dob, address, email, mobile, id_proof, 
+                    crime_types, incident_datetime, platform, description, 
+                    evidence_description, accused_name, accused_contact, 
+                    accused_profile, place, signature
+                    ) VALUES (
+                    %s, %s, %s, %s, %s, %s, %s, 
+                    %s, %s, %s, %s, 
+                    %s, %s, %s, 
+                    %s, %s, %s
+                    ) RETURNING id
+                    """),
+                    (
+                        form_data['full_name'], form_data['gender'], form_data['dob'], 
+                        form_data['address'], form_data['email'], form_data['mobile'], 
+                        form_data['id_proof'], form_data['crime_types'], 
+                        form_data['incident_datetime'], form_data['platform'], 
+                        form_data['description'], form_data['evidence_description'], 
+                        form_data['accused_name'], form_data['accused_contact'],
+                        form_data['accused_profile'], form_data['place'],
+                        form_data['signature']
+                        )
+                        )
+        complaint_id = cur.fetchone()[0]
+        if 'evidence_files' in request.files:
+            files = request.files.getlist('evidence_files')
+            for file in files:
+                if file.filename != '':
+                    cur.execute(
+                        sql.SQL("""
+                                INSERT INTO evidence (
+                                complaint_id, filename, content_type, file_data
+                                ) VALUES (
+                                %s, %s, %s, %s
+                                )
+                                """),
+                                (complaint_id, file.filename, file.content_type, psycopg2.Binary(file.read()))
+                                )
+                    conn.commit()
+                    cur.close()
+                    conn.close()
+                    return jsonify({
+                        'message': 'Complaint submitted successfully',
+                        'complaint_id': complaint_id
+                        }), 200
     except Exception as e:
-        logger.exception("Error in /submit-complaint")
-        return f"Internal Server Error: {e}", 500
+        logger.exception("Error in /cyber-complaint")
+        return jsonify({'error': str(e)}), 500
 
 
 @app.route("/criminal-law")
@@ -563,7 +610,6 @@ def llc_form():
 def submit_llc_form():
     try:
         data = request.get_json()
-        id_proof = data.get('id_proof')
         company_name = data.get('company_name')
         buisness_address = data.get('buisness_address')
         mailing_address = data.get('mailing_address')
@@ -578,17 +624,15 @@ def submit_llc_form():
         owner_role = data.get('owner_role')
         manager_name = data.get('manager_name')
         manager_address = data.get('manager_address')
-        option = data.get('option')
         organization_type = data.get('organization_type')
         signature = data.get('signature')
-        submit_date = data.get('submit_date')
 
-        logger.debug(f"Received: {id_proof}, {company_name}, {buisness_address}, {mailing_address}, {agent_name}, {agent_address}, {buisness_phone}, {duration}, {submit_date}, {owner_name}, {owner_address}, {owner_email}, {owner_role}, {manager_name}, {manager_address}, {option}, {organization_type}, {signature}, {submit_date}")
+        logger.debug(f"Received: {company_name}, {buisness_address}, {mailing_address}, {agent_name}, {agent_address}, {submit_date}, {buisness_phone}, {duration}, {submit_date}, {owner_name}, {owner_address}, {owner_email}, {owner_role}, {manager_name}, {manager_address}, {option}, {organization_type}, {signature}")
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
-        INSERT INTO llc_registrations (id_proof, company_name, buisness_address, mailing_address, agent_name, agent_address, buisness_phone, duration, submit_date, owner_name, owner_address, owner_email, owner_role, manager_name, manager_address, option, organization_type, signature, submit_date) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (id_proof, company_name, buisness_address, mailing_address, agent_name, agent_address, buisness_phone, duration, submit_date, owner_name, owner_address, owner_email, owner_role, manager_name, manager_address, option, organization_type, signature, submit_date))    
+        INSERT INTO llc_registrations (company_name, buisness_address, mailing_address, agent_name, agent_address, buisness_phone, duration, submit_date, owner_name, owner_address, owner_email, owner_role, manager_name, manager_address, organization_type, signature) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                    (company_name, buisness_address, mailing_address, agent_name, agent_address, buisness_phone, duration, submit_date, owner_name, owner_address, owner_email, owner_role, manager_name, manager_address, organization_type, signature))    
         conn.commit()
         cursor.close()
         conn.close()
@@ -606,7 +650,6 @@ def company_registration():
 def submit_company_registration():
     try:
         data = request.get_json()
-        id_proof = data.get('id_proof')
         proposed_name = data.get('proposed_name')
         company_type = data.get('company_type')
         registered_office_address = data.get('registered_office_address')
@@ -627,20 +670,20 @@ def submit_company_registration():
         signature = data.get('signature')
         submission_date = data.get('submission_date')
 
-        logger.debug(f"Received: {id_proof}, {proposed_name}, {company_type}, {registered_office_address}, {office_location}, {director_name}, {dob}, {nationality}, {occupation}, {service_address}, {residential_address}, {secretary_name}, {secretary_address}, {total_shares}, {share_value}, {currency}, {shareholder_1}, {shareholder_2}, {signature}, {submission_date}")
+        logger.debug(f"Received: {proposed_name}, {company_type}, {registered_office_address}, {office_location}, {director_name}, {dob}, {nationality}, {occupation}, {service_address}, {residential_address}, {secretary_name}, {secretary_address}, {total_shares}, {share_value}, {currency}, {shareholder_1}, {shareholder_2}, {signature}, {submission_date}")
         
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
             INSERT INTO uk_registration (
-                id_proof, proposed_name, company_type, registered_office_address,
+                proposed_name, company_type, registered_office_address,
                 office_location, director_name, dob, nationality, occupation,
                 service_address, residential_address, secretary_name, secretary_address,
                 total_shares, share_value, currency, shareholder_1, shareholder_2,
                 signature, submission_date
-            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
         """, (
-            id_proof, proposed_name, company_type, registered_office_address,
+            proposed_name, company_type, registered_office_address,
             office_location, director_name, dob, nationality, occupation,
             service_address, residential_address, secretary_name, secretary_address,
             total_shares, share_value, currency, shareholder_1, shareholder_2,
