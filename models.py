@@ -668,7 +668,7 @@ class CompanyRegistration(db.Model):
     shareholder_1 = db.Column(db.Text)
     shareholder_2 = db.Column(db.Text)
     signature = db.Column(db.Text)
-    submission_date = db.Column(db.Text)
+    submission_date = db.Column(db.Date)
 
     def to_dict(self):
         return {    

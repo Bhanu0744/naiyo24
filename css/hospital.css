@@ -1,29 +1,4 @@
-.marriage-registration-section {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    max-width: 1300px;
-    margin: 60px auto;
-    gap: 60px;
-    padding: 20px;
-  }
-  
-  .marriage-text {
-    flex: 1;
-    color: #444;
-    font-size: 16px;
-    line-height: 1.8;
-  }
-  
-  .marriage-image {
-    flex-shrink: 0;
-  }
-  
-  .marriage-image img {
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
+
   .legal-services {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f8f8f8;
@@ -138,7 +113,7 @@
   }
   
   .footer {
-    background-color: #2b3439;
+    background-color: black;
     color: white;
     padding: 30px 50px;
   }
@@ -147,6 +122,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    background-color: black;
   }
   
   .contact-info {

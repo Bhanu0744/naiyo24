@@ -530,11 +530,11 @@ def create_company_registration():
             shareholder_1=data['shareholder_1'],
             shareholder_2=data['shareholder_2'],
             signature=data['signature'],
-            submitted_at=datetime.fromisoformat(data['submitted_at'])
+            submission_date=data['submission_date']  # ✅ correct field
         )
         db.session.add(new_registration)
         db.session.commit()
-        return jsonify(new_registration.to_dict())  # ✅ No comma
+        return jsonify(new_registration.to_dict()), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
