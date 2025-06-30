@@ -611,12 +611,13 @@ def submit_llc_form():
     try:
         data = request.get_json()
         company_name = data.get('company_name')
-        buisness_address = data.get('buisness_address')
+        business_address = data.get('business_address')
         mailing_address = data.get('mailing_address')
         agent_name = data.get('agent_name')
         agent_address = data.get('agent_address')
-        buisness_phone = data.get('buisness_phone')
+        business_phone = data.get('business_phone')
         duration = data.get('duration')
+        duration_date = data.get('duration_date')  # Add this if you're sending it
         submit_date = data.get('submit_date')
         owner_name = data.get('owner_name')
         owner_address = data.get('owner_address')
@@ -624,23 +625,37 @@ def submit_llc_form():
         owner_role = data.get('owner_role')
         manager_name = data.get('manager_name')
         manager_address = data.get('manager_address')
-        organization_type = data.get('organization_type')
+        registration_option = data.get('option')  # ← keep this, it's OK to read as 'option' from frontend
+        organizer_name = data.get('organization_type')  # assuming this maps to "organizer_name"
         signature = data.get('signature')
 
-        logger.debug(f"Received: {company_name}, {buisness_address}, {mailing_address}, {agent_name}, {agent_address}, {submit_date}, {buisness_phone}, {duration}, {submit_date}, {owner_name}, {owner_address}, {owner_email}, {owner_role}, {manager_name}, {manager_address}, {option}, {organization_type}, {signature}")
+        logger.debug(f"Received: {company_name}, {business_address}, {mailing_address}, {agent_name}, {agent_address}, {business_phone}, {duration}, {duration_date}, {submit_date}, {owner_name}, {owner_address}, {owner_email}, {owner_role}, {manager_name}, {manager_address}, {registration_option}, {organizer_name}, {signature}")
+
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
-        INSERT INTO llc_registrations (company_name, buisness_address, mailing_address, agent_name, agent_address, buisness_phone, duration, submit_date, owner_name, owner_address, owner_email, owner_role, manager_name, manager_address, organization_type, signature) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (company_name, buisness_address, mailing_address, agent_name, agent_address, buisness_phone, duration, submit_date, owner_name, owner_address, owner_email, owner_role, manager_name, manager_address, organization_type, signature))    
+            INSERT INTO llc_registrations (
+                company_name, business_address, mailing_address,
+                agent_name, agent_address, business_phone, duration, duration_date,
+                submit_date, owner_name, owner_address, owner_email, owner_role,
+                manager_name, manager_address, registration_option,
+                organizer_name, signature
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+        """, (
+            company_name, business_address, mailing_address,
+            agent_name, agent_address, business_phone, duration, duration_date,
+            submit_date, owner_name, owner_address, owner_email, owner_role,
+            manager_name, manager_address, registration_option,
+            organizer_name, signature
+        ))
         conn.commit()
         cursor.close()
         conn.close()
         return jsonify({'message': 'LLC registration submitted successfully'}), 201
+
     except Exception as e:
         logger.exception("Error in /llc-registration")
         return f"Internal Server Error: {e}", 500
-    
 
 @app.route('/company-registration')
 def company_registration():
@@ -710,7 +725,6 @@ def china_registration_form():
 def submit_china_registration():
     try:
         data = request.get_json()
-        id_proof = data.get('id_proof')
         company_name_chinese = data.get('company_name_chinese')
         alternate_name = data.get('alternate_name')
         company_type = data.get('company_type')
@@ -734,12 +748,12 @@ def submit_china_registration():
         contact_person_china = data.get('contact_person_china')
         submitted_at = data.get('submitted_at')
 
-        logger.debug(f"Received: {id_proof}, {company_name_chinese}, {alternate_name}, {company_type}, {registered_address}, {business_scope}, {capital_rmb}, {operating_term}, {investor_name}, {investor_nationality}, {investor_id}, {investor_address}, {ownership_percent}, {legal_rep_name}, {legal_rep_nationality}, {legal_rep_id}, {legal_rep_position}, {supervisor_name}, {supervisor_contact}, {executive_director}, {finance_manager}, {contact_person_china}, {submitted_at}")
+        logger.debug(f"Received: {company_name_chinese}, {alternate_name}, {company_type}, {registered_address}, {business_scope}, {capital_rmb}, {operating_term}, {investor_name}, {investor_nationality}, {investor_id}, {investor_address}, {ownership_percent}, {legal_rep_name}, {legal_rep_nationality}, {legal_rep_id}, {legal_rep_position}, {supervisor_name}, {supervisor_contact}, {executive_director}, {finance_manager}, {contact_person_china}, {submitted_at}")
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
-        INSERT INTO china_registration (id_proof, company_name_chinese, alternate_name, company_type, registered_address, business_scope, capital_rmb, operating_term, investor_name, investor_nationality, investor_id, investor_address, ownership_percent, legal_rep_name, legal_rep_nationality, legal_rep_id, legal_rep_position, supervisor_name, supervisor_contact, executive_director, finance_manager, contact_person_china, submitted_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (id_proof, company_name_chinese, alternate_name, company_type, registered_address, business_scope, capital_rmb, operating_term, investor_name, investor_nationality, investor_id, investor_address, ownership_percent, legal_rep_name, legal_rep_nationality, legal_rep_id, legal_rep_position, supervisor_name, supervisor_contact, executive_director, finance_manager, contact_person_china, submitted_at))
+        INSERT INTO china_registration (company_name_chinese, alternate_name, company_type, registered_address, business_scope, capital_rmb, operating_term, investor_name, investor_nationality, investor_id, investor_address, ownership_percent, legal_rep_name, legal_rep_nationality, legal_rep_id, legal_rep_position, supervisor_name, supervisor_contact, executive_director, finance_manager, contact_person_china, submitted_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                    (company_name_chinese, alternate_name, company_type, registered_address, business_scope, capital_rmb, operating_term, investor_name, investor_nationality, investor_id, investor_address, ownership_percent, legal_rep_name, legal_rep_nationality, legal_rep_id, legal_rep_position, supervisor_name, supervisor_contact, executive_director, finance_manager, contact_person_china, submitted_at))
         conn.commit()
         cursor.close()
         conn.close()

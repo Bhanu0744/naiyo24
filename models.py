@@ -600,43 +600,52 @@ class StartupRegistration(db.Model):
     
 class LLCRegistration(db.Model):
     __tablename__ = 'llc_registrations'
-    company_name = db.Column(db.Text, primary_key=True)
-    buisness_address = db.Column(db.Text)
+    id = db.Column(db.Integer, primary_key=True)
+    company_name = db.Column(db.Text)
+    business_address = db.Column(db.Text)
     mailing_address = db.Column(db.Text)
     agent_name = db.Column(db.Text)
     agent_address = db.Column(db.Text)
-    buisness_phone = db.Column(db.Text)
+    business_phone = db.Column(db.String(50))
     duration = db.Column(db.Text)
-    submit_date = db.Column(db.Text)
+    duration_date = db.Column(db.Date)
+    submit_date = db.Column(db.Date)
+    submitted_date = db.Column(db.Date)
     owner_name = db.Column(db.Text)
     owner_address = db.Column(db.Text)
     owner_email = db.Column(db.Text)
     owner_role = db.Column(db.Text)
     manager_name = db.Column(db.Text)
     manager_address = db.Column(db.Text)
-    organization_type = db.Column(db.Text)
+    management = db.Column(db.Text)
+    optional_provisions = db.Column(db.Text)
+    organizer_name = db.Column(db.Text)
+    registration_option = db.Column(db.String(100))
     signature = db.Column(db.Text)
 
     def to_dict(self):
         return {
             "id": self.id,
             "company_name": self.company_name,
-            "buisness_address": self.buisness_address,
+            "business_address": self.buisness_address,
             "mailing_address": self.mailing_address,
             "agent_name": self.agent_name,
             "agent_address": self.agent_address,
-            "buisness_phone": self.buisness_phone,
+            "business_phone": self.buisness_phone,
             "duration": self.duration,
             "submit_date": self.submit_date,
+            "submitted_date": self.submitted_date,
             "owner_name": self.owner_name,
             "owner_address": self.owner_address,
             "owner_email": self.owner_email,
             "owner_role": self.owner_role,
             "manager_name": self.manager_name,
             "manager_address": self.manager_address,
-            "organization_type": self.organization_type,
-            "signature": self.signature,
-           
+            "management": self.management,
+            "optional_provisions": self.optional_provisions,
+            "organizer_name": self.organizer_name,
+            "registration_option": self.option,
+            "signature": self.signature,  
         }
     
 class CompanyRegistration(db.Model):
@@ -686,9 +695,7 @@ class CompanyRegistration(db.Model):
 
 class ChinaRegistration(db.Model):
     __tablename__ = 'china_registration'
-    id = db.Column(db.Integer, primary_key=True)
-    id_proof = db.Column(db.Text)
-    company_name_chinese = db.Column(db.Text)
+    company_name_chinese = db.Column(db.Text, primary_key=True)
     alternate_name = db.Column(db.Text)
     company_type = db.Column(db.Text)
     registered_address = db.Column(db.Text)
@@ -709,12 +716,10 @@ class ChinaRegistration(db.Model):
     executive_director = db.Column(db.Text)
     finance_manager = db.Column(db.Text)
     contact_person_china = db.Column(db.Text)
-    submitted_at = db.Column(db.DateTime, default=datetime.utcnow)
+    submitted_at = db.Column(db.DateTime)
 
     def to_dict(self):
         return {
-            "id": self.id,
-            "id_proof": self.id_proof,
             "company_name_chinese": self.company_name_chinese,
             "alternate_name": self.alternate_name,
             "company_type": self.company_type,

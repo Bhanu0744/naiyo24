@@ -474,27 +474,33 @@ def create_llc_registration():
         data = request.get_json()
         new_registration = LLCRegistration(
             company_name=data['company_name'],
-            buisness_address=data['buisness_address'],
+            business_address=data['business_address'],
             mailing_address=data['mailing_address'],
             agent_name=data['agent_name'],
             agent_address=data['agent_address'],
-            buisness_phone=data['buisness_phone'],
+            business_phone=data['business_phone'],
             duration=data['duration'],
-            submit_date=data['submit_date'],
+            duration_date=datetime.strptime(data['duration_date'], "%Y-%m-%d").date(),
+            submit_date=datetime.strptime(data['submit_date'], "%Y-%m-%d").date(),
+            submitted_date=datetime.strptime(data['submitted_date'], "%Y-%m-%d").date(),
             owner_name=data['owner_name'],
             owner_address=data['owner_address'],
             owner_email=data['owner_email'],
             owner_role=data['owner_role'],
             manager_name=data['manager_name'],
             manager_address=data['manager_address'],
-            organization_type=data['organization_type'],
-            signature=data['signature'],
-            )
+            management=data.get('management'),
+            optional_provisions=data.get('optional_provisions'),
+            registration_option=data['registration_option'],
+            organizer_name=data['organizer_name'],
+            signature=data['signature']
+        )
         db.session.add(new_registration)
         db.session.commit()
         return jsonify(new_registration.to_dict()), 201
     except Exception as e:
         return jsonify({'error': str(e)}), 500
+
 
 @user_bp.route('/company-registration', methods=['GET'])
 def get_company_registration():
@@ -524,7 +530,7 @@ def create_company_registration():
             shareholder_1=data['shareholder_1'],
             shareholder_2=data['shareholder_2'],
             signature=data['signature'],
-            submission_date=data['submission_date']
+            submitted_at=datetime.fromisoformat(data['submitted_at'])
         )
         db.session.add(new_registration)
         db.session.commit()
@@ -542,7 +548,6 @@ def create_china_registration():
     try:
         data = request.get_json()
         new_registration = ChinaRegistration(
-            id_proof=data['id_proof'],
             company_name_chinese=data['company_name_chinese'],
             alternate_name=data['alternate_name'],
             company_type=data['company_type'],
