@@ -814,7 +814,6 @@ def proprietor_form():
 def submit_proprietor_form():
     try:
         data = request.get_json()
-        id_proof = data.get('id_proof')
         full_name = data.get('full_name')
         parent_name = data.get('parent_name')
         dob = data.get('dob')
@@ -842,12 +841,12 @@ def submit_proprietor_form():
         declaration_date = data.get('declaration_date')
         submitted_at = data.get('submitted_at')
 
-        logger.debug(f"Received: {id_proof}, {full_name}, {parent_name}, {dob}, {gender}, {aadhaar}, {pan}, {mobile}, {email}, {res_address}, {res_pin}, {firm_name}, {business_type}, {nature}, {business_address}, {business_city}, {business_pin}, {commencement_date}, {website}, {bank_name}, {account_type}, {ifsc}, {branch_address}, {registrations}, {place}, {declaration_date}, {submitted_at}")
+        logger.debug(f"Received: {full_name}, {parent_name}, {dob}, {gender}, {aadhaar}, {pan}, {mobile}, {email}, {res_address}, {res_pin}, {firm_name}, {business_type}, {nature}, {business_address}, {business_city}, {business_pin}, {commencement_date}, {website}, {bank_name}, {account_type}, {ifsc}, {branch_address}, {registrations}, {place}, {declaration_date}, {submitted_at}")
         conn = get_db_connection()
         cursor = conn.cursor()
         cursor.execute("""
-        INSERT INTO proprietor_registration (id_proof, full_name, parent_name, dob, gender, aadhaar, pan, mobile, email, res_address, res_pin, firm_name, business_type, nature, business_address, business_city, business_pin, commencement_date, website, bank_name, account_type, ifsc, branch_address, registrations, place, declaration_date, submitted_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
-                    (id_proof, full_name, parent_name, dob, gender, aadhaar, pan, mobile, email, res_address, res_pin, firm_name, business_type, nature, business_address, business_city, business_pin, commencement_date, website, bank_name, account_type, ifsc, branch_address, registrations, place, declaration_date, submitted_at))
+        INSERT INTO proprietor_registration (full_name, parent_name, dob, gender, aadhaar, pan, mobile, email, res_address, res_pin, firm_name, business_type, nature, business_address, business_city, business_pin, commencement_date, website, bank_name, account_type, ifsc, branch_address, registrations, place, declaration_date, submitted_at) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)""",
+                    (full_name, parent_name, dob, gender, aadhaar, pan, mobile, email, res_address, res_pin, firm_name, business_type, nature, business_address, business_city, business_pin, commencement_date, website, bank_name, account_type, ifsc, branch_address, registrations, place, declaration_date, submitted_at))
         conn.commit()
         cursor.close()
         conn.close()

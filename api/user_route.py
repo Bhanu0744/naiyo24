@@ -625,40 +625,47 @@ def get_proprietor_registration():
 def create_proprietor_registration():
     try:
         data = request.get_json()
+
+        # Optional: Log incoming data for debugging
+        print("Received data:", data)
+
         new_registration = ProprietorRegistration(
-            id_proof=data['id_proof'],
-            full_name=data['full_name'],
-            parent_name=data['parent_name'],
-            dob=data['dob'],
-            gender=data['gender'],
-            aadhaar=data['aadhaar'],
-            pan=data['pan'],
-            mobile=data['mobile'],
-            email=data['email'],
-            res_address=data['res_address'],
-            res_pin=data['res_pin'],
-            firm_name=data['firm_name'],
-            business_type=data['business_type'],
-            nature=data['nature'],
-            business_address=data['business_address'],
-            business_city=data['business_city'],
-            business_pin=data['business_pin'],
-            commencement_date=data['commencement_date'],
-            website=data['website'],
-            bank_name=data['bank_name'],
-            account_type=data['account_type'],
-            ifsc=data['ifsc'],
-            branch_address=data['branch_address'],
-            registrations=data['registrations'],
-            place=data['place'],
-            declaration_date=data['declaration_date'],
-            submitted_at=data['submitted_at']
-            )
+            full_name=data.get('full_name'),
+            parent_name=data.get('parent_name'),
+            dob=data.get('dob'),
+            gender=data.get('gender'),
+            aadhaar=data.get('aadhaar'),
+            pan=data.get('pan'),
+            mobile=data.get('mobile'),
+            email=data.get('email'),
+            res_address=data.get('res_address'),
+            res_pin=data.get('res_pin'),
+            firm_name=data.get('firm_name'),
+            business_type=data.get('business_type'),
+            nature=data.get('nature'),
+            business_address=data.get('business_address'),
+            business_city=data.get('business_city'),
+            business_pin=data.get('business_pin'),
+            commencement_date=data.get('commencement_date'),
+            website=data.get('website'),
+            bank_name=data.get('bank_name'),
+            account_type=data.get('account_type'),
+            ifsc=data.get('ifsc'),
+            branch_address=data.get('branch_address'),
+            registrations=data.get('registrations'),
+            place=data.get('place'),
+            declaration_date=data.get('declaration_date'),
+            submitted_at=data.get('submitted_at')
+        )
+
         db.session.add(new_registration)
         db.session.commit()
-        return jsonify(new_registration.to_dict()), 201
+        return jsonify({'message': 'Proprietor registration submitted successfully'}), 201
+
     except Exception as e:
+        print("Error in registration:", str(e))
         return jsonify({'error': str(e)}), 500
+
     
 
 @user_bp.route('/partnership-form', methods=['GET'])

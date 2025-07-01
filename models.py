@@ -797,9 +797,7 @@ class WebServiceForm(db.Model):
 
 class ProprietorRegistration(db.Model):
     __tablename__ = 'proprietor_registration'
-    id = db.Column(db.Integer, primary_key=True)
-    id_proof = db.Column(db.Text)
-    full_name = db.Column(db.Text)
+    full_name = db.Column(db.Text, primary_key=True)
     parent_name = db.Column(db.Text)
     dob = db.Column(db.Text)
     gender = db.Column(db.Text)
@@ -828,8 +826,6 @@ class ProprietorRegistration(db.Model):
 
     def to_dict(self):
         return {
-            "id": self.id,
-            "id_proof": self.id_proof,
             "full_name": self.full_name,
             "parent_name": self.parent_name,
             "dob": self.dob,
