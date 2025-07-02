@@ -52,7 +52,7 @@
 
 .legal-services .paragraph {
     color: #555;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 1.8;
     margin-bottom: 20px;
 }
@@ -134,9 +134,9 @@
 }
 
 .footer {
-    background-color: black;
+    background-color: #2b3439;
     color: white;
-    padding: 40px 50px;
+    padding: 30px 50px;
 }
 
 .footer-top {
@@ -147,7 +147,7 @@
 
 .contact-info {
     display: flex;
-    gap: 120px;
+    gap: 50px;
     flex-wrap: wrap;
 }
 
@@ -166,20 +166,17 @@
     margin: 20px 0;
     border-color: #444;
 }
-
 .footer-content {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
-    padding: 40px;
     margin-left: 30px;
     gap: 40px;
 }
 
 .footer-col {
-    flex: 1 1 220px;
-    margin-bottom: 20px;
+    flex: 1;
+    min-width: 200px;
 }
 
 .footer-top {
@@ -188,7 +185,7 @@
 }
 
 .contact-item img {
-    background-color: black;
+    background-color: #10b981;
     height: 40px;
     width: 40px;
     border-radius: 50%;
@@ -198,68 +195,53 @@
 
 .logo-section .logo {
     width: 180px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .footer-col p {
-    font-size: 15px;
-    line-height: 1.7;
+    font-size: 14px;
+    line-height: 1.6;
     color: #ccc;
 }
 
 .footer-col ul {
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .footer-col ul li {
     margin-bottom: 10px;
     font-size: 15px;
     cursor: pointer;
-    transition: color 0.3s;
 }
 
 .footer-col ul li::before {
+    content: "▶";
     margin-right: 8px;
     font-size: 10px;
-    color: black;
 }
 
 .subscribe-form label {
     display: block;
     margin-bottom: 8px;
     font-size: 14px;
-    color: #ccc
 }
 
 .subscribe-form input {
     width: 100%;
-    padding: 10px 12px;
+    padding: 8px;
     border: none;
-    margin-bottom: 12px;
-    border-radius: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px;
     background-color: #dce6eb;
-    font-size: 15px;
 }
 
 .subscribe-form button {
-    background-color: grey;
+    background-color: #10b981;
     color: white;
     border: none;
-    padding: 10px 20px;
-    border-radius: 10px;
+    padding: 8px 20px;
+    border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-.subscribe-form button:hover {
-    background-color: #0e9e6e;
-}
-
-.footer-content .footer-col .logo {
-    height: 100px;
-    width: 120px;
-    border-radius: 20px;
 }

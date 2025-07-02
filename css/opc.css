@@ -136,7 +136,7 @@
 .footer {
     background-color: #2b3439;
     color: white;
-    padding: 30px 50px;
+    padding: 40px 50px;
 }
 
 .footer-top {
@@ -147,7 +147,7 @@
 
 .contact-info {
     display: flex;
-    gap: 50px;
+    gap: 120px;
     flex-wrap: wrap;
 }
 
@@ -166,17 +166,20 @@
     margin: 20px 0;
     border-color: #444;
 }
+
 .footer-content {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: flex-start;
     flex-wrap: wrap;
+    padding: 40px;
     margin-left: 30px;
     gap: 40px;
 }
 
 .footer-col {
-    flex: 1;
-    min-width: 200px;
+    flex: 1 1 220px;
+    margin-bottom: 20px;
 }
 
 .footer-top {
@@ -195,53 +198,67 @@
 
 .logo-section .logo {
     width: 180px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .footer-col p {
-    font-size: 14px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.7;
     color: #ccc;
 }
 
 .footer-col ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 .footer-col ul li {
     margin-bottom: 10px;
     font-size: 15px;
     cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer-col ul li:hover {
+    color: #10b981;
 }
 
 .footer-col ul li::before {
     content: "▶";
     margin-right: 8px;
     font-size: 10px;
+    color: #10b981;
 }
 
 .subscribe-form label {
     display: block;
     margin-bottom: 8px;
     font-size: 14px;
+    color: #ccc
 }
 
 .subscribe-form input {
     width: 100%;
-    padding: 8px;
+    padding: 10px 12px;
     border: none;
-    margin-bottom: 10px;
-    border-radius: 4px;
+    margin-bottom: 12px;
+    border-radius: 15px;
     background-color: #dce6eb;
+    font-size: 15px;
 }
 
 .subscribe-form button {
     background-color: #10b981;
     color: white;
     border: none;
-    padding: 8px 20px;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 10px;
     cursor: pointer;
     font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.subscribe-form button:hover {
+    background-color: #0e9e6e;
 }
